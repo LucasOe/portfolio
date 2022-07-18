@@ -1,35 +1,19 @@
+import { PerspectiveCamera } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import React from "react";
-import logo from "./logo.svg";
 import "./App.scss";
 
-function App() {
+export default function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>This website is currently under construction</p>
-				<p>
-					<a
-						className="App-link"
-						href="https://reactjs.org"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Learn React
-					</a>
-					{" | "}
-					<a
-						className="App-link"
-						href="https://vitejs.dev/guide/features.html"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Vite Docs
-					</a>
-				</p>
-			</header>
+			<Canvas>
+				<PerspectiveCamera makeDefault fov={75} position={[0, 0, 10]} />
+				<ambientLight />
+				<mesh>
+					<boxGeometry />
+					<meshStandardMaterial />
+				</mesh>
+			</Canvas>
 		</div>
 	);
 }
-
-export default App;
