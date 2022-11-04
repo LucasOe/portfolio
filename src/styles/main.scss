@@ -1,23 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
-
-* {
-	box-sizing: border-box;
-}
-
-html {
-	margin: 0;
-	width: 100vw;
-	height: 100vh;
-}
-
-body {
-	margin: 0;
-	background-color: rgb(23, 23, 23);
-	color: rgb(229, 229, 229);
-	font-family: "Libre Baskerville", serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
+@import "base/reset.scss";
 
 .center {
 	display: flex;
@@ -27,6 +8,7 @@ body {
 .main {
 	padding-top: 15rem;
 	max-width: 54rem;
+	font-family: "Libre Baskerville", serif;
 
 	.header {
 		font-size: 3rem;
