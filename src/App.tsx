@@ -1,4 +1,6 @@
 import React from "react";
+import github from "./assets/github.svg";
+import twitter from "./assets/twitter.svg";
 
 export default function App() {
 	return (
@@ -22,14 +24,10 @@ export default function App() {
 						target="_blank"
 						rel="noreferrer"
 					>
-						<img
-							src="./src/assets/twitter.svg"
-							alt="Twitter"
-							className="logo"
-						/>
+						<img src={twitter} alt="Twitter" className="logo" />
 					</a>
 					<a href="http://github.com/LucasOe" target="_blank" rel="noreferrer">
-						<img src="./src/assets/github.svg" alt="Twitter" className="logo" />
+						<img src={github} alt="Github" className="logo" />
 					</a>
 				</div>
 			</div>
