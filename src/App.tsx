@@ -1,6 +1,6 @@
+import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import github from "./assets/github.svg";
-import twitter from "./assets/twitter.svg";
 
 export default function App() {
 	return (
@@ -18,10 +18,10 @@ export default function App() {
 				</p>
 				<div className="socials">
 					<a href="http://twitter.com/_LucasOe_" target="_blank" rel="noreferrer">
-						<img src={twitter} alt="Twitter" className="logo" />
+						<FontAwesomeIcon icon={faTwitter} className="icon" />
 					</a>
 					<a href="http://github.com/LucasOe" target="_blank" rel="noreferrer">
-						<img src={github} alt="Github" className="logo" />
+						<FontAwesomeIcon icon={faGithub} className="icon" />
 					</a>
 				</div>
 			</div>
