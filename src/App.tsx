@@ -1,34 +1,38 @@
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
-import React, { useRef } from "react";
-import "./App.scss";
-
-function Cube() {
-	const meshRef = useRef();
-
-	useFrame(() => {
-		meshRef.current.rotation.x += 0.01;
-		meshRef.current.rotation.y += 0.01;
-	});
-
-	return (
-		<mesh ref={meshRef}>
-			<boxGeometry />
-			<meshStandardMaterial />
-		</mesh>
-	);
-}
+import React from "react";
 
 export default function App() {
 	return (
-		<div className="App">
-			<Canvas>
-				<PerspectiveCamera makeDefault fov={75} position={[0, 0, 5]} />
-				<OrbitControls enableZoom={false} />
-				<ambientLight intensity={0.1} />
-				<directionalLight position={[0, 0, 5]} intensity={1} />
-				<Cube />
-			</Canvas>
+		<div className="center">
+			<div className="main">
+				<h1 className="header">Hey!</h1>
+				<p className="text">
+					My name is Lucas Oelker and I&apos;m currently studying Visual
+					Computing and Design in Lippstadt, Germany. Programming, rendering or
+					web design — if it requires a computer and some creative thinking
+					I&apos;m interested!
+				</p>
+				<p className="text">
+					This is supposed to be a portfolio at some point in the future, but
+					right now it&apos;s still in development. Why don&apos;t you check out
+					my socials down below in the meantime?
+				</p>
+				<div className="socials">
+					<a
+						href="http://twitter.com/_LucasOe_"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img
+							src="./src/assets/twitter.svg"
+							alt="Twitter"
+							className="logo"
+						/>
+					</a>
+					<a href="http://github.com/LucasOe" target="_blank" rel="noreferrer">
+						<img src="./src/assets/github.svg" alt="Twitter" className="logo" />
+					</a>
+				</div>
+			</div>
 		</div>
 	);
 }
