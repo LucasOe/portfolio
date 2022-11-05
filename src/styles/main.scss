@@ -1,3 +1,4 @@
+@import "base/variables.scss";
 @import "base/reset.scss";
 
 .center {
@@ -23,15 +24,6 @@
 
 	.socials {
 		padding-top: 1rem;
-
-		a {
-			margin-right: 0.5rem;
-		}
-
-		.icon {
-			width: 2rem;
-			height: 2rem;
-			color: rgb(229, 229, 229);
-		}
+		display: flex;
 	}
 }
