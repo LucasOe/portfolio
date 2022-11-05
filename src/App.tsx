@@ -1,6 +1,7 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import Social from "./components/Social";
 
 export default function App() {
 	return (
@@ -17,12 +18,9 @@ export default function App() {
 					Why don&apos;t you check out my socials down below in the meantime?
 				</p>
 				<div className="socials">
-					<a href="http://twitter.com/_LucasOe_" target="_blank" rel="noreferrer">
-						<FontAwesomeIcon icon={faTwitter} className="icon" />
-					</a>
-					<a href="http://github.com/LucasOe" target="_blank" rel="noreferrer">
-						<FontAwesomeIcon icon={faGithub} className="icon" />
-					</a>
+					<Social icon={faTwitter} link="https://twitter.com/_LucasOe_" newtab />
+					<Social icon={faGithub} link="https://github.com/LucasOe" newtab />
+					<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
 				</div>
 			</div>
 		</div>
