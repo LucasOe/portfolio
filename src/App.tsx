@@ -5,8 +5,8 @@ import Social from "./components/Social";
 
 export default function App() {
 	return (
-		<div className="flex justify-center bg-neutral-900 w-screen h-screen">
-			<div className="pt-72 max-w-4xl">
+		<div className="min-h-screen flex justify-center bg-neutral-900 p-6">
+			<div className="h-full max-w-4xl sm:pt-20 md:pt-40 lg:pt-60 xl:pt-80">
 				<article className="prose prose-lg prose-invert max-w-none font-serif text-neutral-200">
 					<h1 className="italic">Hey!</h1>
 					<p>
