@@ -1,7 +1,6 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-import "../styles/components/social.scss";
 
 type SocialProps = {
 	icon: IconDefinition;
@@ -11,9 +10,9 @@ type SocialProps = {
 
 export default function Social({ icon, link, newtab }: SocialProps) {
 	return (
-		<div className="iconWrapper">
+		<div className="w-10 h-10 p-2 rounded-full bg-neutral-200 opacity-80 hover:opacity-100">
 			<a href={link} target={newtab ? "_blank" : "_self"} rel="noreferrer">
-				<FontAwesomeIcon icon={icon} className="icon" />
+				<FontAwesomeIcon icon={icon} className="w-full h-full text-neutral-900" />
 			</a>
 		</div>
 	);
