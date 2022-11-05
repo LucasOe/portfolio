@@ -1,3 +1,4 @@
+import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "../styles/components/social.scss";
@@ -5,7 +6,7 @@ import "../styles/components/social.scss";
 type SocialProps = {
 	icon: IconDefinition;
 	link: string;
-	newtab: boolean;
+	newtab?: boolean;
 };
 
 export default function Social({ icon, link, newtab }: SocialProps) {
