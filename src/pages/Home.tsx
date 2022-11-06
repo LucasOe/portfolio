@@ -1,6 +1,5 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
 import Social from "../components/Social";
 
 export default function Home() {
