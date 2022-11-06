@@ -1,9 +1,9 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import Social from "./components/Social";
+import Social from "../components/Social";
 
-export default function App() {
+export default function Home() {
 	return (
 		<div className="min-h-screen flex justify-center bg-neutral-900 p-6">
 			<div className="h-full max-w-4xl sm:pt-20 md:pt-40 lg:pt-60 xl:pt-80">
