@@ -10,9 +10,9 @@ export default function App() {
 				<article className="prose prose-lg prose-invert max-w-none font-serif text-neutral-200">
 					<h1 className="italic">Hey!</h1>
 					<p>
-						My name is Lucas Oelker and I&apos;m currently studying Visual Computing and Design in Lippstadt, Germany.
-						Programming, rendering or web design — if it requires a computer and some creative thinking I&apos;m
-						interested!
+						My name is Lucas Oelker and I&apos;m currently studying Visual Computing and Design in
+						Lippstadt, Germany. Programming, rendering or web design — if it requires a computer and some
+						creative thinking I&apos;m interested!
 					</p>
 					<p>
 						This is supposed to be a portfolio at some point in the future, but right now it&apos;s still in
