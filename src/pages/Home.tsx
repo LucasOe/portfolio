@@ -4,9 +4,9 @@ import Social from "../components/Social";
 
 export default function Home() {
 	return (
-		<div className="min-h-screen flex justify-center bg-neutral-900 p-6">
+		<div className="flex min-h-screen justify-center bg-neutral-900 p-6">
 			<div className="h-full max-w-4xl sm:pt-20 md:pt-40 lg:pt-60 xl:pt-80">
-				<article className="prose prose-lg prose-invert max-w-none font-serif text-neutral-200">
+				<article className="prose-lg prose prose-invert max-w-none font-serif text-neutral-200">
 					<h1 className="italic">Hey!</h1>
 					<p>
 						My name is Lucas Oelker and I&apos;m currently studying Visual Computing and Design in

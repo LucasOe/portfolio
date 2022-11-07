@@ -9,9 +9,9 @@ type SocialProps = {
 
 export default function Social({ icon, link, newtab }: SocialProps) {
 	return (
-		<div className="w-10 h-10 p-2 rounded-full bg-neutral-200 opacity-80 hover:opacity-100">
+		<div className="h-10 w-10 rounded-full bg-neutral-200 p-2 opacity-80 hover:opacity-100">
 			<a href={link} target={newtab ? "_blank" : "_self"} rel="noreferrer">
-				<FontAwesomeIcon icon={icon} className="w-full h-full text-neutral-900" />
+				<FontAwesomeIcon icon={icon} className="h-full w-full text-neutral-900" />
 			</a>
 		</div>
 	);
