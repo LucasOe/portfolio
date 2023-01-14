@@ -4,7 +4,12 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
+				sans: ["Roboto"],
 				serif: ["Libre Baskerville", "serif"],
+				mono: ["Fira Code", "monospace"],
+			},
+			fontSize: {
+				xxl: "12rem",
 			},
 		},
 	},
