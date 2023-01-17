@@ -25,14 +25,14 @@ export default function Timeline({ children, unixBegin, unixEnd, className }: Da
 					{/*Progress Bar*/}
 					<div className=" my-4 mx-2 flex w-2 rounded-full  bg-neutral-700" style={{ contain: "paint" }}>
 						<div className="sticky bottom-[calc(50%-1rem)] self-end">
-							<div className="absolute h-screen w-2 -translate-y-full bg-emerald-400" />
+							<div className="absolute h-screen w-2 -translate-y-full bg-emerald-200 bg-gradient-to-t from-emerald-500" />
 						</div>
 					</div>
 					{/*Sticky*/}
 					<div className="relative -left-6 -mr-6">
 						<div ref={inputRef} className="sticky top-1/2 flex">
 							{/*Dot*/}
-							<div className="mx-1 my-2 h-4 w-4 rounded-full bg-emerald-400" />
+							<div className="mx-1 my-2 h-4 w-4 rounded-full bg-emerald-500" />
 							{/*Arrow*/}
 							<div className="my-2 h-0 w-0 border-y-8 border-r-8 border-y-transparent border-r-neutral-700" />
 							{/*Textbox*/}
