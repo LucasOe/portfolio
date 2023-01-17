@@ -1,6 +1,7 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Social from "../components/Social";
+import StickyDate from "../components/StickyDate";
 
 export default function Home() {
 	return (
@@ -17,12 +18,18 @@ export default function Home() {
 						This is supposed to be a portfolio at some point in the future, but right now it&apos;s still in
 						development. Why don&apos;t you check out my socials down below in the meantime?
 					</p>
+					<div className="mt-6 flex gap-3">
+						<Social icon={faTwitter} link="https://twitter.com/_LucasOe_" newtab />
+						<Social icon={faGithub} link="https://github.com/LucasOe" newtab />
+						<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
+					</div>
+					<h2 className="mt-24">Projects</h2>
+					<div className="mt-6 bg-neutral-800">
+						<StickyDate />
+						<div className="h-96" />
+					</div>
+					<div className="h-96" />
 				</article>
-				<div className="flex gap-3 pt-6">
-					<Social icon={faTwitter} link="https://twitter.com/_LucasOe_" newtab />
-					<Social icon={faGithub} link="https://github.com/LucasOe" newtab />
-					<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
-				</div>
 			</div>
 		</div>
 	);
