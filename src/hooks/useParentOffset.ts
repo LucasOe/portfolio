@@ -13,9 +13,13 @@ export default function useParentOffset(reference: RefObject<HTMLElement>) {
 				if (height != 0) setScrollPosition(top / height);
 			}
 		};
+		window.addEventListener("resize", updatePosition);
 		window.addEventListener("scroll", updatePosition);
 		updatePosition();
-		return () => window.removeEventListener("scroll", updatePosition);
+		return () => {
+			window.removeEventListener("resize", updatePosition);
+			window.removeEventListener("scroll", updatePosition);
+		};
 	}, []);
 
 	return scrollPosition;
