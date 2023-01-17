@@ -1,5 +1,6 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import Project from "../components/Project";
 import Social from "../components/Social";
 import Timeline from "../components/Timeline";
 
@@ -15,24 +16,36 @@ export default function Home() {
 						creative thinking I&apos;m interested!
 					</p>
 					<p>
-						This is supposed to be a portfolio at some point in the future, but right now it&apos;s still in
-						development. Why don&apos;t you check out my socials down below in the meantime?
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit ullam, aspernatur modi sequi
+						nesciunt, minima earum quam reprehenderit laboriosam delectus excepturi mollitia pariatur!
+						Veniam soluta dolore incidunt voluptatem ipsam?
 					</p>
 					<div className="mt-6 flex gap-3">
 						<Social icon={faTwitter} link="https://twitter.com/_LucasOe_" newtab />
 						<Social icon={faGithub} link="https://github.com/LucasOe" newtab />
 						<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
 					</div>
-					<h2 className="mt-24">Projects</h2>
+					<h2 className="mt-24 font-mono">Projects</h2>
 					<Timeline unixBegin={1483225200} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
-							<div className="h-80 rounded-xl bg-slate-400">Project 1</div>
-							<div className="h-80 rounded-xl bg-slate-400">Project 2</div>
-							<div className="h-80 rounded-xl bg-slate-400">Project 3</div>
+							<Project title="Project 1" />
+							<Project title="Project 2" />
+							<Project title="Project 3" />
+							<Project title="Project 4" />
 						</div>
 					</Timeline>
-					<div className="h-80" />
-					<div className="h-80" />
+					<h2 className="mt-24 font-mono">Skills</h2>
+					<div className="h-80">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit vero ipsa consectetur
+						omnis quaerat distinctio quisquam, dolor iste tempora ratione! Similique incidunt quo mollitia
+						nostrum placeat illo repellat cum!
+					</div>
+					<h2 className="mt-24 font-mono">Contact</h2>
+					<div className="h-80">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit vero ipsa consectetur
+						omnis quaerat distinctio quisquam, dolor iste tempora ratione! Similique incidunt quo mollitia
+						nostrum placeat illo repellat cum!
+					</div>
 				</div>
 			</div>
 		</div>
