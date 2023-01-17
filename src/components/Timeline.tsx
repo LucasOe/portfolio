@@ -23,7 +23,11 @@ export default function Timeline({ children, unixBegin, unixEnd, className }: Da
 				{children}
 				<div className="relative hidden sm:flex">
 					{/*Progress Bar*/}
-					<div className="my-4 mx-2 w-2 rounded-full  bg-neutral-700" />
+					<div className=" my-4 mx-2 flex w-2 rounded-full  bg-neutral-700" style={{ contain: "paint" }}>
+						<div className="sticky bottom-[calc(50%-1rem)] self-end">
+							<div className="absolute h-screen w-2 -translate-y-full bg-emerald-400" />
+						</div>
+					</div>
 					{/*Sticky*/}
 					<div className="relative -left-6 -mr-6">
 						<div ref={inputRef} className="sticky top-1/2 flex">
