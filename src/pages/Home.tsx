@@ -1,14 +1,14 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Social from "../components/Social";
-import StickyDate from "../components/StickyDate";
+import Timeline from "../components/Timeline";
 
 export default function Home() {
 	return (
 		<div className="flex min-h-screen justify-center bg-neutral-900 p-6">
 			<div className="h-full max-w-4xl sm:pt-20 md:pt-40 lg:pt-60 xl:pt-80">
-				<article className="prose-lg prose prose-invert max-w-none font-serif text-neutral-200">
-					<h1 className="italic">Hey!</h1>
+				<div className="prose-lg prose prose-invert max-w-none text-neutral-200">
+					<h1 className="font-serif italic">Hey!</h1>
 					<p>
 						My name is Lucas Oelker and I&apos;m currently studying Visual Computing and Design in
 						Lippstadt, Germany. Programming, rendering or web design — if it requires a computer and some
@@ -24,12 +24,16 @@ export default function Home() {
 						<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
 					</div>
 					<h2 className="mt-24">Projects</h2>
-					<div className="mt-6 bg-neutral-800">
-						<StickyDate />
-						<div className="h-96" />
-					</div>
-					<div className="h-96" />
-				</article>
+					<Timeline>
+						<div className="flex grow flex-col gap-3">
+							<div className="h-80 rounded-xl bg-slate-400">Project 1</div>
+							<div className="h-80 rounded-xl bg-slate-400">Project 2</div>
+							<div className="h-80 rounded-xl bg-slate-400">Project 3</div>
+						</div>
+					</Timeline>
+					<div className="h-80" />
+					<div className="h-80" />
+				</div>
 			</div>
 		</div>
 	);
