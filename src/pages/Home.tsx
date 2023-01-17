@@ -6,7 +6,7 @@ import Timeline from "../components/Timeline";
 export default function Home() {
 	return (
 		<div className="flex min-h-screen justify-center bg-neutral-900 p-6">
-			<div className="h-full max-w-4xl sm:pt-20 md:pt-40 lg:pt-60 xl:pt-80">
+			<div className="h-full max-w-4xl pt-10 sm:pt-20 md:pt-40">
 				<div className="prose-lg prose prose-invert max-w-none text-neutral-200">
 					<h1 className="font-serif italic">Hey!</h1>
 					<p>
@@ -24,7 +24,7 @@ export default function Home() {
 						<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
 					</div>
 					<h2 className="mt-24">Projects</h2>
-					<Timeline>
+					<Timeline unixBegin={1483225200} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
 							<div className="h-80 rounded-xl bg-slate-400">Project 1</div>
 							<div className="h-80 rounded-xl bg-slate-400">Project 2</div>
