@@ -28,10 +28,10 @@ export default function Home() {
 					<h2 className="mt-24 font-mono">Projects</h2>
 					<Timeline unixBegin={1483225200} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
-							<Project title="Project 1" arrowPosition={0} />
-							<Project title="Project 2" arrowPosition={50} />
-							<Project title="Project 3" arrowPosition={50} />
-							<Project title="Project 4" arrowPosition={100} />
+							<Project title="Project 1" arrowPosition={0} className="" />
+							<Project title="Project 2" arrowPosition={50} className="" />
+							<Project title="Project 3" arrowPosition={50} className="" />
+							<Project title="Project 4" arrowPosition={100} className="" />
 						</div>
 					</Timeline>
 					<h2 className="mt-24 font-mono">Skills</h2>
