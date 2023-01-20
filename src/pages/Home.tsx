@@ -1,5 +1,6 @@
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import NewTabLink from "../components/NewTabLink";
 import Project from "../components/Project";
 import Social from "../components/Social";
 import Timeline from "../components/Timeline";
@@ -25,13 +26,65 @@ export default function Home() {
 						<Social icon={faGithub} link="https://github.com/LucasOe" newtab />
 						<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
 					</div>
-					<h2 className="mt-24 font-mono">Projects</h2>
-					<Timeline unixBegin={1483225200} unixEnd={1673910000}>
+					<h2 className="mt-24 font-mono">Project Timeline</h2>
+					<Timeline unixBegin={1554069600} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
-							<Project title="Project 1" arrowPosition={0} className="" />
-							<Project title="Project 2" arrowPosition={50} className="" />
-							<Project title="Project 3" arrowPosition={50} className="" />
-							<Project title="Project 4" arrowPosition={100} className="" />
+							<Project
+								title='System.out.println("Hello, World!");'
+								arrowPosition={0}
+								className="mb-[0px]"
+							>
+								I first started learning Java in late 2017 to early 2018 in high school. In April 2019 I
+								created my
+								<NewTabLink link="https://github.com/LucasOe/gameshop" text="first website" />
+								as a school project. For a voluntary internship in Ferber-Software GmbH I also created a
+								<NewTabLink
+									link="https://github.com/LucasOe/streichholzrechner"
+									text="Know-how-Computer"
+								/>
+								with Electron. While the code isn&apos;t great when looking back at it, these projects
+								mark the beginning of my programming journey.
+							</Project>
+							<Project
+								title="Das Rezeptbuch"
+								link="https://github.com/LucasOe/das-rezeptbuch"
+								arrowPosition={50}
+								className="mb-[0px]"
+							>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
+								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
+								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+							</Project>
+							<Project
+								title="Releaf"
+								link="https://github.com/LucasOe/releaf"
+								arrowPosition={50}
+								className="mb-[0px]"
+							>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
+								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
+								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+							</Project>
+							<Project
+								title="Marble Simulation"
+								link="https://github.com/LucasOe/marble-simulation"
+								arrowPosition={50}
+								className="mb-[0px]"
+							>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
+								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
+								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+							</Project>
+							<Project
+								title="Tabletop Simulator API"
+								link="https://github.com/LucasOe/tts-external-api"
+								arrowPosition={100}
+								className="mb-[0px]"
+							>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
+								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
+								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+							</Project>
 						</div>
 					</Timeline>
 					<h2 className="mt-24 font-mono">Skills</h2>
