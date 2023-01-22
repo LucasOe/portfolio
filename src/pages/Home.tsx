@@ -1,6 +1,14 @@
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import NewTabLink from "../components/NewTabLink";
+import {
+	faCss3,
+	faGithub,
+	faHtml5,
+	faJava,
+	faPhp,
+	faSass,
+	faSquareJs,
+	faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { faDatabase, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Project from "../components/Project";
 import Social from "../components/Social";
 import Timeline from "../components/Timeline";
@@ -12,14 +20,15 @@ export default function Home() {
 				<div className="prose-lg prose prose-invert max-w-none text-neutral-200">
 					<h1 className="font-serif italic">Hey!</h1>
 					<p>
-						My name is Lucas Oelker and I&apos;m currently studying Visual Computing and Design in
-						Lippstadt, Germany. Programming, rendering or web design — if it requires a computer and some
-						creative thinking I&apos;m interested!
+						My name is Lucas Oelker and I&apos;m a software developer currently studying Visual Computing
+						and Design in Lippstadt, Germany. Programming, rendering or web design — if it requires a
+						computer and some creative thinking I&apos;m interested!
 					</p>
 					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sit ullam, aspernatur modi sequi
-						nesciunt, minima earum quam reprehenderit laboriosam delectus excepturi mollitia pariatur!
-						Veniam soluta dolore incidunt voluptatem ipsam?
+						I have a deep passion for programming and I like solving problems. I first started learning Java
+						and the basics of web development in high school. Today I&apos;m studying Visual Computing and
+						Design, which allows me to think about the integrated approach to the conception and development
+						of technical systems as well as their conceptual and design perspective.
 					</p>
 					<div className="mt-6 flex gap-3">
 						<Social icon={faTwitter} link="https://twitter.com/_LucasOe_" newtab />
@@ -30,26 +39,20 @@ export default function Home() {
 					<Timeline unixBegin={1554069600} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
 							<Project
-								title='System.out.println("Hello, World!");'
+								title="Game Shop Website"
+								link="https://github.com/LucasOe/gameshop"
+								stack={[faHtml5, faCss3, faPhp]}
 								arrowPosition={0}
-								className="mb-[0px]"
 							>
-								I first started learning Java in late 2017 to early 2018 in high school. In April 2019 I
-								created my
-								<NewTabLink link="https://github.com/LucasOe/gameshop" text="first website" />
-								as a school project. For a voluntary internship in Ferber-Software GmbH I also created a
-								<NewTabLink
-									link="https://github.com/LucasOe/streichholzrechner"
-									text="Know-how-Computer"
-								/>
-								with Electron. While the code isn&apos;t great when looking back at it, these projects
-								mark the beginning of my programming journey.
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
+								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
+								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
 							</Project>
 							<Project
 								title="Das Rezeptbuch"
 								link="https://github.com/LucasOe/das-rezeptbuch"
+								stack={[faJava, faDatabase]}
 								arrowPosition={50}
-								className="mb-[0px]"
 							>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
 								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
@@ -58,18 +61,18 @@ export default function Home() {
 							<Project
 								title="Releaf"
 								link="https://github.com/LucasOe/releaf"
+								stack={[faHtml5, faSass, faSquareJs, faPhp, faDatabase]}
 								arrowPosition={50}
-								className="mb-[0px]"
 							>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
 								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
 								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
 							</Project>
 							<Project
-								title="Marble Simulation"
+								title="Marble Physics Simulation"
 								link="https://github.com/LucasOe/marble-simulation"
+								stack={[]}
 								arrowPosition={50}
-								className="mb-[0px]"
 							>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
 								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
@@ -78,8 +81,8 @@ export default function Home() {
 							<Project
 								title="Tabletop Simulator API"
 								link="https://github.com/LucasOe/tts-external-api"
+								stack={[]}
 								arrowPosition={100}
-								className="mb-[0px]"
 							>
 								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
 								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
