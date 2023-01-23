@@ -24,7 +24,9 @@ export default function Project({ children, title, link, stack, arrowPosition, c
 				<p className="m-0">{children}</p>
 				<div className="flex space-x-2">
 					{stack.map((icon) => (
-						<FontAwesomeIcon key={icon.iconName} icon={icon} className="h-7 w-7" />
+						<div key={icon.iconName} className="h-7 w-7 rounded-md bg-neutral-200 p-1">
+							<FontAwesomeIcon icon={icon} className="block h-full w-full text-neutral-900" />
+						</div>
 					))}
 				</div>
 			</div>
