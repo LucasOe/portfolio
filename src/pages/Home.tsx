@@ -1,9 +1,10 @@
 import {
-	faCss3,
 	faGithub,
 	faHtml5,
 	faJava,
 	faPhp,
+	faReact,
+	faRust,
 	faSass,
 	faSquareJs,
 	faTwitter,
@@ -36,27 +37,17 @@ export default function Home() {
 						<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
 					</div>
 					<h2 className="mt-24 font-mono">Project Timeline</h2>
-					<Timeline unixBegin={1554069600} unixEnd={1673910000}>
+					<Timeline unixBegin={1619820000} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
-							<Project
-								title="Game Shop Website"
-								link="https://github.com/LucasOe/gameshop"
-								stack={[faHtml5, faCss3, faPhp]}
-								arrowPosition={0}
-							>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
-								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
-								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
-							</Project>
 							<Project
 								title="Das Rezeptbuch"
 								link="https://github.com/LucasOe/das-rezeptbuch"
 								stack={[faJava, faDatabase]}
-								arrowPosition={50}
+								arrowPosition={0}
 							>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
-								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
-								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+								<i>Das Rezeptbuch</i> is a digital cookbook. The application provides an interface built
+								in JavaFX that lets you view recipies stored in a database. This project was created in
+								a team effort for the university module <i>Computer Science</i>.
 							</Project>
 							<Project
 								title="Releaf"
@@ -64,29 +55,38 @@ export default function Home() {
 								stack={[faHtml5, faSass, faSquareJs, faPhp, faDatabase]}
 								arrowPosition={50}
 							>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
-								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
-								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+								<i>Releaf</i> is a website and brand identity for an online tea shop. The project was
+								created in a team effort for the university module <i>Web- and Coroprate Design</i> on
+								the topic of {'"Health"'}.
 							</Project>
 							<Project
 								title="Marble Physics Simulation"
 								link="https://github.com/LucasOe/marble-simulation"
-								stack={[]}
+								stack={[faJava]}
 								arrowPosition={50}
 							>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
-								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
-								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+								A 2D Physics simulation created for the university module <i>Visual Computing</i>. The
+								model simulates a 2D marble run with physically accurate calculations for gravity,
+								friction, collisions and a pendulum.
+							</Project>
+							<Project
+								title="Portfolio"
+								link="https://github.com/LucasOe/portfolio"
+								stack={[faReact]}
+								arrowPosition={50}
+							>
+								You&apos;re looking at it right now. After building multiple websites using HTML, CSS
+								and PHP only, this project was my first deep dive into the world of modern web
+								development, using a tech stack including Vite, Typescript, React, and Tailwind CSS.
 							</Project>
 							<Project
 								title="Tabletop Simulator API"
 								link="https://github.com/LucasOe/tts-external-api"
-								stack={[]}
+								stack={[faRust]}
 								arrowPosition={100}
 							>
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam numquam natus est
-								necessitatibus nostrum dolorem, odio delectus id optio commodi cum perspiciatis
-								inventore dolores incidunt omnis officiis tenetur adipisci voluptatem?
+								A Rust API for interacting with the game Tabletop Simulator using TCP messages. <br /> I
+								created this project as an opportunity to learn more about Rust and API design.
 							</Project>
 						</div>
 					</Timeline>
