@@ -1,17 +1,4 @@
-import {
-	faGithub,
-	faHtml5,
-	faJava,
-	faPhp,
-	faReact,
-	faRust,
-	faSass,
-	faSquareJs,
-	faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { faDatabase, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Project from "../components/Project";
-import Social from "../components/Social";
 import Timeline from "../components/Timeline";
 
 export default function Home() {
@@ -31,18 +18,13 @@ export default function Home() {
 						Design, which allows me to think about the integrated approach to the conception and development
 						of technical systems as well as their conceptual and design perspective.
 					</p>
-					<div className="mt-6 flex gap-3">
-						<Social icon={faTwitter} link="https://twitter.com/_LucasOe_" newtab />
-						<Social icon={faGithub} link="https://github.com/LucasOe" newtab />
-						<Social icon={faEnvelope} link="mailto:lucas.oelker@gmx.de" />
-					</div>
 					<h2 className="mt-24 font-mono">Project Timeline</h2>
 					<Timeline unixBegin={1619820000} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
 							<Project
 								title="Das Rezeptbuch"
 								link="https://github.com/LucasOe/das-rezeptbuch"
-								stack={[faJava, faDatabase]}
+								stack={["java", "mysql"]}
 								arrowPosition={0}
 							>
 								<i>Das Rezeptbuch</i> is a digital cookbook. The application provides an interface built
@@ -52,7 +34,7 @@ export default function Home() {
 							<Project
 								title="Releaf"
 								link="https://github.com/LucasOe/releaf"
-								stack={[faHtml5, faSass, faSquareJs, faPhp, faDatabase]}
+								stack={["html", "sass", "javascript", "php"]}
 								arrowPosition={50}
 							>
 								<i>Releaf</i> is a website and brand identity for an online tea shop. The project was
@@ -62,7 +44,7 @@ export default function Home() {
 							<Project
 								title="Marble Physics Simulation"
 								link="https://github.com/LucasOe/marble-simulation"
-								stack={[faJava]}
+								stack={["java"]}
 								arrowPosition={50}
 							>
 								A 2D Physics simulation created for the university module <i>Visual Computing</i>. The
@@ -72,7 +54,7 @@ export default function Home() {
 							<Project
 								title="Portfolio"
 								link="https://github.com/LucasOe/portfolio"
-								stack={[faReact]}
+								stack={["vite", "react", "tailwind", "typescript"]}
 								arrowPosition={50}
 							>
 								You&apos;re looking at it right now. After building multiple websites using HTML, CSS
@@ -82,7 +64,7 @@ export default function Home() {
 							<Project
 								title="Tabletop Simulator API"
 								link="https://github.com/LucasOe/tts-external-api"
-								stack={[faRust]}
+								stack={["rust"]}
 								arrowPosition={100}
 							>
 								A Rust API for interacting with the game Tabletop Simulator using TCP messages. <br /> I
