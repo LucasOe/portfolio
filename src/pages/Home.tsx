@@ -34,7 +34,7 @@ export default function Home() {
 							<Project
 								title="Releaf"
 								link="https://github.com/LucasOe/releaf"
-								stack={["html", "sass", "javascript", "php"]}
+								stack={["html", "sass", "javascript", "php", "mysql"]}
 								arrowPosition={50}
 							>
 								<i>Releaf</i> is a website and brand identity for an online tea shop. The project was
