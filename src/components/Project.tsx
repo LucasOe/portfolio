@@ -1,6 +1,6 @@
 import { FiExternalLink } from "react-icons/fi";
 import { Icons } from "../data/Icons";
-import Icon from "./Icon";
+import TooltipIcon from "./TooltipIcon";
 
 type ProjectProps = {
 	children: React.ReactNode;
@@ -24,7 +24,7 @@ export default function Project({ children, title, link, stack, arrowPosition, c
 				<p className="m-0">{children}</p>
 				<div className="flex space-x-2">
 					{stack.map((icon, index) => (
-						<Icon key={index} icon={icon} />
+						<TooltipIcon key={index} icon={icon} />
 					))}
 				</div>
 			</div>
