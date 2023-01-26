@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom";
-import LinkButton from "../components/Button";
+import LinkButton from "../components/LinkButton";
 
 type ErrorResponse = {
 	status: number;
