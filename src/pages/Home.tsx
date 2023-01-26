@@ -1,10 +1,11 @@
+import ContactForm from "../components/ContactForm";
 import Project from "../components/Project";
 import Timeline from "../components/Timeline";
 
 export default function Home() {
 	return (
 		<div className="flex min-h-screen justify-center bg-neutral-900 p-6">
-			<div className="h-full max-w-4xl pt-10 sm:pt-20 md:pt-40">
+			<div className="my-10 h-full max-w-4xl sm:my-20 md:my-40">
 				<div className="prose-lg prose prose-invert max-w-none text-neutral-200">
 					<h1 className="font-serif italic">Hey!</h1>
 					<p>
@@ -80,9 +81,7 @@ export default function Home() {
 					</div>
 					<h2 className="mt-24 font-mono">Contact</h2>
 					<div className="h-80">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit vero ipsa consectetur
-						omnis quaerat distinctio quisquam, dolor iste tempora ratione! Similique incidunt quo mollitia
-						nostrum placeat illo repellat cum!
+						<ContactForm />
 					</div>
 				</div>
 			</div>
