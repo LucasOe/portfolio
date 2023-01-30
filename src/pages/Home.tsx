@@ -80,9 +80,7 @@ export default function Home() {
 						nostrum placeat illo repellat cum!
 					</div>
 					<h2 className="mt-24 font-mono">Contact</h2>
-					<div className="h-80">
-						<ContactForm />
-					</div>
+					<ContactForm />
 				</div>
 			</div>
 		</div>
