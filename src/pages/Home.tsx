@@ -1,5 +1,6 @@
 import ContactForm from "../components/ContactForm";
 import Project from "../components/Project";
+import Skills from "../components/Skills";
 import Timeline from "../components/Timeline";
 
 export default function Home() {
@@ -19,7 +20,7 @@ export default function Home() {
 						Design, which allows me to think about the integrated approach to the conception and development
 						of technical systems as well as their conceptual and design perspective.
 					</p>
-					<h2 className="mt-24 font-mono">Project Timeline</h2>
+					<h2 className="mt-24 font-mono"># Project Timeline</h2>
 					<Timeline unixBegin={1619820000} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
 							<Project
@@ -73,13 +74,12 @@ export default function Home() {
 							</Project>
 						</div>
 					</Timeline>
-					<h2 className="mt-24 font-mono">Skills</h2>
-					<div className="h-80">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sit vero ipsa consectetur
-						omnis quaerat distinctio quisquam, dolor iste tempora ratione! Similique incidunt quo mollitia
-						nostrum placeat illo repellat cum!
+					<h2 className="mt-24 font-mono"># Skills</h2>
+					<div className="flex gap-2">
+						<Skills text="Software Development" skills={["java", "rust", "javascript", "typescript"]} />
+						<Skills text="Frontend Development" skills={["html", "sass", "react"]} />
 					</div>
-					<h2 className="mt-24 font-mono">Contact</h2>
+					<h2 className="mt-24 font-mono"># Contact</h2>
 					<ContactForm />
 				</div>
 			</div>

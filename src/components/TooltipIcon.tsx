@@ -3,11 +3,12 @@ import { icons } from "../data/Icons";
 
 type IconProps = {
 	icon: string | number;
+	className?: string;
 };
 
-export default function TooltipIcon({ icon }: IconProps) {
+export default function TooltipIcon({ icon, className }: IconProps) {
 	return (
-		<div className="h-7 w-7 rounded-md bg-neutral-200 [&>#tooltip]:hover:visible">
+		<div className={`${className} h-7 w-7 rounded-md bg-neutral-200 [&>#tooltip]:hover:visible`}>
 			<IconContext.Provider value={{ className: "w-full h-full text-neutral-900 p-1" }}>
 				{icons[icon].icon}
 			</IconContext.Provider>
