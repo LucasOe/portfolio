@@ -9,12 +9,12 @@ export default function Home() {
 			<div className="my-10 h-full max-w-4xl sm:my-20 md:my-40">
 				<div className="prose-lg prose prose-invert max-w-none text-neutral-200">
 					<h1 className="font-serif italic">Hey!</h1>
-					<p>
+					<p className="sm:pr-6">
 						My name is Lucas Oelker and I&apos;m a software developer currently studying Visual Computing
 						and Design in Lippstadt, Germany. Programming, rendering or web design — if it requires a
 						computer and some creative thinking I&apos;m interested!
 					</p>
-					<p>
+					<p className="sm:pr-6">
 						I have a deep passion for programming and I like solving problems. I first started learning Java
 						and the basics of web development in high school. Today I&apos;m studying Visual Computing and
 						Design, which allows me to think about the integrated approach to the conception and development
