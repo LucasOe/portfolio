@@ -84,7 +84,7 @@ export default function Home() {
 						</Skills>
 						<Skills title="Frontend Development" icon={<FaReact />}>
 							I have experience in Design and web development using HTML, CSS and PHP. Currently I&apos;m
-							learning to use modern framework like React and Tailwind CSS.
+							learning to use modern frameworks like React and Tailwind CSS.
 						</Skills>
 					</div>
 					<h2 className="mt-24 font-mono"># Contact</h2>
