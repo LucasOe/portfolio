@@ -18,8 +18,8 @@ export default function ContactForm() {
 							id="name"
 							placeholder="Enter Your Name"
 							required
-							className="w-full rounded-md border-none bg-neutral-700 
-							placeholder:text-neutral-500 focus:outline-none focus:ring-0"
+							className="w-full rounded-md border-none bg-neutral-700
+							placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-green-400"
 						/>
 					</label>
 					<label className="w-full">
@@ -31,7 +31,7 @@ export default function ContactForm() {
 							placeholder="Enter Your E-Mail"
 							required
 							className="w-full rounded-md border-none bg-neutral-700 
-							placeholder:text-neutral-500 focus:outline-none focus:ring-0"
+							placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-green-400"
 						/>
 					</label>
 				</div>
@@ -44,12 +44,13 @@ export default function ContactForm() {
 						rows={8}
 						required
 						className="w-full resize-none rounded-md border-none bg-neutral-700 
-						placeholder:text-neutral-500 focus:outline-none focus:ring-0"
+						placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-green-400"
 					/>
 				</label>
 				<button
 					type="submit"
-					className="self-end rounded-md border-none bg-neutral-200 p-1 opacity-80 hover:opacity-100"
+					className="self-end rounded-lg border-none bg-neutral-200 p-1 opacity-80
+					outline-none hover:opacity-100 focus:ring-2 focus:ring-green-400"
 				>
 					<p className="m-0 px-5 font-medium text-neutral-900">Send Message</p>
 				</button>
