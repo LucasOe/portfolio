@@ -75,7 +75,7 @@ export default function Home() {
 						</div>
 					</Timeline>
 					<h2 className="mt-24 font-mono"># Skills</h2>
-					<div className="flex gap-2">
+					<div className="flex flex-col gap-2 sm:flex-row">
 						<Skills text="Software Development" skills={["java", "rust", "javascript", "typescript"]} />
 						<Skills text="Frontend Development" skills={["html", "sass", "react"]} />
 					</div>

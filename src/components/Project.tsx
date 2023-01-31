@@ -24,7 +24,7 @@ export default function Project({ children, title, link, stack, arrowPosition, c
 				<p className="m-0">{children}</p>
 				<div className="flex space-x-2">
 					{stack.map((icon, index) => (
-						<TooltipIcon key={index} icon={icon} />
+						<TooltipIcon key={index} icon={icon} className="h-7 w-7" />
 					))}
 				</div>
 			</div>
