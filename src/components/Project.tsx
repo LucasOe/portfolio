@@ -7,12 +7,11 @@ type ProjectProps = {
 	link: string;
 	stack: string[];
 	arrowPosition: number;
-	className?: string;
 };
 
-export default function Project({ children, title, link, stack, arrowPosition, className }: ProjectProps) {
+export default function Project({ children, title, link, stack, arrowPosition }: ProjectProps) {
 	return (
-		<div className={`${className} flex transition-transform duration-300 hover:-translate-x-2`}>
+		<div className="flex transition-transform duration-300 hover:-translate-x-2">
 			<div className="flex w-full flex-col space-y-4 rounded-md bg-neutral-700 p-4">
 				<div className="flex items-start justify-between">
 					<h3 className="m-0 leading-none">{title}</h3>
@@ -20,13 +19,14 @@ export default function Project({ children, title, link, stack, arrowPosition, c
 						href={link}
 						target="_blank"
 						rel="noreferrer"
+						aria-label={`${title} on Github`}
 						className="rounded-md focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-green-400"
 					>
 						<FiExternalLink className="h-6 w-6 hover:text-green-400" />
 					</a>
 				</div>
 				<p className="m-0">{children}</p>
-				<div className="flex space-x-2">
+				<div className="flex flex-wrap gap-2">
 					{stack.map((tech, index) => (
 						<Label key={index} text={tech} />
 					))}
