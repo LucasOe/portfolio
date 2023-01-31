@@ -1,3 +1,5 @@
+import { FaReact } from "react-icons/fa";
+import { FiMonitor } from "react-icons/fi";
 import ContactForm from "../components/ContactForm";
 import Project from "../components/Project";
 import Skills from "../components/Skills";
@@ -76,8 +78,14 @@ export default function Home() {
 					</Timeline>
 					<h2 className="mt-24 font-mono"># Skills</h2>
 					<div className="flex flex-col gap-2 sm:flex-row">
-						<Skills text="Software Development" skills={["Java", "Rust", "JavaScript", "TypeScript"]} />
-						<Skills text="Frontend Development" skills={["HTML", "SASS", "React"]} />
+						<Skills title="Software Development" icon={<FiMonitor />}>
+							I have five years of academic education in Java and I&apos;m currently learning Rust. I also
+							have experience in game development using Unity and C#.
+						</Skills>
+						<Skills title="Frontend Development" icon={<FaReact />}>
+							I have experience in Design and web development using HTML, CSS and PHP. Currently I&apos;m
+							learning to use modern framework like React and Tailwind CSS.
+						</Skills>
 					</div>
 					<h2 className="mt-24 font-mono"># Contact</h2>
 					<ContactForm />
