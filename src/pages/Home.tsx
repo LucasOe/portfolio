@@ -26,7 +26,7 @@ export default function Home() {
 							<Project
 								title="Das Rezeptbuch"
 								link="https://github.com/LucasOe/das-rezeptbuch"
-								stack={["java", "mysql"]}
+								stack={["Java", "MySQL"]}
 								arrowPosition={0}
 							>
 								<i>Das Rezeptbuch</i> is a digital cookbook. The application provides an interface built
@@ -36,7 +36,7 @@ export default function Home() {
 							<Project
 								title="Releaf"
 								link="https://github.com/LucasOe/releaf"
-								stack={["html", "sass", "javascript", "php", "mysql"]}
+								stack={["HTML", "SASS", "JavaScript", "PHP", "MySQL"]}
 								arrowPosition={50}
 							>
 								<i>Releaf</i> is a website and brand identity for an online tea shop. The project was
@@ -46,7 +46,7 @@ export default function Home() {
 							<Project
 								title="Marble Physics Simulation"
 								link="https://github.com/LucasOe/marble-simulation"
-								stack={["java"]}
+								stack={["Java"]}
 								arrowPosition={50}
 							>
 								A 2D Physics simulation created for the university module <i>Visual Computing</i>. The
@@ -56,7 +56,7 @@ export default function Home() {
 							<Project
 								title="Portfolio"
 								link="https://github.com/LucasOe/portfolio"
-								stack={["vite", "react", "tailwind", "typescript"]}
+								stack={["Vite", "React", "Tailwind CSS", "TypeScript"]}
 								arrowPosition={50}
 							>
 								You&apos;re looking at it right now. After building multiple websites using HTML, CSS
@@ -66,7 +66,7 @@ export default function Home() {
 							<Project
 								title="Tabletop Simulator API"
 								link="https://github.com/LucasOe/tts-external-api"
-								stack={["rust"]}
+								stack={["Rust"]}
 								arrowPosition={100}
 							>
 								A Rust API for interacting with the game Tabletop Simulator using TCP messages. <br /> I
@@ -76,8 +76,8 @@ export default function Home() {
 					</Timeline>
 					<h2 className="mt-24 font-mono"># Skills</h2>
 					<div className="flex flex-col gap-2 sm:flex-row">
-						<Skills text="Software Development" skills={["java", "rust", "javascript", "typescript"]} />
-						<Skills text="Frontend Development" skills={["html", "sass", "react"]} />
+						<Skills text="Software Development" skills={["Java", "Rust", "JavaScript", "TypeScript"]} />
+						<Skills text="Frontend Development" skills={["HTML", "SASS", "React"]} />
 					</div>
 					<h2 className="mt-24 font-mono"># Contact</h2>
 					<ContactForm />
