@@ -15,7 +15,7 @@ export default function Home() {
 					<h1 className="font-serif italic">Hey!</h1>
 					<p className="sm:pr-6">
 						My name is Lucas Oelker and I&apos;m a software developer currently studying Visual Computing
-						and Design in Lippstadt, Germany. Programming, rendering or web design — if it requires a
+						and Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a
 						computer and some creative thinking I&apos;m interested!
 					</p>
 					<p className="sm:pr-6">
@@ -34,8 +34,8 @@ export default function Home() {
 								arrowPosition={0}
 							>
 								<i>Das Rezeptbuch</i> is a digital cookbook. The application provides an interface built
-								in JavaFX that lets you view recipies stored in a database. This project was created in
-								a team effort for the university module <i>Computer Science</i>.
+								in JavaFX that lets you view recipes stored in a database. This project was created in a
+								team effort for the university module <i>Computer Science</i>.
 							</Project>
 							<Project
 								title="Releaf"
@@ -44,7 +44,7 @@ export default function Home() {
 								arrowPosition={50}
 							>
 								<i>Releaf</i> is a website and brand identity for an online tea shop. The project was
-								created in a team effort for the university module <i>Web- and Coroprate Design</i> on
+								created in a team effort for the university module <i>Web- and Corporate Design</i> on
 								the topic of {'"Health"'}.
 							</Project>
 							<Project
@@ -53,9 +53,9 @@ export default function Home() {
 								stack={["Java"]}
 								arrowPosition={50}
 							>
-								A 2D Physics simulation created for the university module <i>Visual Computing</i>. The
+								A 2D Physics simulation, created for the university module <i>Visual Computing</i>. The
 								model simulates a 2D marble run with physically accurate calculations for gravity,
-								friction, collisions and a pendulum.
+								friction, collisions, and a pendulum.
 							</Project>
 							<Project
 								title="Portfolio"
@@ -63,7 +63,7 @@ export default function Home() {
 								stack={["Vite", "React", "Tailwind CSS", "TypeScript"]}
 								arrowPosition={50}
 							>
-								You&apos;re looking at it right now. After building multiple websites using HTML, CSS
+								You&apos;re looking at it right now. After building multiple websites using HTML, CSS,
 								and PHP only, this project was my first deep dive into the world of modern web
 								development, using a tech stack including Vite, Typescript, React, and Tailwind CSS.
 							</Project>
