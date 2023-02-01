@@ -1,3 +1,5 @@
+import { BiBrush } from "react-icons/bi";
+import { BsPeople } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { FiMonitor } from "react-icons/fi";
 import ContactForm from "../components/ContactForm";
@@ -77,14 +79,22 @@ export default function Home() {
 						</div>
 					</Timeline>
 					<h2 className="mt-24 font-mono"># Skills</h2>
-					<div className="flex flex-col gap-2 sm:flex-row">
+					<div className="grid gap-3 sm:grid-cols-2">
 						<Skills title="Software Development" icon={<FiMonitor />}>
-							I have five years of academic education in Java and I&apos;m currently learning Rust. I also
-							have experience in game development using Unity and C#.
+							I have five years of academic education in <b>Java</b> and I&apos;m currently learning{" "}
+							<b>Rust</b>. I also have experience in game development using <b>Unity</b> and <b>C#</b>.
 						</Skills>
 						<Skills title="Frontend Development" icon={<FaReact />}>
-							I have experience in Design and web development using HTML, CSS and PHP. Currently I&apos;m
-							learning to use modern frameworks like React and Tailwind CSS.
+							I am proficient in web development using <b>HTML</b>, <b>CSS</b>, and <b>PHP</b>. Currently,
+							I&apos;m learning to use modern frameworks like <b>React</b> and <b>Tailwind CSS</b>.
+						</Skills>
+						<Skills title="Design" icon={<BiBrush />}>
+							The university degree I&apos;m pursuing doesn&apos;t just cover Computer Science but also
+							Design and User Experience! I have worked with <b>Adobe XD</b> and <b>Figma</b> in the past.
+						</Skills>
+						<Skills title="Cooperation" icon={<BsPeople />}>
+							I have worked in groups on multiple projects for school and university. I like to work on
+							Open Source projects on Github in my free time.
 						</Skills>
 					</div>
 					<h2 className="mt-24 font-mono"># Contact</h2>
