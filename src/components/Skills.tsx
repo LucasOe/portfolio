@@ -16,6 +16,7 @@ export default function Skills({ children, title, icon, className }: SkillsProps
 			</div>
 			<div className="flex gap-2">
 				<div
+					aria-hidden="true"
 					className="flex select-none flex-col items-center justify-between
 					font-mono text-sm font-semibold leading-normal text-neutral-500"
 				>
