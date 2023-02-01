@@ -93,8 +93,8 @@ export default function Home() {
 							Design and User Experience! I have worked with <b>Adobe XD</b> and <b>Figma</b> in the past.
 						</Skills>
 						<Skills title="Cooperation" icon={<BsPeople />}>
-							I have worked in groups on multiple projects for school and university. I like to work on
-							Open Source projects on Github in my free time.
+							I have worked in groups on many projects for school and university. I like to work on Open
+							Source projects on Github in my free time.
 						</Skills>
 					</div>
 					<h2 className="mt-24 font-mono"># Contact</h2>
