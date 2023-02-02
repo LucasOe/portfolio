@@ -11,7 +11,7 @@ export default function LinkButton({ link, text, className }: LinkButtonProps) {
 		<Link
 			to={link}
 			className={`${className} inline-block overflow-hidden rounded-lg
-			focus:outline focus:outline-2 focus:outline-green-400`}
+			focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400`}
 		>
 			<div className="bg-neutral-200 p-2 opacity-80 hover:opacity-100">
 				<p className="px-5 font-medium text-neutral-900">{text}</p>
