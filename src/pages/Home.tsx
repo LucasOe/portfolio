@@ -43,7 +43,8 @@ export default function Home() {
 						</div>
 						<a
 							href="#about"
-							className="absolute top-[75vh] animate-bounce self-center rounded-full bg-white opacity-50 hover:opacity-75"
+							className="absolute top-[75vh] animate-bounce self-center rounded-full bg-white/50 hover:bg-white/75
+							focus:outline focus:outline-2 focus:outline-green-400"
 						>
 							<BsArrowDownShort className="h-12 w-12 text-neutral-800" />
 						</a>
