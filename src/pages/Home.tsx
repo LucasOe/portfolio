@@ -14,7 +14,7 @@ export default function Home() {
 	return (
 		<div className="flex min-h-screen justify-center bg-neutral-900 px-6">
 			<div className="mb-[20vh] h-full max-w-4xl">
-				<div className="prose-lg prose prose-invert max-w-none text-neutral-200">
+				<div className="prose prose-lg prose-invert max-w-none text-neutral-200">
 					<div className="absolute w-full max-w-4xl">
 						<div className="my-8 flex flex-wrap justify-between">
 							<div className="flex flex-wrap gap-x-8">
