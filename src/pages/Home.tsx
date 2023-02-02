@@ -4,6 +4,7 @@ import { FaReact } from "react-icons/fa";
 import { FiMonitor } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
 import ContactForm from "../components/ContactForm";
+import Header from "../components/Header";
 import Project from "../components/Project";
 import Skills from "../components/Skills";
 import Timeline from "../components/Timeline";
@@ -47,9 +48,7 @@ export default function Home() {
 							<BsArrowDownShort className="h-12 w-12 text-neutral-800" />
 						</a>
 					</div>
-					<h2 id="about" className="mt-24 scroll-m-[12vh] font-mono">
-						# About
-					</h2>
+					<Header text="About" id="about" />
 					<p className="sm:pr-6">
 						My name is Lucas Oelker and I&apos;m a software developer currently studying Visual Computing
 						and Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a
@@ -61,9 +60,7 @@ export default function Home() {
 						Design, which allows me to think about the integrated approach to the conception and development
 						of technical systems as well as their conceptual and design perspective.
 					</p>
-					<h2 id="projects" className="mt-24 scroll-m-[12vh] font-mono">
-						# Project Timeline
-					</h2>
+					<Header text="Project Timeline" id="projects" />
 					<Timeline unixBegin={1619820000} unixEnd={1673910000}>
 						<div className="flex grow flex-col gap-3">
 							<Project
@@ -117,9 +114,7 @@ export default function Home() {
 							</Project>
 						</div>
 					</Timeline>
-					<h2 id="skills" className="mt-24 scroll-m-[12vh] font-mono">
-						# Skills
-					</h2>
+					<Header text="Skills" id="skills" />
 					<div className="grid gap-3 sm:grid-cols-2">
 						<Skills title="Software Development" icon={<FiMonitor />}>
 							I have five years of academic education in <b>Java</b> and I&apos;m currently learning{" "}
@@ -138,9 +133,7 @@ export default function Home() {
 							Source projects on Github in my free time.
 						</Skills>
 					</div>
-					<h2 id="contact" className="mt-24 scroll-m-[12vh] font-mono">
-						# Contact
-					</h2>
+					<Header text="Contact" id="contact" />
 					<ContactForm />
 				</div>
 			</div>
