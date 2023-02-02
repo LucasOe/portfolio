@@ -58,8 +58,9 @@ export default function Home() {
 						</div>
 						<a
 							href="#about"
+							aria-label="Scroll Down"
 							className="absolute top-[75vh] animate-bounce self-center rounded-full bg-white/50 hover:bg-white/75
-							focus:outline focus:outline-2 focus:outline-green-400"
+							focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400"
 						>
 							<BsArrowDownShort className="h-12 w-12 text-neutral-800" />
 						</a>
