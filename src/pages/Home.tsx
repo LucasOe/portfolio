@@ -5,6 +5,7 @@ import { FiMonitor } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
 import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
+import LinkNavbar from "../components/LinkNavbar";
 import Project from "../components/Project";
 import Skills from "../components/Skills";
 import Timeline from "../components/Timeline";
@@ -14,6 +15,20 @@ export default function Home() {
 		<div className="flex min-h-screen justify-center bg-neutral-900 px-6">
 			<div className="mb-[20vh] h-full max-w-4xl">
 				<div className="prose-lg prose prose-invert max-w-none text-neutral-200">
+					<div className="absolute w-full max-w-4xl">
+						<div className="my-8 flex flex-wrap justify-between">
+							<div className="flex flex-wrap gap-x-8">
+								<LinkNavbar text="about" to="#about" slashes />
+								<LinkNavbar text="projects" to="#projects" slashes />
+								<LinkNavbar text="skills" to="#skills" slashes />
+								<LinkNavbar text="contact" to="#contact" slashes />
+							</div>
+							<div className="flex flex-wrap gap-x-8">
+								<LinkNavbar text="Github" to="https://github.com/LucasOe" newtab />
+								<LinkNavbar text="Twitter" to="https://twitter.com/_LucasOe_" newtab />
+							</div>
+						</div>
+					</div>
 					<div className="flex h-[100vh] flex-col justify-center">
 						<h1 className="m-0 text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]">
 							Hey, I&apos;m Lucas Oelker.
