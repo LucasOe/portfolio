@@ -13,17 +13,17 @@ import Timeline from "../components/Timeline";
 export default function Home() {
 	return (
 		<div className="flex min-h-screen justify-center bg-neutral-900 px-6">
-			<div className="mb-[20vh] h-full max-w-4xl">
+			<div className="relative mb-[20vh] h-full max-w-4xl">
 				<div className="prose prose-lg prose-invert max-w-none text-neutral-200">
-					<div className="absolute w-full max-w-4xl">
+					<div className="absolute w-full">
 						<div className="my-8 flex flex-wrap justify-between">
-							<div className="flex flex-wrap gap-x-8">
+							<div className="flex flex-wrap gap-x-8 text-[3vw] sm:text-lg">
 								<LinkNavbar text="about" to="#about" slashes />
 								<LinkNavbar text="projects" to="#projects" slashes />
 								<LinkNavbar text="skills" to="#skills" slashes />
 								<LinkNavbar text="contact" to="#contact" slashes />
 							</div>
-							<div className="flex flex-wrap gap-x-8">
+							<div className="invisible flex flex-wrap gap-x-8 text-lg sm:visible">
 								<LinkNavbar text="Github" to="https://github.com/LucasOe" newtab />
 								<LinkNavbar text="Twitter" to="https://twitter.com/_LucasOe_" newtab />
 							</div>
