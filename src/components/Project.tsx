@@ -20,8 +20,7 @@ export default function Project({ children, title, link, stack, arrowPosition }:
 						target="_blank"
 						rel="noreferrer"
 						aria-label={`${title} on Github`}
-						className="rounded-md
-						focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-400"
+						className="focus rounded-md"
 					>
 						<FiExternalLink className="h-6 w-6 hover:text-green-400" />
 					</a>
