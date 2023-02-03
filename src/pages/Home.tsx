@@ -59,10 +59,12 @@ export default function Home() {
 						<a
 							href="#about"
 							aria-label="Scroll Down"
-							className="absolute top-[75vh] animate-bounce self-center rounded-full bg-white/50 hover:bg-white/75
+							className="absolute top-[75vh] self-center
 							focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400"
 						>
-							<BsArrowDownShort className="h-12 w-12 text-neutral-800" />
+							<div className="m-2 animate-bounce rounded-full bg-white/50 hover:bg-white/75">
+								<BsArrowDownShort className="h-12 w-12 text-neutral-800" />
+							</div>
 						</a>
 					</div>
 					<Header text="About" id="about" />
