@@ -2,9 +2,9 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
 	return (
-		<div>
-			<h1 className="m-0 text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]">Hey, I&apos;m Lucas Oelker.</h1>
-			<div className="flex text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]">
+		<div className="not-prose select-none text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]">
+			<h1 className="m-0 font-bold">Hey, I&apos;m Lucas Oelker.</h1>
+			<div className="flex">
 				<span>I&apos;m a&nbsp;</span>
 				<TypeAnimation
 					sequence={[
