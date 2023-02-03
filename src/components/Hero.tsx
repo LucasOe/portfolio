@@ -19,7 +19,7 @@ export default function Hero() {
 						"student.",
 						2000,
 					]}
-					wrapper="div"
+					wrapper="span"
 					cursor={true}
 					repeat={Infinity}
 					speed={1}
