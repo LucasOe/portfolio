@@ -5,7 +5,7 @@ type LinkNavbarProps = {
 	newtab?: boolean;
 };
 
-export default function Label({ text, to, slashes, newtab }: LinkNavbarProps) {
+export default function LinkNavbar({ text, to, slashes, newtab }: LinkNavbarProps) {
 	return (
 		<div>
 			<a
