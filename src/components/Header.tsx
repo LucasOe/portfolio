@@ -6,7 +6,7 @@ type HeaderProps = {
 export default function Header({ text, id }: HeaderProps) {
 	return (
 		<h2 id={id} className="mt-24 scroll-m-[12vh] font-mono">
-			# {text}
+			{`# ${text}`}
 		</h2>
 	);
 }

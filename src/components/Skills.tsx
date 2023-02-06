@@ -1,7 +1,8 @@
 import { IconContext } from "react-icons";
+import ReactMarkdown from "react-markdown";
 
 type SkillsProps = {
-	children: React.ReactNode;
+	children: string;
 	title: string;
 	icon: React.ReactNode;
 	className?: string;
@@ -20,11 +21,11 @@ export default function Skills({ children, title, icon, className }: SkillsProps
 					className="flex select-none flex-col items-center justify-between
 					font-mono text-sm font-semibold leading-normal text-neutral-500"
 				>
-					<span>&#60;h3&#62;</span>
+					<span>{"<h3>"}</span>
 					<div className="m-auto my-2 h-full w-[2px] rounded-full bg-neutral-500" />
-					<span>&#60;/h3&#62;</span>
+					<span>{"</h3>"}</span>
 				</div>
-				<p>{children}</p>
+				<ReactMarkdown>{children}</ReactMarkdown>
 			</div>
 		</div>
 	);
