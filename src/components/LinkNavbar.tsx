@@ -3,9 +3,10 @@ type LinkNavbarProps = {
 	to: string;
 	slashes?: boolean;
 	newtab?: boolean;
+	[prop: string]: unknown;
 };
 
-export default function LinkNavbar({ text, to, slashes, newtab }: LinkNavbarProps) {
+export default function LinkNavbar({ text, to, slashes, newtab, ...anchorProps }: LinkNavbarProps) {
 	return (
 		<div>
 			<a
@@ -13,6 +14,7 @@ export default function LinkNavbar({ text, to, slashes, newtab }: LinkNavbarProp
 				target={newtab ? "_blank" : "_self"}
 				rel="noreferrer"
 				className="focus rounded-md no-underline outline-none"
+				{...anchorProps}
 			>
 				<span className="font-mono font-semibold hover:text-green-400">
 					{slashes && <>&#47;&#47;</>}

@@ -1,28 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { IconContext } from "react-icons";
 import { FiMenu, FiX } from "react-icons/fi";
 import LinkNavbar from "./LinkNavbar";
 
-function Links() {
+type LinksProps = {
+	onClick?: () => void;
+};
+
+function Links({ onClick }: LinksProps) {
 	return (
 		<>
-			<LinkNavbar text="about" to="#about" slashes />
-			<LinkNavbar text="projects" to="#projects" slashes />
-			<LinkNavbar text="skills" to="#skills" slashes />
-			<LinkNavbar text="contact" to="#contact" slashes />
+			<LinkNavbar text="about" to="#about" slashes onClick={onClick} />
+			<LinkNavbar text="projects" to="#projects" slashes onClick={onClick} />
+			<LinkNavbar text="skills" to="#skills" slashes onClick={onClick} />
+			<LinkNavbar text="contact" to="#contact" slashes onClick={onClick} />
 		</>
 	);
 }
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
+	const closeNavbar = () => setNavbarOpen(false);
+
+	useEffect(() => {
+		window.addEventListener("resize", closeNavbar);
+		window.addEventListener("scroll", closeNavbar);
+		return () => {
+			window.removeEventListener("resize", closeNavbar);
+			window.removeEventListener("scroll", closeNavbar);
+		};
+	}, []);
+
 	return (
 		<div>
 			<div className="my-6 flex justify-between">
 				{/* Hamburger Menu */}
 				<div className="block md:hidden">
 					<button className="focus block rounded-md" type="button" onClick={() => setNavbarOpen(!navbarOpen)}>
-						<FiMenu className={`h-8 w-8 ${navbarOpen && "hidden"}`} />
-						<FiX className={`h-8 w-8 ${!navbarOpen && "hidden"}`} />
+						<IconContext.Provider value={{ className: "w-8 h-8" }}>
+							{navbarOpen ? <FiX /> : <FiMenu />}
+						</IconContext.Provider>
 					</button>
 				</div>
 				{/* Site Links */}
@@ -38,12 +55,14 @@ export default function Navbar() {
 				</div>
 			</div>
 			{/* Collapsable Menu */}
-			<div className={`flex gap-3 ${navbarOpen ? " flex" : " hidden"}`}>
-				<div className="block w-1 rounded-full bg-neutral-500" />
-				<div className="flex flex-col gap-y-2">
-					<Links />
+			{navbarOpen && (
+				<div className="flex gap-3 md:hidden">
+					<div className="block w-1 rounded-full bg-neutral-500" />
+					<div className="flex flex-col gap-y-2">
+						<Links onClick={closeNavbar} />
+					</div>
 				</div>
-			</div>
+			)}
 		</div>
 	);
 }
