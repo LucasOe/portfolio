@@ -1,3 +1,5 @@
+import { HashLink } from "react-router-hash-link";
+
 type LinkNavbarProps = {
 	text: string;
 	to: string;
@@ -9,8 +11,9 @@ type LinkNavbarProps = {
 export default function LinkNavbar({ text, to, slashes, newtab, ...anchorProps }: LinkNavbarProps) {
 	return (
 		<div>
-			<a
-				href={to}
+			<HashLink
+				to={to}
+				smooth
 				target={newtab ? "_blank" : "_self"}
 				rel="noreferrer"
 				className="focus rounded-md no-underline outline-none"
@@ -20,7 +23,7 @@ export default function LinkNavbar({ text, to, slashes, newtab, ...anchorProps }
 					{slashes && <>&#47;&#47;</>}
 					{text}
 				</span>
-			</a>
+			</HashLink>
 		</div>
 	);
 }

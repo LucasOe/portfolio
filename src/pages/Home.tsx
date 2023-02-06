@@ -2,6 +2,7 @@ import { BiBrush } from "react-icons/bi";
 import { BsArrowDownShort, BsPeople } from "react-icons/bs";
 import { FaReact } from "react-icons/fa";
 import { FiMonitor } from "react-icons/fi";
+import { HashLink } from "react-router-hash-link";
 import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
@@ -20,8 +21,9 @@ export default function Home() {
 					</div>
 					<div className="flex h-[100vh] flex-col justify-center">
 						<Hero />
-						<a
-							href="#about"
+						<HashLink
+							to="#about"
+							smooth
 							aria-label="Scroll Down"
 							tabIndex={-1}
 							className="absolute top-[75vh] self-center"
@@ -29,7 +31,7 @@ export default function Home() {
 							<div className="m-2 animate-bounce rounded-full bg-white/50 hover:bg-white/75">
 								<BsArrowDownShort className="h-12 w-12 text-neutral-800" />
 							</div>
-						</a>
+						</HashLink>
 					</div>
 					<Header text="About" id="about" />
 					<p className="sm:pr-6">
