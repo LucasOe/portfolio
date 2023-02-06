@@ -19,10 +19,7 @@ export default function LinkNavbar({ text, to, slashes, newtab, ...anchorProps }
 				className="focus rounded-md no-underline outline-none"
 				{...anchorProps}
 			>
-				<span className="font-mono font-semibold hover:text-green-400">
-					{slashes && <>&#47;&#47;</>}
-					{text}
-				</span>
+				<span className="font-mono font-semibold hover:text-green-400">{`${slashes ? "//" : ""}${text}`}</span>
 			</HashLink>
 		</div>
 	);

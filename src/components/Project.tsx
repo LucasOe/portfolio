@@ -1,8 +1,9 @@
 import { FiExternalLink } from "react-icons/fi";
+import ReactMarkdown from "react-markdown";
 import Label from "./Label";
 
 type ProjectProps = {
-	children: React.ReactNode;
+	children: string;
 	title: string;
 	link: string;
 	stack: string[];
@@ -25,7 +26,7 @@ export default function Project({ children, title, link, stack, arrowPosition }:
 						<FiExternalLink className="h-6 w-6 hover:text-green-400" />
 					</a>
 				</div>
-				<p className="m-0">{children}</p>
+				<ReactMarkdown>{children}</ReactMarkdown>
 				<div className="flex flex-wrap gap-2">
 					{stack.map((tech, index) => (
 						<Label key={index} text={tech} />
