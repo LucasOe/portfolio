@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -55,14 +56,23 @@ export default function Navbar() {
 				</div>
 			</div>
 			{/* Collapsable Menu */}
-			{navbarOpen && (
-				<div className="flex gap-3 md:hidden">
-					<div className="block w-1 rounded-full bg-neutral-500" />
-					<div className="flex flex-col gap-y-2">
-						<Links onClick={closeNavbar} />
+			<AnimatePresence>
+				{navbarOpen && (
+					<div className="flex gap-3 md:hidden">
+						<motion.div
+							className="block w-1 rounded-full bg-neutral-500"
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 100 }}
+							exit={{ opacity: 0 }}
+						/>
+						<div className="flex flex-col gap-y-2">
+							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+								<Links onClick={closeNavbar} />
+							</motion.div>
+						</div>
 					</div>
-				</div>
-			)}
+				)}
+			</AnimatePresence>
 		</div>
 	);
 }
