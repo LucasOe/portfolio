@@ -4,20 +4,16 @@ import { IconContext } from "react-icons";
 import { FiMenu, FiX } from "react-icons/fi";
 import LinkNavbar from "./LinkNavbar";
 
-type LinksProps = {
-	onClick?: () => void;
-};
-
-function Links({ onClick }: LinksProps) {
-	return (
-		<>
-			<LinkNavbar text="about" to="#about" slashes onClick={onClick} />
-			<LinkNavbar text="projects" to="#projects" slashes onClick={onClick} />
-			<LinkNavbar text="skills" to="#skills" slashes onClick={onClick} />
-			<LinkNavbar text="contact" to="#contact" slashes onClick={onClick} />
-		</>
-	);
-}
+const links = [
+	{ text: "about", to: "#about" },
+	{ text: "projects", to: "#projects" },
+	{ text: "skills", to: "#skills" },
+	{ text: "contact", to: "#contact" },
+];
+const socials = [
+	{ text: "Github", to: "https://github.com/LucasOe" },
+	{ text: "Twitter", to: "https://twitter.com/_LucasOe_" },
+];
 
 export default function Navbar() {
 	const [navbarOpen, setNavbarOpen] = useState(false);
@@ -46,13 +42,16 @@ export default function Navbar() {
 				{/* Site Links */}
 				<div className="hidden md:block">
 					<div className="flex flex-wrap gap-x-8 text-lg">
-						<Links />
+						{links.map((link, index) => (
+							<LinkNavbar key={index} text={link.text} to={link.to} slashes />
+						))}
 					</div>
 				</div>
 				{/* Social Links */}
 				<div className="flex flex-wrap items-center gap-x-8 text-lg">
-					<LinkNavbar text="Github" to="https://github.com/LucasOe" newtab />
-					<LinkNavbar text="Twitter" to="https://twitter.com/_LucasOe_" newtab />
+					{socials.map((social, index) => (
+						<LinkNavbar key={index} text={social.text} to={social.to} newtab />
+					))}
 				</div>
 			</div>
 			{/* Collapsable Menu */}
@@ -67,7 +66,15 @@ export default function Navbar() {
 						/>
 						<div className="flex flex-col gap-y-2">
 							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-								<Links onClick={closeNavbar} />
+								{links.map((link, index) => (
+									<LinkNavbar
+										key={index}
+										text={link.text}
+										to={link.to}
+										onClick={closeNavbar}
+										slashes
+									/>
+								))}
 							</motion.div>
 						</div>
 					</div>
