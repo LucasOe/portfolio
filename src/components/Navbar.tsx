@@ -57,26 +57,38 @@ export default function Navbar() {
 			{/* Collapsable Menu */}
 			<AnimatePresence>
 				{navbarOpen && (
-					<div className="flex gap-3 md:hidden">
+					<div className="flex flex-col gap-y-2 text-[1.35rem] md:hidden">
 						<motion.div
-							className="block w-1 rounded-full bg-neutral-500"
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 100 }}
-							exit={{ opacity: 0 }}
-						/>
-						<div className="flex flex-col gap-y-2">
-							<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-								{links.map((link, index) => (
-									<LinkNavbar
-										key={index}
-										text={link.text}
-										to={link.to}
-										onClick={closeNavbar}
-										slashes
-									/>
-								))}
-							</motion.div>
-						</div>
+							initial="closed"
+							animate="open"
+							exit="closed"
+							variants={{
+								open: {
+									transition: {
+										staggerChildren: 0.05,
+										staggerDirection: 1,
+									},
+								},
+								closed: {
+									transition: {
+										staggerChildren: 0.05,
+										staggerDirection: -1,
+									},
+								},
+							}}
+						>
+							{links.map((link, index) => (
+								<motion.div
+									key={index}
+									variants={{
+										open: { opacity: 1, x: 0 },
+										closed: { opacity: 0, x: -10 },
+									}}
+								>
+									<LinkNavbar text={link.text} to={link.to} onClick={closeNavbar} slashes />
+								</motion.div>
+							))}
+						</motion.div>
 					</div>
 				)}
 			</AnimatePresence>
