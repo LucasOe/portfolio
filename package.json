@@ -9,6 +9,7 @@
 		"lint": "eslint src/**/*.{js,jsx,ts,tsx}"
 	},
 	"dependencies": {
+		"framer-motion": "^9.0.2",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"react-icons": "^4.7.1",
