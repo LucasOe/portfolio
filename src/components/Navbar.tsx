@@ -33,11 +33,15 @@ export default function Navbar() {
 			<div className="my-6 flex justify-between">
 				{/* Hamburger Menu */}
 				<div className="block md:hidden">
-					<button className="focus block rounded-md" type="button" onClick={() => setNavbarOpen(!navbarOpen)}>
+					<motion.button
+						className="focus block rounded-md"
+						onTap={() => setNavbarOpen(!navbarOpen)}
+						whileTap={{ scale: 0.8 }}
+					>
 						<IconContext.Provider value={{ className: "w-8 h-8" }}>
 							{navbarOpen ? <FiX /> : <FiMenu />}
 						</IconContext.Provider>
-					</button>
+					</motion.button>
 				</div>
 				{/* Site Links */}
 				<div className="hidden md:block">
