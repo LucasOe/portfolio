@@ -1,4 +1,4 @@
-![deploy_workflow](https://github.com/LucasOe/portfolio/actions/workflows/deploy.yml/badge.svg)
+<a href="https://github.com/LucasOe/portfolio/actions">![deploy_workflow](https://github.com/LucasOe/portfolio/actions/workflows/deploy.yml/badge.svg)</a>
 
 # Personal Portfolio Website
 
