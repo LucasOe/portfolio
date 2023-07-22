@@ -5,10 +5,10 @@ import { FiMenu, FiX } from "react-icons/fi";
 import LinkNavbar from "./LinkNavbar";
 
 const links = [
-	{ text: "about", to: "#about" },
-	{ text: "projects", to: "#projects" },
-	{ text: "skills", to: "#skills" },
-	{ text: "contact", to: "#contact" },
+	{ text: "about", to: "/#about" },
+	{ text: "projects", to: "/#projects" },
+	{ text: "skills", to: "/#skills" },
+	{ text: "contact", to: "/#contact" },
 ];
 const socials = [
 	{ text: "Github", to: "https://github.com/LucasOe" },
