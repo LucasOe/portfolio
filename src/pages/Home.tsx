@@ -37,8 +37,6 @@ export default function Home() {
 					</ReactMarkdown>
 					<Header text="Project Timeline" id="projects" />
 					<Timeline
-						unixBegin={1619820000}
-						unixEnd={1673910000}
 						projectProps={[
 							{
 								title: "Das Rezeptbuch",
