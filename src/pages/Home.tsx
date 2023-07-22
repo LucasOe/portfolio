@@ -7,7 +7,6 @@ import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
-import Project from "../components/Project";
 import ScrollIndicator from "../components/ScrollIndicator";
 import Skills from "../components/Skills";
 import Timeline from "../components/Timeline";
@@ -37,59 +36,61 @@ export default function Home() {
 						of technical systems as well as their conceptual and design perspective.
 					</ReactMarkdown>
 					<Header text="Project Timeline" id="projects" />
-					<Timeline unixBegin={1619820000} unixEnd={1673910000}>
-						<div className="flex grow flex-col gap-3">
-							<Project
-								title="Das Rezeptbuch"
-								link="https://github.com/LucasOe/das-rezeptbuch"
-								stack={["Java", "JavaFX", "MySQL"]}
-								arrowPosition={0}
-							>
-								*Das Rezeptbuch* is a digital cookbook. The application provides an interface built in
+					<Timeline
+						unixBegin={1619820000}
+						unixEnd={1673910000}
+						projectProps={[
+							{
+								title: "Das Rezeptbuch",
+								link: "https://github.com/LucasOe/das-rezeptbuch",
+								stack: ["Java", "JavaFX", "MySQL"],
+								time: 1619820000,
+								arrowPosition: 0,
+								description: `*Das Rezeptbuch* is a digital cookbook. The application provides an interface built in
 								JavaFX that lets you view recipes stored in a database. This project was created in a
-								team effort for the university module *Computer Science*.
-							</Project>
-							<Project
-								title="Releaf"
-								link="https://github.com/LucasOe/releaf"
-								stack={["HTML", "SASS", "JavaScript", "PHP", "MySQL"]}
-								arrowPosition={50}
-							>
-								*Releaf* is a website and brand identity for an online shop selling tea for relaxation
+								team effort for the university module *Computer Science*.`,
+							},
+							{
+								title: "Releaf",
+								link: "https://github.com/LucasOe/releaf",
+								stack: ["HTML", "SASS", "JavaScript", "PHP", "MySQL"],
+								time: 1635721200,
+								arrowPosition: 50,
+								description: `*Releaf* is a website and brand identity for an online shop that sells tea for relaxation
 								and health. The project was created in a team effort for the university module *Web- and
-								Corporate Design* on the topic of health.
-							</Project>
-							<Project
-								title="Marble Physics Simulation"
-								link="https://github.com/LucasOe/marble-simulation"
-								stack={["Java"]}
-								arrowPosition={50}
-							>
-								A 2D Physics simulation, created for the university module *Visual Computing*. The model
-								simulates a 2D marble run with physically accurate calculations for gravity, friction,
-								collisions, and a pendulum.
-							</Project>
-							<Project
-								title="Portfolio"
-								link="https://github.com/LucasOe/portfolio"
-								stack={["Vite", "React", "Tailwind CSS", "TypeScript"]}
-								arrowPosition={50}
-							>
-								You’re looking at it right now. After building multiple websites using HTML, CSS, and
-								PHP, this project was my first deep dive into the world of modern web development, using
-								a tech stack including Vite, Typescript, React, and Tailwind CSS.
-							</Project>
-							<Project
-								title="Tabletop Simulator API"
-								link="https://github.com/LucasOe/tts-external-api"
-								stack={["Rust"]}
-								arrowPosition={100}
-							>
-								A Rust API for interacting with the game Tabletop Simulator using TCP messages. I
-								created this project as an opportunity to learn more about Rust and API design.
-							</Project>
-						</div>
-					</Timeline>
+								Corporate Design* on the topic of health.`,
+							},
+							{
+								title: "Marble Physics Simulation",
+								link: "https://github.com/LucasOe/marble-simulation",
+								stack: ["Java"],
+								time: 1646089200,
+								arrowPosition: 50,
+								description: `A 2D Physics simulation, created for the university module *Visual Computing*.  
+								The model simulates a 2D marble run with physically accurate calculations for gravity,
+								friction, collisions, and a pendulum.`,
+							},
+							{
+								title: "Portfolio",
+								link: "https://github.com/LucasOe/portfolio",
+								stack: ["Vite", "React", "Tailwind CSS", "TypeScript"],
+								time: 1659304800,
+								arrowPosition: 50,
+								description: `You’re looking at it right now. After building multiple websites using HTML, CSS, and
+								PHP, this project was my first deep dive into the world of modern web development,
+								using a tech stack including Vite, Typescript, React, and Tailwind CSS.`,
+							},
+							{
+								title: "Tabletop Simulator API",
+								link: "https://github.com/LucasOe/tts-external-api",
+								stack: ["Rust"],
+								time: 1673910000,
+								arrowPosition: 100,
+								description: `A Rust API for interacting with the game Tabletop Simulator using TCP messages.  
+								I created this project as an opportunity to learn more about Rust and API design.`,
+							},
+						]}
+					/>
 					<Header text="Skills" id="skills" />
 					<div className="grid gap-3 sm:grid-cols-2">
 						<Skills title="Software Development" icon={<FiMonitor />}>
