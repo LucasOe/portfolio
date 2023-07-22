@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import useOffset from "../hooks/useOffset";
+import { clamp, lerp, negativeValues } from "../utils/math";
 import Project, { ProjectProps } from "./Project";
 
 type DateProps = {
@@ -9,14 +10,6 @@ type DateProps = {
 	className?: string;
 };
 
-function negativeValues(array: number[]): number {
-	return array.filter((num) => num <= 0).length;
-}
-
-function lerp(a: number, b: number, t: number): number {
-	return a + t * (b - a);
-}
-
 function unixTime(time: number): string {
 	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	const date = new Date(time * 1000);
@@ -24,7 +17,7 @@ function unixTime(time: number): string {
 }
 
 function getCurrentDate(offsets: number[], times: number[]): string {
-	const index = Math.max(0, negativeValues(offsets) - 1);
+	const index = clamp(negativeValues(offsets) - 1, 0, offsets.length);
 	const percentage = -offsets[index] / (offsets[index + 1] - offsets[index]);
 	const currentTime = lerp(times[index], times[index + 1], percentage);
 
