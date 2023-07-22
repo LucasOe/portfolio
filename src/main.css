@@ -4,7 +4,7 @@
 
 @layer components {
 	.focus {
-		@apply focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400;
+		@apply focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-green-400 focus-visible:outline-offset-4;
 	}
 }
 
