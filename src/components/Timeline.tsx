@@ -1,26 +1,53 @@
 import { useRef } from "react";
-import useParentOffset from "../hooks/useParentOffset";
+import useOffset from "../hooks/useOffset";
+import Project, { ProjectProps } from "./Project";
 
 type DateProps = {
-	children: React.ReactNode;
+	projectProps: ProjectProps[];
 	unixBegin: number;
 	unixEnd: number;
 	className?: string;
 };
 
-export default function Timeline({ children, unixBegin, unixEnd, className }: DateProps) {
-	const inputRef = useRef<HTMLDivElement>(null);
-	// The offset to the parent in percentage
-	const percentage = useParentOffset(inputRef);
-	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	const currentTime = Math.floor((unixEnd - unixBegin) * percentage) + unixBegin;
-	const date = new Date(currentTime * 1000);
-	const dateText = `${months[date.getMonth()]} ${date.getFullYear()}`;
+function negativeValues(array: number[]): number {
+	return array.filter((num) => num <= 0).length;
+}
 
+function lerp(a: number, b: number, t: number): number {
+	return a + t * (b - a);
+}
+
+function unixTime(time: number): string {
+	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+	const date = new Date(time * 1000);
+	return `${months[date.getMonth()]} ${date.getFullYear()}`;
+}
+
+function getCurrentDate(offsets: number[], times: number[]): string {
+	const index = Math.max(0, negativeValues(offsets) - 1);
+	const percentage = -offsets[index] / (offsets[index + 1] - offsets[index]);
+	const currentTime = lerp(times[index], times[index + 1], percentage);
+
+	return unixTime(currentTime);
+}
+
+const projectOffsets: number[] = [];
+const projectTimes: number[] = [];
+
+export default function Timeline({ projectProps, className }: DateProps) {
+	const scrollbarRef = useRef<HTMLDivElement>(null);
 	return (
 		<div className={className}>
 			<div className="flex">
-				{children}
+				<div className="flex grow flex-col gap-3">
+					{projectProps.map((props: ProjectProps, index) => {
+						const projectRef = useRef<HTMLDivElement>(null);
+						projectOffsets[index] = useOffset(scrollbarRef, projectRef);
+						projectTimes[index] = props.time;
+
+						return <Project key={index} {...props} arrowRef={projectRef} />;
+					})}
+				</div>
 				<div className="relative hidden sm:flex">
 					{/*Progress Bar*/}
 					<div className=" mx-2 my-4 flex w-2 rounded-full bg-neutral-700" style={{ contain: "paint" }}>
@@ -30,14 +57,16 @@ export default function Timeline({ children, unixBegin, unixEnd, className }: Da
 					</div>
 					{/*Sticky*/}
 					<div className="relative -left-6 -mr-6">
-						<div ref={inputRef} className="sticky top-[calc(50%-1rem)] flex">
+						<div ref={scrollbarRef} className="sticky top-[calc(50%-1rem)] flex">
 							{/*Dot*/}
 							<div className="mx-1 my-2 h-4 w-4 rounded-full bg-green-500" />
 							{/*Arrow*/}
 							<div className="my-2 h-0 w-0 border-y-8 border-r-8 border-y-transparent border-r-neutral-700" />
 							{/*Textbox*/}
 							<div className="w-28 rounded-md bg-neutral-700 text-center">
-								<p className="m-0 font-mono font-bold">{dateText}</p>
+								<p className="m-0 font-mono font-bold">
+									{getCurrentDate(projectOffsets, projectTimes)}
+								</p>
 							</div>
 						</div>
 					</div>

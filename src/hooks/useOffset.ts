@@ -1,15 +1,16 @@
 import { RefObject, useEffect, useState } from "react";
 
-export default function useParentOffset(reference: RefObject<HTMLElement>) {
+export default function useOffset(selfRef: RefObject<HTMLElement>, otherRef: RefObject<HTMLElement>) {
 	const [scrollPosition, setScrollPosition] = useState(0);
 
 	useEffect(() => {
 		const updatePosition = () => {
-			const element = reference.current;
-			const parent = reference.current?.parentElement;
-			if (element && parent) {
-				const top = element.getBoundingClientRect().top - parent.getBoundingClientRect().top;
-				const height = parent.getBoundingClientRect().height - element.getBoundingClientRect().height;
+			const self = selfRef.current;
+			const other = otherRef.current;
+
+			if (self && other) {
+				const top = self.getBoundingClientRect().top - other.getBoundingClientRect().top;
+				const height = other.getBoundingClientRect().height - self.getBoundingClientRect().height;
 				if (height != 0) setScrollPosition(top / height);
 			}
 		};
