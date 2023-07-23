@@ -12,6 +12,7 @@
 		"format:check": "prettier --check src/**/*.{js,jsx,ts,tsx}"
 	},
 	"dependencies": {
+		"dedent": "^1.2.0",
 		"framer-motion": "^10.13.0",
 		"prop-types": "^15.8.1",
 		"react": "^18.0.0",
