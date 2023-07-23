@@ -10,7 +10,7 @@ export default function Privacy() {
 					<div className="absolute w-full">
 						<Navbar />
 					</div>
-					<div className="md:pt-40 lg:pt-60 xl:pt-80">
+					<div className="pt-40 lg:pt-60 xl:pt-80">
 						<ReactMarkdown>{dedent`
 							# Privacy Policy for LucasOe’s Portfolio
 
