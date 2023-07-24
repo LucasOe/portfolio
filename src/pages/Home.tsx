@@ -14,9 +14,9 @@ import Timeline from "../components/Timeline";
 export default function Home() {
 	return (
 		<div className="pb-[20vh]">
-			<div className="flex h-[100vh] flex-col items-center justify-center">
+			<div className="flex h-[100vh] flex-col justify-center">
 				<Hero />
-				<ScrollIndicator className="absolute top-[75vh]" />
+				<ScrollIndicator className="absolute top-[75vh] self-center" />
 			</div>
 			<Header text="About" id="about" />
 			<ReactMarkdown>
