@@ -13,10 +13,10 @@ import Timeline from "../components/Timeline";
 
 export default function Home() {
 	return (
-		<div className="max-w-4xl pb-[20vh]">
-			<div className="flex h-[100vh] flex-col justify-center">
+		<div className="pb-[20vh]">
+			<div className="flex h-[100vh] flex-col items-center justify-center">
 				<Hero />
-				<ScrollIndicator className="absolute top-[75vh] self-center" />
+				<ScrollIndicator className="absolute top-[75vh]" />
 			</div>
 			<Header text="About" id="about" />
 			<ReactMarkdown>

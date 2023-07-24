@@ -8,9 +8,6 @@ module.exports = {
 				serif: ["Libre Baskerville", "serif"],
 				mono: ["Fira Code", "monospace"],
 			},
-			fontSize: {
-				xxl: "12rem",
-			},
 		},
 	},
 	plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
