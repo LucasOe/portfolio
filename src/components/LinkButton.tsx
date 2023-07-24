@@ -8,10 +8,8 @@ type LinkButtonProps = {
 
 export default function LinkButton({ link, text, className }: LinkButtonProps) {
 	return (
-		<Link to={link} className={`${className} focus inline-block overflow-hidden rounded-lg`}>
-			<div className="bg-neutral-200 p-2 opacity-80 hover:opacity-100">
-				<p className="px-5 font-medium text-neutral-900">{text}</p>
-			</div>
+		<Link to={link} className={`${className} focus button`}>
+			{text}
 		</Link>
 	);
 }

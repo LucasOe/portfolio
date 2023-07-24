@@ -10,13 +10,13 @@ export default function ErrorPage() {
 			<ReactMarkdown className="mb-2 font-sans text-2xl font-medium text-green-400">
 				Form submitted successfully!
 			</ReactMarkdown>
-			<ReactMarkdown className="font-sans">
+			<ReactMarkdown className="mb-10 font-sans">
 				{dedent`
 					Thank you! The form has been submitted successfully.  
 					I will reply to you soon!
 				`}
 			</ReactMarkdown>
-			<LinkButton link={"/"} text={"Go Home"} className="m-8" />
+			<LinkButton link={"/"} text={"Go Home"} />
 		</div>
 	);
 }

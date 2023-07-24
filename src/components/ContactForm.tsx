@@ -44,11 +44,8 @@ export default function ContactForm() {
 						className="focus w-full resize-none rounded-md border-none bg-neutral-700 placeholder:text-neutral-500"
 					/>
 				</label>
-				<button
-					type="submit"
-					className="focus self-end rounded-lg border-none bg-neutral-200 p-1 opacity-80 hover:opacity-100"
-				>
-					<p className="m-0 px-5 font-medium text-neutral-900">Send Message</p>
+				<button type="submit" className="focus button self-end">
+					Send Message
 				</button>
 			</form>
 		</div>
