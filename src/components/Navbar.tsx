@@ -61,7 +61,7 @@ export default function Navbar() {
 			{/* Collapsable Menu */}
 			<AnimatePresence>
 				{navbarOpen && (
-					<div className="flex flex-col gap-y-2 text-[1.35rem] md:hidden">
+					<div className="mt-6 flex flex-col gap-y-2 text-[1.35rem] md:hidden">
 						<motion.div
 							initial="closed"
 							animate="open"
