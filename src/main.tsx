@@ -36,7 +36,7 @@ const root = ReactDOM.createRoot(document.getElementById("root") as Element);
 root.render(
 	<StrictMode>
 		<div className="flex min-h-screen flex-col items-center justify-center bg-neutral-900 px-6">
-			<div className="prose prose-lg prose-invert relative inline-block w-max max-w-none prose-p:text-neutral-200">
+			<div className="prose prose-lg prose-invert relative max-w-4xl prose-p:text-neutral-200">
 				<RouterProvider router={router} />
 			</div>
 		</div>
