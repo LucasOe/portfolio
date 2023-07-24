@@ -29,8 +29,8 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<div className="absolute top-0 my-6 w-full">
-			<div className="flex justify-between">
+		<div className="absolute top-0 w-full">
+			<div className="prose-lg my-6 flex justify-between">
 				{/* Hamburger Menu */}
 				<div className="block md:hidden">
 					<motion.button
@@ -45,14 +45,14 @@ export default function Navbar() {
 				</div>
 				{/* Site Links */}
 				<div className="hidden md:block">
-					<div className="prose-lg flex flex-wrap gap-x-8">
+					<div className="flex flex-wrap gap-x-8">
 						{links.map((link, index) => (
 							<LinkNavbar key={index} text={link.text} to={link.to} slashes />
 						))}
 					</div>
 				</div>
 				{/* Social Links */}
-				<div className="prose-lg flex flex-wrap gap-x-8">
+				<div className="flex flex-wrap gap-x-8">
 					{socials.map((social, index) => (
 						<LinkNavbar key={index} text={social.text} to={social.to} newtab />
 					))}
