@@ -29,8 +29,8 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<div className="absolute top-0 w-full">
-			<div className="mb-6 flex justify-between">
+		<div className="absolute top-0 my-6 w-full">
+			<div className="flex justify-between">
 				{/* Hamburger Menu */}
 				<div className="block md:hidden">
 					<motion.button
