@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 
 export default function Privacy() {
 	return (
-		<div className="pb-[20vh] pt-40 lg:pt-60 xl:pt-80">
+		<div className="py-80">
 			<ReactMarkdown>
 				{dedent`
 					# Privacy Policy for LucasOe’s Portfolio
