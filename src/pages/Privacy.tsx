@@ -1,17 +1,13 @@
 import dedent from "dedent";
 import ReactMarkdown from "react-markdown";
-import Navbar from "../components/Navbar";
 
 export default function Privacy() {
 	return (
-		<div className="flex min-h-screen justify-center bg-neutral-900 px-6">
-			<div className="relative mb-[20vh] h-full max-w-4xl">
-				<div className="prose prose-lg prose-invert max-w-none text-neutral-200">
-					<div className="absolute w-full">
-						<Navbar />
-					</div>
-					<div className="pt-40 lg:pt-60 xl:pt-80">
-						<ReactMarkdown>{dedent`
+		<div className="mb-[20vh] h-full max-w-4xl">
+			<div className="prose prose-lg prose-invert max-w-none text-neutral-200">
+				<div className="pt-40 lg:pt-60 xl:pt-80">
+					<ReactMarkdown>
+						{dedent`
 							# Privacy Policy for LucasOe’s Portfolio
 
 							For this portfolio, accessible at https://lucasoe.com/, one of my main
@@ -138,8 +134,8 @@ export default function Privacy() {
 							kind of information on our website, I strongly encourage you to contact me
 							immediately and I will do our best efforts to promptly remove such information
 							from my records.
-						`}</ReactMarkdown>
-					</div>
+						`}
+					</ReactMarkdown>
 				</div>
 			</div>
 		</div>

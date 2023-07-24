@@ -29,7 +29,7 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<div>
+		<div className="absolute top-0 w-full">
 			<div className="my-6 flex justify-between">
 				{/* Hamburger Menu */}
 				<div className="block md:hidden">
