@@ -45,14 +45,14 @@ export default function Navbar() {
 				</div>
 				{/* Site Links */}
 				<div className="hidden md:block">
-					<div className="flex flex-wrap gap-x-8 text-lg">
+					<div className="prose-lg flex flex-wrap gap-x-8">
 						{links.map((link, index) => (
 							<LinkNavbar key={index} text={link.text} to={link.to} slashes />
 						))}
 					</div>
 				</div>
 				{/* Social Links */}
-				<div className="flex flex-wrap items-center gap-x-8 text-lg">
+				<div className="prose-lg flex flex-wrap gap-x-8">
 					{socials.map((social, index) => (
 						<LinkNavbar key={index} text={social.text} to={social.to} newtab />
 					))}
