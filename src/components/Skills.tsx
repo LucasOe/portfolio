@@ -16,14 +16,10 @@ export default function Skills({ children, title, icon, className }: SkillsProps
 				<IconContext.Provider value={{ className: "w-10 h-10" }}>{icon}</IconContext.Provider>
 			</div>
 			<div className="flex gap-2">
-				<div
-					aria-hidden="true"
-					className="flex select-none flex-col items-center justify-between
-					font-mono text-sm font-semibold leading-normal text-neutral-500"
-				>
-					<span>{"<h3>"}</span>
-					<div className="m-auto my-2 h-full w-[2px] rounded-full bg-neutral-500" />
-					<span>{"</h3>"}</span>
+				<div aria-hidden="true" className="not-prose flex select-none flex-col items-center justify-between">
+					<span className="font-mono text-sm font-semibold text-neutral-500">{"<h3>"}</span>
+					<div className="m-1 h-full w-[2px] rounded-full bg-neutral-500" />
+					<span className="font-mono text-sm font-semibold text-neutral-500">{"</h3>"}</span>
 				</div>
 				<ReactMarkdown>{children}</ReactMarkdown>
 			</div>
