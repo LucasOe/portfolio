@@ -29,16 +29,16 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<div className="absolute top-0 my-6 w-full">
-			<div className="flex justify-between">
+		<div className="not-prose absolute top-0 my-6 w-full">
+			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
-				<div className="block md:hidden">
+				<div className="h-full md:hidden">
 					<motion.button
-						className="focus block rounded-md"
+						className="focus h-full rounded-md"
 						onTap={() => setNavbarOpen(!navbarOpen)}
 						whileTap={{ scale: 0.8 }}
 					>
-						<IconContext.Provider value={{ className: "w-8 h-8" }}>
+						<IconContext.Provider value={{ className: "h-full w-full" }}>
 							{navbarOpen ? <FiX /> : <FiMenu />}
 						</IconContext.Provider>
 					</motion.button>

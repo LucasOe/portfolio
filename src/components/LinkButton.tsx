@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 type LinkButtonProps = {
 	link: string;
@@ -8,8 +8,8 @@ type LinkButtonProps = {
 
 export default function LinkButton({ link, text, className }: LinkButtonProps) {
 	return (
-		<Link to={link} className={`${className} focus button`}>
+		<HashLink to={link} className={`${className} not-prose focus button`}>
 			{text}
-		</Link>
+		</HashLink>
 	);
 }

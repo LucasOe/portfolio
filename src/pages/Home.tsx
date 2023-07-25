@@ -15,7 +15,7 @@ export default function Home() {
 	return (
 		<div className="pb-80">
 			<div className="flex h-[100vh] flex-col justify-center">
-				<Hero />
+				<Hero className="mb-24" />
 				<ScrollIndicator className="absolute top-[75vh] self-center" />
 			</div>
 			<Header text="About" id="about" />

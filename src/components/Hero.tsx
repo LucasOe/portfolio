@@ -1,11 +1,15 @@
 import { TypeAnimation } from "react-type-animation";
 
-export default function Hero() {
+type HeroProps = {
+	className?: string;
+};
+
+export default function Hero({ className }: HeroProps) {
 	return (
-		<div className="not-prose select-none text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]">
-			<h1 className="m-0 font-bold">Hey, I’m Lucas Oelker.</h1>
-			<div className="inline">
-				<span className="whitespace-pre-wrap">{"I’m a "}</span>
+		<div className={`${className} select-none text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]`}>
+			<p className="m-0 font-bold">Hey, I’m Lucas Oelker.</p>
+			<p className="m-0 font-normal">
+				{"I’m a "}
 				<TypeAnimation
 					sequence={[
 						"programmer.",
@@ -26,7 +30,7 @@ export default function Hero() {
 					deletionSpeed={20}
 					className="text-green-400 after:text-white"
 				/>
-			</div>
+			</p>
 		</div>
 	);
 }

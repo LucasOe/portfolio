@@ -1,6 +1,6 @@
 export default function ContactForm() {
 	return (
-		<div>
+		<div className="not-prose">
 			<form
 				action="https://api.web3forms.com/submit"
 				method="POST"
@@ -11,7 +11,7 @@ export default function ContactForm() {
 				<input type="hidden" name="redirect" value="https://lucasoe.com/success" />
 				<div className="flex flex-col gap-3 sm:flex-row">
 					<label className="w-full">
-						<span className="pl-1 font-bold text-neutral-100">Name</span>
+						<span className="pl-1 font-bold">Name</span>
 						<input
 							type="text"
 							name="name"
@@ -22,7 +22,7 @@ export default function ContactForm() {
 						/>
 					</label>
 					<label className="w-full">
-						<span className="pl-1 font-bold text-neutral-100">E-Mail</span>
+						<span className="pl-1 font-bold">E-Mail</span>
 						<input
 							type="email"
 							name="email"
@@ -34,14 +34,14 @@ export default function ContactForm() {
 					</label>
 				</div>
 				<label className="w-full">
-					<span className="pl-1 font-bold text-neutral-100">Message</span>
+					<span className="pl-1 font-bold">Message</span>
 					<textarea
 						name="message"
 						id="message"
 						placeholder="Enter Your Message"
 						rows={8}
 						required
-						className="form resize-none"
+						className="form resize-none text-neutral-200"
 					/>
 				</label>
 				<button type="submit" className="focus button self-end">
