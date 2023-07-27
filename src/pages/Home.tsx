@@ -120,10 +120,27 @@ export default function Home() {
 						],
 						stack: ["Rust"],
 						time: 1673910000,
-						arrowPosition: 100,
+						arrowPosition: 50,
 						description: dedent`
 							A Rust API for interacting with the game Tabletop Simulator using TCP messages.  
 							I created this project as an opportunity to learn more about Rust and API design.
+						`,
+					},
+					{
+						title: "Spellbound Sprouts",
+						links: [
+							{
+								to: "https://github.com/LucasOe/spellbound-sprouts",
+								icon: <FaGithub />,
+							},
+						],
+						stack: ["Unity", "C#"],
+						time: 1688205600,
+						arrowPosition: 100,
+						description: dedent`
+							In *Spellbound Sprouts* you play as a witch on her farm, defending crops from waves
+							of monsters that appear at night. The game is a combination of tower defense
+							and farming game, made in Unity.
 						`,
 					},
 				]}
