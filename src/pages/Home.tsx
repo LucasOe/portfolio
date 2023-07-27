@@ -1,8 +1,8 @@
 import dedent from "dedent";
 import { BiBrush } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
-import { FaReact } from "react-icons/fa";
-import { FiMonitor } from "react-icons/fi";
+import { FaGithub, FaReact } from "react-icons/fa";
+import { FiExternalLink, FiMonitor } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
 import ContactForm from "../components/ContactForm";
 import Header from "../components/Header";
@@ -36,7 +36,12 @@ export default function Home() {
 				projectProps={[
 					{
 						title: "Das Rezeptbuch",
-						link: "https://github.com/LucasOe/das-rezeptbuch",
+						links: [
+							{
+								to: "https://github.com/LucasOe/das-rezeptbuch",
+								icon: <FaGithub />,
+							},
+						],
 						stack: ["Java", "JavaFX", "MySQL"],
 						time: 1619820000,
 						arrowPosition: 0,
@@ -48,7 +53,16 @@ export default function Home() {
 					},
 					{
 						title: "Releaf",
-						link: "https://github.com/LucasOe/releaf",
+						links: [
+							{
+								to: "https://releaf.lucasoe.com",
+								icon: <FiExternalLink />,
+							},
+							{
+								to: "https://github.com/LucasOe/releaf",
+								icon: <FaGithub />,
+							},
+						],
 						stack: ["HTML", "SASS", "JavaScript", "PHP", "MySQL"],
 						time: 1635721200,
 						arrowPosition: 50,
@@ -60,7 +74,12 @@ export default function Home() {
 					},
 					{
 						title: "Marble Physics Simulation",
-						link: "https://github.com/LucasOe/marble-simulation",
+						links: [
+							{
+								to: "https://github.com/LucasOe/marble-simulation",
+								icon: <FaGithub />,
+							},
+						],
 						stack: ["Java"],
 						time: 1646089200,
 						arrowPosition: 50,
@@ -72,7 +91,12 @@ export default function Home() {
 					},
 					{
 						title: "Portfolio",
-						link: "https://github.com/LucasOe/portfolio",
+						links: [
+							{
+								to: "https://github.com/LucasOe/portfolio",
+								icon: <FaGithub />,
+							},
+						],
 						stack: ["Vite", "React", "Tailwind CSS", "TypeScript"],
 						time: 1659304800,
 						arrowPosition: 50,
@@ -84,7 +108,16 @@ export default function Home() {
 					},
 					{
 						title: "Tabletop Simulator API",
-						link: "https://github.com/LucasOe/tts-external-api",
+						links: [
+							{
+								to: "https://crates.io/crates/tts-external-api",
+								icon: <FiExternalLink />,
+							},
+							{
+								to: "https://github.com/LucasOe/tts-external-api",
+								icon: <FaGithub />,
+							},
+						],
 						stack: ["Rust"],
 						time: 1673910000,
 						arrowPosition: 100,
