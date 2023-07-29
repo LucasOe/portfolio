@@ -2,20 +2,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { FiMenu, FiX } from "react-icons/fi";
-import LinkNavbar from "./LinkNavbar";
 
-const links = [
-	{ text: "about", to: "/#about" },
-	{ text: "projects", to: "/#projects" },
-	{ text: "skills", to: "/#skills" },
-	{ text: "contact", to: "/#contact" },
-];
-const socials = [
-	{ text: "Github", to: "https://github.com/LucasOe" },
-	{ text: "Twitter", to: "https://twitter.com/_LucasOe_" },
-];
+import NavbarLink from "@/components/Navbar/NavbarLink";
 
-export default function Navbar() {
+export type TextLink = {
+	text: string;
+	to: string;
+};
+
+export type NavbarProps = React.HTMLAttributes<HTMLDivElement> & {
+	links: TextLink[];
+	socials: TextLink[];
+};
+
+export default function Navbar({ links, socials, className }: NavbarProps) {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const closeNavbar = () => setNavbarOpen(false);
 
@@ -29,7 +29,7 @@ export default function Navbar() {
 	}, []);
 
 	return (
-		<div className="not-prose absolute top-0 my-6 w-full">
+		<div className={`not-prose absolute top-0 my-6 w-full ${className}`}>
 			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">
@@ -47,14 +47,14 @@ export default function Navbar() {
 				<div className="hidden md:block">
 					<div className="flex flex-wrap gap-x-8">
 						{links.map((link, index) => (
-							<LinkNavbar key={index} text={link.text} to={link.to} slashes />
+							<NavbarLink key={index} text={link.text} to={link.to} slashes />
 						))}
 					</div>
 				</div>
 				{/* Social Links */}
 				<div className="flex flex-wrap gap-x-8">
 					{socials.map((social, index) => (
-						<LinkNavbar key={index} text={social.text} to={social.to} newtab />
+						<NavbarLink key={index} text={social.text} to={social.to} newtab />
 					))}
 				</div>
 			</div>
@@ -89,7 +89,7 @@ export default function Navbar() {
 										closed: { opacity: 0, x: -10 },
 									}}
 								>
-									<LinkNavbar text={link.text} to={link.to} onClick={closeNavbar} slashes />
+									<NavbarLink text={link.text} to={link.to} onClick={closeNavbar} slashes />
 								</motion.div>
 							))}
 						</motion.div>

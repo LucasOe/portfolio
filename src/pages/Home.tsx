@@ -4,12 +4,13 @@ import { BsPeople } from "react-icons/bs";
 import { FaGithub, FaReact } from "react-icons/fa";
 import { FiExternalLink, FiMonitor } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
-import ContactForm from "../components/ContactForm";
-import Header from "../components/Header";
-import Hero from "../components/Hero";
-import ScrollIndicator from "../components/ScrollIndicator";
-import Skills from "../components/Skills";
-import Timeline from "../components/Timeline";
+
+import ContactForm from "@/components/Contact/ContactForm";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import ScrollIndicator from "@/components/ScrollIndicator";
+import Skills from "@/components/Skills";
+import Timeline from "@/components/Timeline";
 
 export default function Home() {
 	return (

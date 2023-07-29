@@ -1,11 +1,10 @@
 import { IconContext } from "react-icons";
 import ReactMarkdown from "react-markdown";
 
-type SkillsProps = {
+export type SkillsProps = React.HTMLAttributes<HTMLDivElement> & {
 	children: string;
 	title: string;
 	icon: React.ReactNode;
-	className?: string;
 };
 
 export default function Skills({ children, title, icon, className }: SkillsProps) {

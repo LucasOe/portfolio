@@ -1,14 +1,13 @@
 import { HashLink } from "react-router-hash-link";
 
-type LinkButtonProps = {
-	link: string;
+export type LinkButtonProps = React.HTMLAttributes<HTMLAnchorElement> & {
 	text: string;
-	className?: string;
+	to: string;
 };
 
-export default function LinkButton({ link, text, className }: LinkButtonProps) {
+export default function LinkButton({ text, to, className, ...rest }: LinkButtonProps) {
 	return (
-		<HashLink to={link} className={`${className} not-prose focus button`}>
+		<HashLink to={to} className={`not-prose focus button ${className}`} {...rest}>
 			{text}
 		</HashLink>
 	);

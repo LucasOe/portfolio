@@ -1,26 +1,33 @@
 import { ReactNode } from "react";
 import { IconContext } from "react-icons";
 import ReactMarkdown from "react-markdown";
-import Label from "./Label";
 
-type Link = {
-	to: string;
-	icon: ReactNode;
-};
+import Label from "@/components/Label";
 
-export type ProjectProps = {
+export type ProjectProps = React.HTMLAttributes<HTMLDivElement> & {
 	description: string;
 	title: string;
-	links: Link[];
+	links: {
+		to: string;
+		icon: ReactNode;
+	}[];
 	stack: string[];
 	time: number;
 	arrowPosition: number;
 	arrowRef?: React.Ref<HTMLDivElement> | null;
 };
 
-export default function Project({ description, title, links, stack, arrowPosition, arrowRef }: ProjectProps) {
+export default function Project({
+	description,
+	title,
+	links,
+	stack,
+	arrowPosition,
+	arrowRef,
+	className,
+}: ProjectProps) {
 	return (
-		<div className="flex w-full transition-transform duration-300 hover:-translate-x-2">
+		<div className={`flex w-full transition-transform duration-300 hover:-translate-x-2 ${className}`}>
 			<div className="flex w-full flex-col space-y-4 rounded-md bg-neutral-700 p-4">
 				<div className="flex items-start justify-between">
 					<h3 className="m-0 leading-none">{title}</h3>
