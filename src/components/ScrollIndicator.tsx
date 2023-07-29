@@ -2,11 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { BsArrowDownShort } from "react-icons/bs";
 import { HashLink } from "react-router-hash-link";
 
-type ScrollIndicatorType = {
-	className: string;
-};
-
-export default function ScrollIndicator({ className }: ScrollIndicatorType) {
+export default function ScrollIndicator({ className }: React.HTMLAttributes<HTMLDivElement>) {
 	const { scrollY } = useScroll();
 	// Map values from [0, 500] to [1, 0]
 	const opacity = useTransform(scrollY, [0, window.innerHeight / 2], [1, 0]);

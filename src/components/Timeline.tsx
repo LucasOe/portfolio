@@ -1,9 +1,10 @@
 import { useRef } from "react";
-import useOffset from "../hooks/useOffset";
-import { clamp, lerp, negativeValues } from "../utils/math";
-import Project, { ProjectProps } from "./Project";
 
-type TimelineProps = {
+import Project, { ProjectProps } from "@/components/Project";
+import useOffset from "@/hooks/useOffset";
+import { clamp, lerp, negativeValues } from "@/utils/math";
+
+export type TimelineProps = React.HTMLAttributes<HTMLDivElement> & {
 	projectProps: ProjectProps[];
 };
 
@@ -24,10 +25,10 @@ function getCurrentDate(offsets: number[], times: number[]): string {
 const projectOffsets: number[] = [];
 const projectTimes: number[] = [];
 
-export default function Timeline({ projectProps }: TimelineProps) {
+export default function Timeline({ projectProps, className }: TimelineProps) {
 	const scrollbarRef = useRef<HTMLDivElement>(null);
 	return (
-		<div className="flex">
+		<div className={`flex ${className}`}>
 			<div className="flex grow flex-col gap-3">
 				{projectProps.map((props: ProjectProps, index) => {
 					const projectRef = useRef<HTMLDivElement>(null);

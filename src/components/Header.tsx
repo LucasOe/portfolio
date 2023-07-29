@@ -1,11 +1,11 @@
-type HeaderProps = {
+export type HeaderProps = React.HTMLAttributes<HTMLDivElement> & {
 	text: string;
 	id: string;
 };
 
-export default function Header({ text, id }: HeaderProps) {
+export default function Header({ text, id, className }: HeaderProps) {
 	return (
-		<h2 id={id} className="mt-24 scroll-m-[12vh] font-mono">
+		<h2 id={id} className={`mt-24 scroll-m-[12vh] font-mono ${className}`}>
 			{`# ${text}`}
 		</h2>
 	);
