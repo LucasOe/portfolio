@@ -35,7 +35,7 @@ export default function Timeline({ projects, className }: TimelineProps) {
 					projectOffsets[index] = useOffset(scrollbarRef, projectRef);
 					projectTimes[index] = props.time;
 
-					return <TimelineProject key={index} {...props} arrowRef={projectRef} />;
+					return <TimelineProject key={index} {...props} ref={projectRef} />;
 				})}
 			</div>
 			<div className="relative hidden sm:flex">
