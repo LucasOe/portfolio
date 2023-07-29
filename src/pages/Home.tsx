@@ -41,6 +41,7 @@ export default function Home() {
 							{
 								to: "https://github.com/LucasOe/das-rezeptbuch",
 								icon: <FaGithub />,
+								label: "Open on Github",
 							},
 						],
 						stack: ["Java", "JavaFX", "MySQL"],
@@ -58,10 +59,12 @@ export default function Home() {
 							{
 								to: "https://releaf.lucasoe.com",
 								icon: <FiExternalLink />,
+								label: "Open Demo",
 							},
 							{
 								to: "https://github.com/LucasOe/releaf",
 								icon: <FaGithub />,
+								label: "Open on Github",
 							},
 						],
 						stack: ["HTML", "SASS", "JavaScript", "PHP", "MySQL"],
@@ -79,6 +82,7 @@ export default function Home() {
 							{
 								to: "https://github.com/LucasOe/marble-simulation",
 								icon: <FaGithub />,
+								label: "Open on Github",
 							},
 						],
 						stack: ["Java"],
@@ -96,6 +100,7 @@ export default function Home() {
 							{
 								to: "https://github.com/LucasOe/portfolio",
 								icon: <FaGithub />,
+								label: "Open on Github",
 							},
 						],
 						stack: ["Vite", "React", "Tailwind CSS", "TypeScript"],
@@ -113,10 +118,12 @@ export default function Home() {
 							{
 								to: "https://crates.io/crates/tts-external-api",
 								icon: <FiExternalLink />,
+								label: "Open on Crates.io",
 							},
 							{
 								to: "https://github.com/LucasOe/tts-external-api",
 								icon: <FaGithub />,
+								label: "Open on Github",
 							},
 						],
 						stack: ["Rust"],
@@ -133,6 +140,7 @@ export default function Home() {
 							{
 								to: "https://github.com/LucasOe/spellbound-sprouts",
 								icon: <FaGithub />,
+								label: "Open on Github",
 							},
 						],
 						stack: ["Unity", "C#"],

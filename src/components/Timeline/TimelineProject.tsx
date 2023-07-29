@@ -1,16 +1,13 @@
-import { ReactNode, forwardRef } from "react";
-import { IconContext } from "react-icons";
+import { forwardRef } from "react";
 import ReactMarkdown from "react-markdown";
 
+import LinkIcon, { LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
 
 export type TimelineProjectProps = React.HTMLAttributes<HTMLDivElement> & {
 	description: string;
 	title: string;
-	links: {
-		to: string;
-		icon: ReactNode;
-	}[];
+	links: LinkIconProps[];
 	stack: string[];
 	time: number;
 	arrowPosition: number;
@@ -27,18 +24,7 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 					<h3 className="m-0 leading-none">{title}</h3>
 					<div className="flex gap-3">
 						{links.map((link, index) => (
-							<a
-								key={index}
-								href={link.to}
-								target="_blank"
-								rel="noreferrer"
-								aria-label={`${title} on Github`}
-								className="focus rounded-sm"
-							>
-								<IconContext.Provider value={{ className: "h-6 w-6 hover:text-green-400" }}>
-									{link.icon}
-								</IconContext.Provider>
-							</a>
+							<LinkIcon key={index} icon={link.icon} to={link.to} label={link.label} />
 						))}
 					</div>
 				</div>
