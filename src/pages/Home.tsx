@@ -10,7 +10,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Skills from "@/components/Skills";
-import Timeline from "@/components/Timeline";
+import Timeline from "@/components/Timeline/Timeline";
 
 export default function Home() {
 	return (
@@ -34,7 +34,7 @@ export default function Home() {
 			</ReactMarkdown>
 			<Header text="Project Timeline" id="projects" />
 			<Timeline
-				projectProps={[
+				projects={[
 					{
 						title: "Das Rezeptbuch",
 						links: [

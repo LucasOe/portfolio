@@ -1,11 +1,11 @@
 import { useRef } from "react";
 
-import Project, { ProjectProps } from "@/components/Project";
+import TimelineProject, { TimelineProjectProps } from "@/components/Timeline/TimelineProject";
 import useOffset from "@/hooks/useOffset";
 import { clamp, lerp, negativeValues } from "@/utils/math";
 
 export type TimelineProps = React.HTMLAttributes<HTMLDivElement> & {
-	projectProps: ProjectProps[];
+	projects: TimelineProjectProps[];
 };
 
 function unixTime(time: number): string {
@@ -25,17 +25,17 @@ function getCurrentDate(offsets: number[], times: number[]): string {
 const projectOffsets: number[] = [];
 const projectTimes: number[] = [];
 
-export default function Timeline({ projectProps, className }: TimelineProps) {
+export default function Timeline({ projects, className }: TimelineProps) {
 	const scrollbarRef = useRef<HTMLDivElement>(null);
 	return (
 		<div className={`flex ${className}`}>
 			<div className="flex grow flex-col gap-3">
-				{projectProps.map((props: ProjectProps, index) => {
+				{projects.map((props: TimelineProjectProps, index) => {
 					const projectRef = useRef<HTMLDivElement>(null);
 					projectOffsets[index] = useOffset(scrollbarRef, projectRef);
 					projectTimes[index] = props.time;
 
-					return <Project key={index} {...props} arrowRef={projectRef} />;
+					return <TimelineProject key={index} {...props} arrowRef={projectRef} />;
 				})}
 			</div>
 			<div className="relative hidden sm:flex">
