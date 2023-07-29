@@ -5,11 +5,11 @@ import { FaGithub, FaReact } from "react-icons/fa";
 import { FiExternalLink, FiMonitor } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
 
-import ContactForm from "@/components/Contact/ContactForm";
+import Contact from "@/components/Contact/Contact";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ScrollIndicator from "@/components/ScrollIndicator";
-import Skills from "@/components/Skills";
+import Skill from "@/components/Skill";
 import Timeline from "@/components/Timeline/Timeline";
 
 export default function Home() {
@@ -148,33 +148,33 @@ export default function Home() {
 			/>
 			<Header text="Skills" id="skills" />
 			<div className="grid gap-3 sm:grid-cols-2">
-				<Skills title="Software Development" icon={<FiMonitor />}>
+				<Skill title="Software Development" icon={<FiMonitor />}>
 					{dedent`
 						I have five years of academic education in **Java** and I’m currently learning **Rust**.
 						I also have experience in game development using **Unity** and **C#**.
 					`}
-				</Skills>
-				<Skills title="Frontend Development" icon={<FaReact />}>
+				</Skill>
+				<Skill title="Frontend Development" icon={<FaReact />}>
 					{dedent`								
 						I am proficient in web development using **HTML**, **CSS**, and **PHP**. Currently, I’m
 						learning to use modern frameworks like **React** and **Tailwind CSS**.
 					`}
-				</Skills>
-				<Skills title="Design" icon={<BiBrush />}>
+				</Skill>
+				<Skill title="Design" icon={<BiBrush />}>
 					{dedent`								
 						The university degree I’m pursuing doesn’t just cover Computer Science but also Design
 						and User Experience! I have worked with **Adobe XD** and **Figma** in the past.
 					`}
-				</Skills>
-				<Skills title="Cooperation" icon={<BsPeople />}>
+				</Skill>
+				<Skill title="Cooperation" icon={<BsPeople />}>
 					{dedent`
 						I have worked in groups on many projects for school and university. In my free time I
 						like to work on Open Source projects on Github.
 					`}
-				</Skills>
+				</Skill>
 			</div>
 			<Header text="Contact" id="contact" />
-			<ContactForm />
+			<Contact />
 		</div>
 	);
 }

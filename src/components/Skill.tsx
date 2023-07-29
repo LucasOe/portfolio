@@ -1,13 +1,13 @@
 import { IconContext } from "react-icons";
 import ReactMarkdown from "react-markdown";
 
-export type SkillsProps = React.HTMLAttributes<HTMLDivElement> & {
+export type SkillProps = React.HTMLAttributes<HTMLDivElement> & {
 	children: string;
 	title: string;
 	icon: React.ReactNode;
 };
 
-export default function Skills({ children, title, icon, className }: SkillsProps) {
+export default function Skill({ children, title, icon, className }: SkillProps) {
 	return (
 		<div className={`${className} w-full rounded-md bg-neutral-700 p-4`}>
 			<div className="mb-2 flex items-center justify-between gap-4">

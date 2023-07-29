@@ -1,7 +1,7 @@
 import ContactInput from "@/components/Contact/ContactInput";
 import ContactTextarea from "@/components/Contact/ContactTextarea";
 
-export default function ContactForm({ className }: React.HTMLAttributes<HTMLDivElement>) {
+export default function Contact({ className }: React.HTMLAttributes<HTMLDivElement>) {
 	return (
 		<div className={`not-prose ${className}`}>
 			<form
