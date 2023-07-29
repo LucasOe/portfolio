@@ -2,9 +2,9 @@ import { ReactNode } from "react";
 import { IconContext } from "react-icons";
 import ReactMarkdown from "react-markdown";
 
-import Label from "@/components/Label";
+import TimelineLabel from "@/components/Timeline/TimelineLabel";
 
-export type ProjectProps = React.HTMLAttributes<HTMLDivElement> & {
+export type TimelineProjectProps = React.HTMLAttributes<HTMLDivElement> & {
 	description: string;
 	title: string;
 	links: {
@@ -17,7 +17,7 @@ export type ProjectProps = React.HTMLAttributes<HTMLDivElement> & {
 	arrowRef?: React.Ref<HTMLDivElement> | null;
 };
 
-export default function Project({
+export default function TimelineProject({
 	description,
 	title,
 	links,
@@ -25,7 +25,7 @@ export default function Project({
 	arrowPosition,
 	arrowRef,
 	className,
-}: ProjectProps) {
+}: TimelineProjectProps) {
 	return (
 		<div className={`flex w-full transition-transform duration-300 hover:-translate-x-2 ${className}`}>
 			<div className="flex w-full flex-col space-y-4 rounded-md bg-neutral-700 p-4">
@@ -51,7 +51,7 @@ export default function Project({
 				<ReactMarkdown>{description}</ReactMarkdown>
 				<div className="flex flex-wrap gap-2">
 					{stack.map((tech, index) => (
-						<Label key={index} text={tech} />
+						<TimelineLabel key={index} text={tech} />
 					))}
 				</div>
 			</div>
