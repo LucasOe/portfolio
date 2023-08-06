@@ -34,6 +34,7 @@ export default function Navbar({ links, socials, className }: NavbarProps) {
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">
 					<motion.button
+						aria-label="Open Navigation Menu"
 						className="focus h-full rounded-md"
 						onTap={() => setNavbarOpen(!navbarOpen)}
 						whileTap={{ scale: 0.8 }}
