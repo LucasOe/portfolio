@@ -19,7 +19,7 @@ export default function Skill({ children, title, icon, className }: SkillProps) 
 			glareBorderRadius="0.375rem"
 			transitionSpeed={1500}
 			scale={0.95}
-			className={`${className} w-full touch-none rounded-md bg-neutral-700 p-5 transform-style-3d backface-hidden`}
+			className={`${className} pointer-events-none w-full rounded-md bg-neutral-700 p-5 transform-style-3d backface-hidden md:pointer-events-auto`}
 		>
 			<div className="mb-2 flex items-center justify-between gap-4 translate-z-8">
 				<h3 className="m-0 font-mono">{title}</h3>
