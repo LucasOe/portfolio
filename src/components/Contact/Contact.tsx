@@ -16,7 +16,7 @@ export default function Contact({ className }: React.HTMLAttributes<HTMLDivEleme
 					<ContactInput text="Name" name="name" type="text" />
 					<ContactInput text="E-Mail" name="email" type="email" />
 				</div>
-				<ContactTextarea text="E-Mail" name="message" rows={8} />
+				<ContactTextarea text="Message" name="message" rows={8} />
 				<button type="submit" className="focus button self-end">
 					Send Message
 				</button>
