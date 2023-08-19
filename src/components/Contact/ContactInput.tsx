@@ -6,16 +6,20 @@ export type ContactInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 export default function ContactInput({ text, type, name, className, ...rest }: ContactInputProps) {
 	return (
-		<label className={`w-full ${className}`}>
-			<span className="pl-1 font-bold">{text}</span>
+		<div className={`w-full ${className}`}>
+			<label htmlFor={name} className="pl-1 font-bold">
+				{text}
+			</label>
 			<input
+				id={name}
 				type={type}
 				name={name}
 				placeholder={`Enter your ${text}`}
+				autoComplete={name}
 				required
 				className="focus w-full rounded-md border-none bg-neutral-700 placeholder:text-neutral-500"
 				{...rest}
 			/>
-		</label>
+		</div>
 	);
 }
