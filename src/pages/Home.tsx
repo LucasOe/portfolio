@@ -1,9 +1,10 @@
 import dedent from "dedent";
+import Markdown from "react-markdown";
+
 import { BiBrush } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
 import { FaGithub, FaReact } from "react-icons/fa";
 import { FiExternalLink, FiMonitor } from "react-icons/fi";
-import Markdown from "react-markdown";
 
 import Contact from "@/components/Contact/Contact";
 import Header from "@/components/Header";

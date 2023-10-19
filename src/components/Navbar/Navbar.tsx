@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
+
 import { FiMenu, FiX } from "react-icons/fi";
 
 import NavbarLink from "@/components/Navbar/NavbarLink";

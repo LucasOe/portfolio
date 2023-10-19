@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { BsArrowDownShort } from "react-icons/bs";
 import { HashLink } from "react-router-hash-link";
+
+import { BsArrowDownShort } from "react-icons/bs";
 
 export default function ScrollIndicator({ className }: React.HTMLAttributes<HTMLDivElement>) {
 	const { scrollY } = useScroll();
