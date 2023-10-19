@@ -164,13 +164,13 @@ export default function Home() {
 					`}
 				</Skill>
 				<Skill title="Frontend Development" icon={<FaReact />}>
-					{dedent`								
+					{dedent`
 						I am proficient in web development using **HTML**, **CSS**, and **PHP**. Currently, I’m
 						learning to use modern frameworks like **React** and **Tailwind CSS**.
 					`}
 				</Skill>
 				<Skill title="Design" icon={<BiBrush />}>
-					{dedent`								
+					{dedent`
 						The university degree I’m pursuing doesn’t just cover Computer Science but also Design
 						and User Experience! I have worked with **Adobe XD** and **Figma** in the past.
 					`}
