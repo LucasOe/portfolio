@@ -2,7 +2,7 @@ import { IconContext } from "react-icons";
 import Markdown from "react-markdown";
 import Tilt from "react-parallax-tilt";
 
-export type SkillProps = React.HTMLAttributes<HTMLDivElement> & {
+export type SkillProps = React.ComponentProps<"div"> & {
 	children: string;
 	title: string;
 	icon: React.ReactNode;

@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 
-export type NavbarLinkProps = React.HTMLAttributes<HTMLAnchorElement> & {
+export type NavbarLinkProps = React.ComponentProps<typeof HashLink> & {
 	text: string;
 	to: string;
 	slashes?: boolean;

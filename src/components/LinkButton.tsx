@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 
-export type LinkButtonProps = React.HTMLAttributes<HTMLAnchorElement> & {
+export type LinkButtonProps = React.ComponentProps<typeof HashLink> & {
 	text: string;
 	to: string;
 };

@@ -1,4 +1,4 @@
-export type ContactTextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement> & {
+export type ContactTextareaProps = React.ComponentProps<"textarea"> & {
 	text: string;
 	name: string;
 };

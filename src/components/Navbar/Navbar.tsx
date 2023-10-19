@@ -11,7 +11,7 @@ export type TextLink = {
 	to: string;
 };
 
-export type NavbarProps = React.HTMLAttributes<HTMLDivElement> & {
+export type NavbarProps = React.ComponentProps<"div"> & {
 	links: TextLink[];
 	socials: TextLink[];
 };

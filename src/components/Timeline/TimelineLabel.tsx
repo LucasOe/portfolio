@@ -1,4 +1,4 @@
-export type TimelineLabelProps = React.HTMLAttributes<HTMLDivElement> & {
+export type TimelineLabelProps = React.ComponentProps<"div"> & {
 	text: string;
 };
 
