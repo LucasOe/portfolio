@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 
 import LinkIcon, { LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
@@ -28,7 +28,7 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 						))}
 					</div>
 				</div>
-				<ReactMarkdown>{description}</ReactMarkdown>
+				<Markdown>{description}</Markdown>
 				<div className="flex flex-wrap gap-2">
 					{stack.map((tech, index) => (
 						<TimelineLabel key={index} text={tech} />

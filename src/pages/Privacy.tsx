@@ -1,10 +1,10 @@
 import dedent from "dedent";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 
 export default function Privacy() {
 	return (
 		<div className="py-80">
-			<ReactMarkdown>
+			<Markdown>
 				{dedent`
 					# Privacy Policy for LucasOe’s Portfolio
 
@@ -133,7 +133,7 @@ export default function Privacy() {
 					immediately and I will do our best efforts to promptly remove such information
 					from my records.
 				`}
-			</ReactMarkdown>
+			</Markdown>
 		</div>
 	);
 }
