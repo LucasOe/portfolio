@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 export type ContactTextareaProps = React.ComponentProps<"textarea"> & {
 	text: string;
 	name: string;
@@ -5,7 +7,7 @@ export type ContactTextareaProps = React.ComponentProps<"textarea"> & {
 
 export default function ContactTextArea({ text, name, className, ...rest }: ContactTextareaProps) {
 	return (
-		<div className={`w-full ${className}`}>
+		<div className={twMerge("w-full", className)}>
 			<label htmlFor={name} className="pl-1 font-bold">
 				{text}
 			</label>

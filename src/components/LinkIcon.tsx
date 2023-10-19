@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { IconContext } from "react-icons";
+import { twMerge } from "tailwind-merge";
 
 export type LinkIconProps = React.ComponentProps<"a"> & {
 	icon: ReactNode;
@@ -14,7 +15,7 @@ export default function LinkIcon({ icon, to, label, className, ...rest }: LinkIc
 			target="_blank"
 			rel="noreferrer"
 			aria-label={label}
-			className={`focus rounded-sm ${className}`}
+			className={twMerge("focus rounded-sm", className)}
 			{...rest}
 		>
 			<IconContext.Provider value={{ className: "h-6 w-6 hover:text-green-400" }}>{icon}</IconContext.Provider>

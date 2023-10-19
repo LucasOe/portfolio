@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 export type HeaderProps = React.ComponentProps<"div"> & {
 	text: string;
 	id: string;
@@ -5,7 +7,7 @@ export type HeaderProps = React.ComponentProps<"div"> & {
 
 export default function Header({ text, id, className }: HeaderProps) {
 	return (
-		<h2 id={id} className={`mt-24 scroll-m-[12vh] font-mono ${className}`}>
+		<h2 id={id} className={twMerge("mt-24 scroll-m-[12vh] font-mono", className)}>
 			{`# ${text}`}
 		</h2>
 	);
