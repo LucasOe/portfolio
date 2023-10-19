@@ -1,7 +1,9 @@
 import { TypeAnimation } from "react-type-animation";
 import { twMerge } from "tailwind-merge";
 
-export default function Hero({ className }: React.ComponentProps<"div">) {
+export type HeroProps = React.ComponentProps<"div">;
+
+export default function Hero({ className }: HeroProps) {
 	return (
 		<div className={twMerge("select-none text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]", className)}>
 			<p className="m-0 font-bold">Hey, I’m Lucas Oelker.</p>

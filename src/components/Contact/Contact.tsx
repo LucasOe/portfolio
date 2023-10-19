@@ -1,9 +1,11 @@
+import { twMerge } from "tailwind-merge";
+
 import ContactInput from "@/components/Contact/ContactInput";
 import ContactTextarea from "@/components/Contact/ContactTextarea";
 
-import { twMerge } from "tailwind-merge";
+export type ContactProps = React.ComponentProps<"div">;
 
-export default function Contact({ className }: React.ComponentProps<"div">) {
+export default function Contact({ className }: ContactProps) {
 	return (
 		<div className={twMerge("not-prose", className)}>
 			<form
