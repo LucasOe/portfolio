@@ -3,7 +3,7 @@ import { BiBrush } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
 import { FaGithub, FaReact } from "react-icons/fa";
 import { FiExternalLink, FiMonitor } from "react-icons/fi";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 
 import Contact from "@/components/Contact/Contact";
 import Header from "@/components/Header";
@@ -20,7 +20,7 @@ export default function Home() {
 				<ScrollIndicator className="absolute top-[75vh] self-center" />
 			</div>
 			<Header text="About" id="about" />
-			<ReactMarkdown>
+			<Markdown>
 				{dedent`
 					My name is Lucas Oelker and I’m a software developer currently studying Visual Computing and
 					Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a
@@ -31,7 +31,7 @@ export default function Home() {
 					and Design, which allows me to think about the integrated approach to the conception and
 					development of technical systems as well as their conceptual and design perspective.
 				`}
-			</ReactMarkdown>
+			</Markdown>
 			<Header text="Project Timeline" id="projects" />
 			<Timeline
 				projects={[

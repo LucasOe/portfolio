@@ -1,5 +1,5 @@
 import { IconContext } from "react-icons";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 import Tilt from "react-parallax-tilt";
 
 export type SkillProps = React.HTMLAttributes<HTMLDivElement> & {
@@ -32,7 +32,7 @@ export default function Skill({ children, title, icon, className }: SkillProps) 
 					<span className="font-mono text-sm font-semibold text-neutral-500">{"</h3>"}</span>
 				</div>
 				<div className="translate-z-4">
-					<ReactMarkdown>{children}</ReactMarkdown>
+					<Markdown>{children}</Markdown>
 				</div>
 			</div>
 		</Tilt>
