@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-
 import ContactInput from "@/components/Contact/ContactInput";
 import ContactTextarea from "@/components/Contact/ContactTextarea";
 
@@ -7,7 +5,7 @@ export type ContactProps = React.ComponentProps<"div">;
 
 export default function Contact({ className }: ContactProps) {
 	return (
-		<div className={twMerge("not-prose", className)}>
+		<div className={className}>
 			<form
 				action="https://api.web3forms.com/submit"
 				method="POST"
