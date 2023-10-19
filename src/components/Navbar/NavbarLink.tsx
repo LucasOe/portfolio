@@ -1,4 +1,5 @@
 import { HashLink } from "react-router-hash-link";
+import { twMerge } from "tailwind-merge";
 
 export type NavbarLinkProps = React.ComponentProps<typeof HashLink> & {
 	text: string;
@@ -14,7 +15,7 @@ export default function NavbarLink({ text, to, slashes, newtab, className, ...re
 			smooth
 			target={newtab ? "_blank" : "_self"}
 			rel="noreferrer"
-			className={`focus rounded-sm leading-none no-underline outline-none ${className}`}
+			className={twMerge("focus rounded-sm leading-none no-underline outline-none", className)}
 			{...rest}
 		>
 			<span className="font-mono font-semibold hover:text-green-400">{`${slashes ? "//" : ""}${text}`}</span>

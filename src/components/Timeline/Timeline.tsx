@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { twMerge } from "tailwind-merge";
 
 import TimelineProject, { TimelineProjectProps } from "@/components/Timeline/TimelineProject";
 import useOffset from "@/hooks/useOffset";
@@ -28,7 +29,7 @@ const projectTimes: number[] = [];
 export default function Timeline({ projects, className }: TimelineProps) {
 	const scrollbarRef = useRef<HTMLDivElement>(null);
 	return (
-		<div className={`flex ${className}`}>
+		<div className={twMerge("flex", className)}>
 			<div className="flex grow flex-col gap-3">
 				{projects.map((props: TimelineProjectProps, index) => {
 					const projectRef = useRef<HTMLDivElement>(null);

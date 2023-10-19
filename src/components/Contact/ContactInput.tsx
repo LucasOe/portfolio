@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 export type ContactInputProps = React.ComponentProps<"input"> & {
 	text: string;
 	name: string;
@@ -6,7 +8,7 @@ export type ContactInputProps = React.ComponentProps<"input"> & {
 
 export default function ContactInput({ text, type, name, className, ...rest }: ContactInputProps) {
 	return (
-		<div className={`w-full ${className}`}>
+		<div className={twMerge("w-full", className)}>
 			<label htmlFor={name} className="pl-1 font-bold">
 				{text}
 			</label>

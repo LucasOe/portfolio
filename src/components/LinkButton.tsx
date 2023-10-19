@@ -1,4 +1,5 @@
 import { HashLink } from "react-router-hash-link";
+import { twMerge } from "tailwind-merge";
 
 export type LinkButtonProps = React.ComponentProps<typeof HashLink> & {
 	text: string;
@@ -7,7 +8,7 @@ export type LinkButtonProps = React.ComponentProps<typeof HashLink> & {
 
 export default function LinkButton({ text, to, className, ...rest }: LinkButtonProps) {
 	return (
-		<HashLink to={to} className={`not-prose focus button ${className}`} {...rest}>
+		<HashLink to={to} className={twMerge("not-prose focus button", className)} {...rest}>
 			{text}
 		</HashLink>
 	);

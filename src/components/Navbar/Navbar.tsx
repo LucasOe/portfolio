@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
+import { twMerge } from "tailwind-merge";
 
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -30,7 +31,7 @@ export default function Navbar({ links, socials, className }: NavbarProps) {
 	}, []);
 
 	return (
-		<div className={`not-prose absolute top-0 my-6 w-full ${className}`}>
+		<div className={twMerge("not-prose absolute top-0 my-6 w-full", className)}>
 			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">

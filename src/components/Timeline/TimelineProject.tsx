@@ -1,5 +1,6 @@
 import { forwardRef } from "react";
 import Markdown from "react-markdown";
+import { twMerge } from "tailwind-merge";
 
 import LinkIcon, { LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
@@ -18,7 +19,7 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 	ref
 ) {
 	return (
-		<div className={`flex w-full transition-transform duration-300 hover:-translate-x-2 ${className}`}>
+		<div className={twMerge("flex w-full transition-transform duration-300 hover:-translate-x-2", className)}>
 			<div className="flex w-full flex-col space-y-4 rounded-md bg-neutral-700 p-4">
 				<div className="flex items-start justify-between">
 					<h3 className="m-0 leading-none">{title}</h3>
