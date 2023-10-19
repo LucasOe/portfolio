@@ -3,7 +3,7 @@ export type ContactTextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElem
 	name: string;
 };
 
-export default function ContactInput({ text, name, className, ...rest }: ContactTextareaProps) {
+export default function ContactTextArea({ text, name, className, ...rest }: ContactTextareaProps) {
 	return (
 		<div className={`w-full ${className}`}>
 			<label htmlFor={name} className="pl-1 font-bold">
