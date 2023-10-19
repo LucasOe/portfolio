@@ -1,4 +1,4 @@
-export type HeaderProps = React.HTMLAttributes<HTMLDivElement> & {
+export type HeaderProps = React.ComponentProps<"div"> & {
 	text: string;
 	id: string;
 };

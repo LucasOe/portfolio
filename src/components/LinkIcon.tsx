@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { IconContext } from "react-icons";
 
-export type LinkIconProps = React.HTMLAttributes<HTMLAnchorElement> & {
+export type LinkIconProps = React.ComponentProps<"a"> & {
 	icon: ReactNode;
 	to: string;
 	label?: string;

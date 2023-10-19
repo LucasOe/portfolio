@@ -4,7 +4,7 @@ import TimelineProject, { TimelineProjectProps } from "@/components/Timeline/Tim
 import useOffset from "@/hooks/useOffset";
 import { clamp, lerp, negativeValues } from "@/utils/math";
 
-export type TimelineProps = React.HTMLAttributes<HTMLDivElement> & {
+export type TimelineProps = React.ComponentProps<"div"> & {
 	projects: TimelineProjectProps[];
 };
 

@@ -4,7 +4,7 @@ import Markdown from "react-markdown";
 import LinkIcon, { LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
 
-export type TimelineProjectProps = React.HTMLAttributes<HTMLDivElement> & {
+export type TimelineProjectProps = React.ComponentProps<"div"> & {
 	description: string;
 	title: string;
 	links: LinkIconProps[];

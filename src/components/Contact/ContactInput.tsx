@@ -1,4 +1,4 @@
-export type ContactInputProps = React.InputHTMLAttributes<HTMLInputElement> & {
+export type ContactInputProps = React.ComponentProps<"input"> & {
 	text: string;
 	name: string;
 	type: string;

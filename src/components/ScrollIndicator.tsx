@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 
 import { BsArrowDownShort } from "react-icons/bs";
 
-export default function ScrollIndicator({ className }: React.HTMLAttributes<HTMLDivElement>) {
+export default function ScrollIndicator({ className }: React.ComponentProps<"div">) {
 	const { scrollY } = useScroll();
 	// Map values from [0, 500] to [1, 0]
 	const opacity = useTransform(scrollY, [0, window.innerHeight / 2], [1, 0]);
