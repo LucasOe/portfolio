@@ -8,7 +8,7 @@ export type ContactTextareaProps = React.ComponentProps<"textarea"> & {
 export default function ContactTextArea({ text, name, className, ...rest }: ContactTextareaProps) {
 	return (
 		<div className={twMerge("w-full", className)}>
-			<label htmlFor={name} className="pl-1 font-bold">
+			<label htmlFor={name} className="inline-block p-1 font-bold">
 				{text}
 			</label>
 			<textarea
