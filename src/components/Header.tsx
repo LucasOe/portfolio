@@ -5,9 +5,9 @@ export type HeaderProps = React.ComponentProps<"div"> & {
 	id: string;
 };
 
-export default function Header({ text, id, className }: HeaderProps) {
+export default function Header({ text, id, className, ...rest }: HeaderProps) {
 	return (
-		<h2 id={id} className={twMerge("mt-24 scroll-m-[12vh] font-mono", className)}>
+		<h2 id={id} className={twMerge("mt-24 scroll-m-[12vh] font-mono", className)} {...rest}>
 			{`# ${text}`}
 		</h2>
 	);

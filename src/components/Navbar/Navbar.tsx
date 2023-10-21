@@ -17,7 +17,7 @@ export type NavbarProps = React.ComponentProps<"div"> & {
 	socials: TextLink[];
 };
 
-export default function Navbar({ links, socials, className }: NavbarProps) {
+export default function Navbar({ links, socials, className, ...rest }: NavbarProps) {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const closeNavbar = () => setNavbarOpen(false);
 
@@ -31,7 +31,7 @@ export default function Navbar({ links, socials, className }: NavbarProps) {
 	}, []);
 
 	return (
-		<div className={twMerge("not-prose absolute top-0 my-6 w-full", className)}>
+		<div className={twMerge("not-prose absolute top-0 my-6 w-full", className)} {...rest}>
 			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">
