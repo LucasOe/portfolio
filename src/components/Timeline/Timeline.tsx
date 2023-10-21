@@ -26,10 +26,10 @@ function getCurrentDate(offsets: number[], times: number[]): string {
 const projectOffsets: number[] = [];
 const projectTimes: number[] = [];
 
-export default function Timeline({ projects, className }: TimelineProps) {
+export default function Timeline({ projects, className, ...rest }: TimelineProps) {
 	const scrollbarRef = useRef<HTMLDivElement>(null);
 	return (
-		<div className={twMerge("flex", className)}>
+		<div className={twMerge("flex", className)} {...rest}>
 			<div className="flex grow flex-col gap-3">
 				{projects.map((props: TimelineProjectProps, index) => {
 					const projectRef = useRef<HTMLDivElement>(null);
