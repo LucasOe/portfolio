@@ -62,7 +62,19 @@ module.exports = {
 							<stop offset='0%' stop-color='${theme("colors.accent[violet]").replace("#", "%23")}' />\
 							<stop offset='100%' stop-color='${theme("colors.accent[pink]").replace("#", "%23")}' />\
 						</linearGradient>\
-					</svg>#grad") red`,
+					</svg>#grad")`,
+				},
+				".background-gradient": {
+					background: dedent`\
+						linear-gradient(\
+							var(--focus-bg, ${theme("colors.primary")}),\
+							var(--focus-bg, ${theme("colors.primary")})\
+						) padding-box,\
+						linear-gradient(to bottom left,\
+							${theme("colors.accent[pink]")},\
+							${theme("colors.accent[violet]")}\
+						) border-box\
+					`,
 				},
 			});
 		},
