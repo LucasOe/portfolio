@@ -15,7 +15,7 @@ export default function NavbarLink({ text, to, slashes, newtab, className, ...re
 			smooth
 			target={newtab ? "_blank" : "_self"}
 			rel="noreferrer"
-			className={twMerge("focus-primary rounded-sm leading-none no-underline outline-none", className)}
+			className={twMerge("focus rounded-sm leading-none no-underline outline-none", className)}
 			{...rest}
 		>
 			<span className="font-mono font-semibold hover:text-accent-pink">{`${slashes ? "//" : ""}${text}`}</span>
