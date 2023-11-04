@@ -44,7 +44,7 @@ export default function Timeline({ projects, className, ...rest }: TimelineProps
 				{/*Progress Bar*/}
 				<div className="mx-2 my-4 flex w-2 rounded-full bg-secondary" style={{ contain: "paint" }}>
 					<div className="sticky bottom-1/2 self-end">
-						<div className="absolute h-screen w-2 bg-accent-pink bg-gradient-to-b from-accent-purple from-50% -translate-y-full" />
+						<div className="absolute h-screen w-2 bg-accent-pink bg-gradient-to-b from-accent-violet from-50% -translate-y-full" />
 					</div>
 				</div>
 				{/*Sticky*/}

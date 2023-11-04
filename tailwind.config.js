@@ -1,16 +1,16 @@
+import colors from "tailwindcss/colors";
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./src/**/*.{js,jsx,ts,tsx}", "index.html"],
 	theme: {
 		extend: {
 			colors: {
-				primary: "#171717",
-				secondary: "#242424",
-				tertiary: "#2b2b2b",
+				primary: colors.neutral[900],
+				secondary: colors.neutral[800],
 				accent: {
-					DEFAULT: "#db2777",
-					pink: "#db2777",
-					purple: "#6c80e3",
+					pink: colors.pink[600],
+					violet: colors.violet[600],
 				},
 			},
 			typography: ({ theme }) => ({
