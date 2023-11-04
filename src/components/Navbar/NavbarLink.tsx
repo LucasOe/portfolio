@@ -18,7 +18,9 @@ export default function NavbarLink({ text, to, slashes, newtab, className, ...re
 			className={twMerge("focus rounded-sm no-underline outline-none px-2", className)}
 			{...rest}
 		>
-			<span className="font-mono font-semibold hover:text-accent-pink">{`${slashes ? "//" : ""}${text}`}</span>
+			<span className="font-mono font-semibold hover:bg-accent-violet hover:bg-gradient-to-bl hover:from-accent-pink hover:bg-cover hover:bg-clip-text hover:text-transparent">{`${
+				slashes ? "//" : ""
+			}${text}`}</span>
 		</HashLink>
 	);
 }
