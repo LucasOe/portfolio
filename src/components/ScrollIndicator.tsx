@@ -28,7 +28,7 @@ export default function ScrollIndicator({ className, ...rest }: ScrollIndicatorP
 
 	return (
 		<div ref={ref} className={className} {...rest}>
-			<motion.div style={{ opacity: opacity }} className="relative flex items-center justify-center">
+			<motion.div style={{ opacity: opacity }} className="relative flex select-none items-center justify-center">
 				{/* Foreground */}
 				<HashLink to="#about" smooth aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
 					<div className="inline-block rounded-full border-2 border-neutral-200 hover:border-transparent">
@@ -40,7 +40,7 @@ export default function ScrollIndicator({ className, ...rest }: ScrollIndicatorP
 					style={{ x: distance.x, y: distance.y }}
 					className="absolute left-0 top-0 flex h-full w-full items-center justify-center"
 				>
-					<div className="background-gradient h-full w-full select-none rounded-full border-[3px] border-transparent" />
+					<div className="background-gradient h-full w-full rounded-full border-[3px] border-transparent" />
 				</motion.div>
 			</motion.div>
 		</div>
