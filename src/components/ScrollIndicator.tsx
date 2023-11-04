@@ -14,7 +14,7 @@ export default function ScrollIndicator({ className, ...rest }: ScrollIndicatorP
 		<motion.div style={{ opacity: opacity }} className={className} {...rest}>
 			<HashLink to="#about" smooth aria-label="Scroll Down" tabIndex={-1}>
 				<div className="m-2 animate-bounce rounded-full bg-white/50 hover:bg-white/75">
-					<BsArrowDownShort className="h-12 w-12 text-neutral-800" />
+					<BsArrowDownShort className="h-12 w-12 text-primary" />
 				</div>
 			</HashLink>
 		</motion.div>
