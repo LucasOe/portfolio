@@ -26,9 +26,9 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 			<div className="flex w-full flex-col space-y-4 rounded-lg bg-secondary p-4">
 				<div className="flex items-start justify-between">
 					<h3 className="m-0 leading-none">{title}</h3>
-					<div className="flex gap-3">
+					<div className="-m-1 flex gap-3">
 						{links.map((link, index) => (
-							<LinkIcon key={index} icon={link.icon} to={link.to} label={link.label} />
+							<LinkIcon key={index} icon={link.icon} to={link.to} label={link.label} className="p-1" />
 						))}
 					</div>
 				</div>
