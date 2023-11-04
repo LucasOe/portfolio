@@ -16,7 +16,7 @@ export default function ContactTextArea({ text, name, className, ...rest }: Cont
 				name={name}
 				placeholder={`Enter your ${text}`}
 				required
-				className="focus w-full resize-none rounded-md border-none bg-secondary placeholder:text-neutral-500"
+				className="focus w-full resize-none rounded-lg border-none bg-secondary placeholder:text-neutral-500"
 				{...rest}
 			/>
 		</div>

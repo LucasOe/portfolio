@@ -20,8 +20,9 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 			glareBorderRadius="0.375rem"
 			transitionSpeed={1500}
 			scale={0.95}
+			glareColor="#f472b6"
 			className={twMerge(
-				"pointer-events-none w-full rounded-md bg-secondary p-5 transform-style-3d backface-hidden md:pointer-events-auto",
+				"pointer-events-none w-full rounded-lg bg-secondary p-5 transform-style-3d backface-hidden md:pointer-events-auto",
 				className
 			)}
 			{...rest}
