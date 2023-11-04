@@ -1,8 +1,9 @@
+import dedent from "dedent";
 import colors from "tailwindcss/colors";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	content: ["./src/**/*.{js,jsx,ts,tsx}", "index.html"],
+	content: ["./src/**/*.{js,jsx,ts,tsx,svg}", "index.html"],
 	theme: {
 		extend: {
 			colors: {
@@ -53,5 +54,17 @@ module.exports = {
 		require("@tailwindcss/forms"),
 		require("tailwindcss-3d"),
 		require("@mertasan/tailwindcss-variables"),
+		function ({ addComponents, theme }) {
+			addComponents({
+				".fill-gradient": {
+					fill: dedent`url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'>\
+						<linearGradient id='grad'>\
+							<stop offset='0%' stop-color='${theme("colors.accent[violet]").replace("#", "%23")}' />\
+							<stop offset='100%' stop-color='${theme("colors.accent[pink]").replace("#", "%23")}' />\
+						</linearGradient>\
+					</svg>#grad") red`,
+				},
+			});
+		},
 	],
 };
