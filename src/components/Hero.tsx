@@ -33,7 +33,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 					repeat={Infinity}
 					speed={1}
 					deletionSpeed={20}
-					className="inline-block bg-accent-violet bg-gradient-to-l from-accent-pink bg-cover bg-clip-text text-transparent after:text-neutral-50"
+					className="inline-block bg-accent-violet bg-gradient-to-bl from-accent-pink bg-cover bg-clip-text text-transparent after:text-neutral-50"
 				/>
 			</p>
 		</div>
