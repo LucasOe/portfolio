@@ -23,7 +23,7 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 			className={twMerge("flex w-full transition-transform duration-300 hover:-translate-x-2", className)}
 			{...rest}
 		>
-			<div className="flex w-full flex-col space-y-4 rounded-md bg-secondary p-4">
+			<div className="flex w-full flex-col space-y-4 rounded-lg bg-secondary p-4">
 				<div className="flex items-start justify-between">
 					<h3 className="m-0 leading-none">{title}</h3>
 					<div className="flex gap-3">
@@ -40,10 +40,10 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 				</div>
 			</div>
 			{/*Arrow*/}
-			<div className="hidden h-full py-2 sm:flex">
+			<div className="hidden h-full py-4 sm:flex">
 				<div
 					ref={ref}
-					className="relative h-0 w-0 border-y-8 border-l-8 border-y-transparent border-l-secondary"
+					className="relative h-0 w-0 border-y-[10px] border-l-[10px] border-y-transparent border-l-secondary"
 					style={{ top: `${arrowPosition}%`, transform: `translateY(-${arrowPosition}%)` }}
 				/>
 			</div>
