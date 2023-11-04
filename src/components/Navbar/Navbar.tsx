@@ -48,14 +48,14 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 				</div>
 				{/* Site Links */}
 				<div className="hidden md:block">
-					<div className="flex flex-wrap gap-x-8">
+					<div className="flex flex-wrap gap-x-4">
 						{links.map((link, index) => (
 							<NavbarLink key={index} text={link.text} to={link.to} slashes />
 						))}
 					</div>
 				</div>
 				{/* Social Links */}
-				<div className="flex flex-wrap gap-x-8">
+				<div className="flex flex-wrap gap-x-4">
 					{socials.map((social, index) => (
 						<NavbarLink key={index} text={social.text} to={social.to} newtab />
 					))}
