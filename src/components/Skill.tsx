@@ -21,7 +21,7 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 			transitionSpeed={1500}
 			scale={0.95}
 			className={twMerge(
-				"pointer-events-none w-full rounded-md bg-neutral-700 p-5 transform-style-3d backface-hidden md:pointer-events-auto",
+				"pointer-events-none w-full rounded-md bg-secondary p-5 transform-style-3d backface-hidden md:pointer-events-auto",
 				className
 			)}
 			{...rest}
@@ -32,9 +32,9 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 			</div>
 			<div className="flex gap-2 transform-style-3d translate-z-4">
 				<div aria-hidden="true" className="not-prose flex select-none flex-col items-center justify-between">
-					<span className="font-mono text-sm font-semibold text-neutral-500">{"<h3>"}</span>
-					<div className="m-1 h-full w-[2px] rounded-full bg-neutral-500" />
-					<span className="font-mono text-sm font-semibold text-neutral-500">{"</h3>"}</span>
+					<span className="font-mono text-sm font-semibold text-neutral-600">{"<h3>"}</span>
+					<div className="m-1 h-full w-[2px] rounded-full bg-neutral-600" />
+					<span className="font-mono text-sm font-semibold text-neutral-600">{"</h3>"}</span>
 				</div>
 				<div className="translate-z-4">
 					<Markdown>{children}</Markdown>

@@ -18,7 +18,7 @@ export default function LinkIcon({ icon, to, label, className, ...rest }: LinkIc
 			className={twMerge("focus rounded-sm", className)}
 			{...rest}
 		>
-			<IconContext.Provider value={{ className: "h-6 w-6 hover:text-green-400" }}>{icon}</IconContext.Provider>
+			<IconContext.Provider value={{ className: "h-6 w-6 hover:text-accent" }}>{icon}</IconContext.Provider>
 		</a>
 	);
 }

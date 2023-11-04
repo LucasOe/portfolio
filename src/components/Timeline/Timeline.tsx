@@ -42,20 +42,20 @@ export default function Timeline({ projects, className, ...rest }: TimelineProps
 			</div>
 			<div className="relative hidden sm:flex">
 				{/*Progress Bar*/}
-				<div className="mx-2 my-4 flex w-2 rounded-full bg-neutral-700" style={{ contain: "paint" }}>
+				<div className="mx-2 my-4 flex w-2 rounded-full bg-secondary" style={{ contain: "paint" }}>
 					<div className="sticky bottom-1/2 self-end">
-						<div className="absolute h-screen w-2 bg-emerald-200 bg-gradient-to-t from-green-500 -translate-y-full" />
+						<div className="absolute h-screen w-2 bg-accent-pink bg-gradient-to-b from-accent-purple from-50% -translate-y-full" />
 					</div>
 				</div>
 				{/*Sticky*/}
 				<div className="relative -left-6 -mr-6">
 					<div ref={scrollbarRef} className="sticky top-[calc(50%-1rem)] flex">
 						{/*Dot*/}
-						<div className="mx-1 my-2 h-4 w-4 rounded-full bg-green-500" />
+						<div className="mx-1 my-2 h-4 w-4 rounded-full bg-accent-pink" />
 						{/*Arrow*/}
-						<div className="my-2 h-0 w-0 border-y-8 border-r-8 border-y-transparent border-r-neutral-700" />
+						<div className="my-2 h-0 w-0 border-y-8 border-r-8 border-y-transparent border-r-secondary" />
 						{/*Textbox*/}
-						<div className="w-28 rounded-md bg-neutral-700 text-center">
+						<div className="w-28 rounded-md bg-secondary text-center">
 							<p className="m-0 font-mono font-bold">{getCurrentDate(projectOffsets, projectTimes)}</p>
 						</div>
 					</div>

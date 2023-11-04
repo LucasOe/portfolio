@@ -30,7 +30,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 					repeat={Infinity}
 					speed={1}
 					deletionSpeed={20}
-					className="text-green-400 after:text-white"
+					className="inline-block bg-[url(gradient.svg/#gradient)] bg-cover bg-clip-text text-transparent after:text-white"
 				/>
 			</p>
 		</div>
