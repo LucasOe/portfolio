@@ -20,7 +20,10 @@ export default function Contact({ className, ...rest }: ContactProps) {
 					<ContactInput text="E-Mail" name="email" type="email" />
 				</div>
 				<ContactTextarea text="Message" name="message" rows={8} />
-				<button type="submit" className="button self-end">
+				<button
+					type="submit"
+					className="focus inline-block self-end rounded-lg bg-neutral-300 p-1 px-5 font-medium text-neutral-900 no-underline outline-none focus-neutral-300 hover:bg-neutral-100"
+				>
 					Send Message
 				</button>
 			</form>

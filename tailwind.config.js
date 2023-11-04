@@ -1,5 +1,6 @@
 import dedent from "dedent";
 import colors from "tailwindcss/colors";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -80,7 +81,7 @@ module.exports = {
 						"--focus-bg": value,
 					}),
 				},
-				{ values: theme("colors") }
+				{ values: flattenColorPalette(theme("colors")) }
 			);
 		},
 	],

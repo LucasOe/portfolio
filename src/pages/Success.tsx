@@ -18,7 +18,9 @@ export default function SuccessPage() {
 					I will reply to you soon!
 				`}
 			</Markdown>
-			<LinkButton text={"Go Home"} to={"/"} className="m-10" />
+			<div className="p-10">
+				<LinkButton text={"Go Home"} to={"/"} />
+			</div>
 		</div>
 	);
 }
