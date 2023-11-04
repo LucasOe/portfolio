@@ -18,6 +18,6 @@
 	.background-gradient {
 		background:
 			linear-gradient(var(--focus-bg, var(--primary)), var(--focus-bg, var(--primary))) padding-box,
-			linear-gradient(to left, var(--accent-pink), var(--accent-violet)) border-box;
+			linear-gradient(to bottom left, var(--accent-pink), var(--accent-violet)) border-box;
 	}
 }
