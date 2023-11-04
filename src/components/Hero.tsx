@@ -1,8 +1,6 @@
 import { TypeAnimation } from "react-type-animation";
 import { twMerge } from "tailwind-merge";
 
-import gradientUrl from "@/assets/gradient.svg";
-
 export type HeroProps = React.ComponentProps<"div">;
 
 export default function Hero({ className, ...rest }: HeroProps) {
@@ -35,8 +33,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 					repeat={Infinity}
 					speed={1}
 					deletionSpeed={20}
-					className="inline-block bg-cover bg-clip-text text-transparent after:text-neutral-50"
-					style={{ backgroundImage: `url("${gradientUrl}")` }}
+					className="inline-block bg-accent-violet bg-gradient-to-l from-accent-pink bg-cover bg-clip-text text-transparent after:text-neutral-50"
 				/>
 			</p>
 		</div>

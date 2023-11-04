@@ -13,6 +13,9 @@ module.exports = {
 					violet: colors.violet[600],
 				},
 			},
+			variables: ({ theme }) => ({
+				DEFAULT: theme("colors"),
+			}),
 			typography: ({ theme }) => ({
 				DEFAULT: {
 					css: {
@@ -45,5 +48,10 @@ module.exports = {
 	future: {
 		hoverOnlyWhenSupported: true,
 	},
-	plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms"), require("tailwindcss-3d")],
+	plugins: [
+		require("@tailwindcss/typography"),
+		require("@tailwindcss/forms"),
+		require("tailwindcss-3d"),
+		require("@mertasan/tailwindcss-variables"),
+	],
 };
