@@ -31,7 +31,7 @@ module.exports = {
 						"--tw-prose-captions": theme("colors.neutral[400]"),
 						"--tw-prose-code": theme("colors.neutral[200]"),
 						"--tw-prose-pre-code": theme("colors.neutral[200]"),
-						"--tw-prose-pre-bg": "rgb(0 0 0 / 50%)",
+						"--tw-prose-pre-bg": "rgb(255 255 255 / 50%)",
 						"--tw-prose-th-borders": theme("colors.neutral[600]"),
 						"--tw-prose-td-borders": theme("colors.neutral[700]"),
 					},
@@ -53,6 +53,8 @@ module.exports = {
 		require("tailwindcss-3d"),
 		function ({ addComponents, matchUtilities, theme }) {
 			addComponents({
+				// Utility component to fill an svg with a gradient.
+				// See: https://fvsch.com/svg-gradient-fill
 				".fill-gradient": {
 					fill: dedent`url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'>\
 						<linearGradient id='grad'>\
@@ -61,6 +63,20 @@ module.exports = {
 						</linearGradient>\
 					</svg>#grad")`,
 				},
+				".stroke-gradient": {
+					stroke: dedent`url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'>\
+						<linearGradient id='grad'>\
+							<stop offset='0%' stop-color='${theme("colors.accent[violet]").replace("#", "%23")}' />\
+							<stop offset='100%' stop-color='${theme("colors.accent[pink]").replace("#", "%23")}' />\
+						</linearGradient>\
+					</svg>#grad")`,
+				},
+
+				// Utility component for borders with gradients.
+				// See: https://codyhouse.co/nuggets/css-gradient-borders
+				//
+				// Uses `var(--bg)` set by the bg utility, or uses the primary
+				// color as fallback.
 				".background-gradient": {
 					background: dedent`\
 						linear-gradient(\
@@ -77,9 +93,10 @@ module.exports = {
 
 			matchUtilities(
 				{
+					// Sets the `--bg` var to the background color, so it can be
+					// used inside the `background-gradient` component
 					bg: (value) => ({
 						"--bg": value,
-						backgroundColor: "var(--bg)",
 					}),
 				},
 				{ values: flattenColorPalette(theme("colors")) }
