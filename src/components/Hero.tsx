@@ -8,7 +8,10 @@ export type HeroProps = React.ComponentProps<"div">;
 export default function Hero({ className, ...rest }: HeroProps) {
 	return (
 		<div
-			className={twMerge("select-none text-[7vw] leading-normal md:text-[4rem] lg:text-[5rem]", className)}
+			className={twMerge(
+				"select-none text-[7vw] text-neutral-50 leading-normal md:text-[4rem] lg:text-[5rem]",
+				className
+			)}
 			{...rest}
 		>
 			<p className="m-0 font-bold">Hey, I’m Lucas Oelker.</p>
@@ -32,7 +35,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 					repeat={Infinity}
 					speed={1}
 					deletionSpeed={20}
-					className="inline-block bg-cover bg-clip-text text-transparent after:text-white"
+					className="inline-block bg-cover bg-clip-text text-transparent after:text-neutral-50"
 					style={{ backgroundImage: `url("${gradientUrl}")` }}
 				/>
 			</p>
