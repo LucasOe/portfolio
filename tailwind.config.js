@@ -64,8 +64,8 @@ module.exports = {
 				".background-gradient": {
 					background: dedent`\
 						linear-gradient(\
-							var(--focus-bg, ${theme("colors.primary")}),\
-							var(--focus-bg, ${theme("colors.primary")})\
+							var(--bg, ${theme("colors.primary")}),\
+							var(--bg, ${theme("colors.primary")})\
 						) padding-box,\
 						linear-gradient(to bottom left,\
 							${theme("colors.accent[pink]")},\
@@ -77,8 +77,9 @@ module.exports = {
 
 			matchUtilities(
 				{
-					focus: (value) => ({
-						"--focus-bg": value,
+					bg: (value) => ({
+						"--bg": value,
+						backgroundColor: "var(--bg)",
 					}),
 				},
 				{ values: flattenColorPalette(theme("colors")) }
