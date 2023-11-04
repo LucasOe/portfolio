@@ -1,6 +1,6 @@
-import { RefObject, useEffect, useState } from "react";
+import { ElementRef, RefObject, useEffect, useState } from "react";
 
-export default function useOffset(selfRef: RefObject<HTMLElement>, otherRef: RefObject<HTMLElement>) {
+export default function useOffset(selfRef: RefObject<ElementRef<"div">>, otherRef: RefObject<ElementRef<"div">>) {
 	const [scrollPosition, setScrollPosition] = useState(0);
 
 	useEffect(() => {
