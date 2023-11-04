@@ -14,9 +14,6 @@ module.exports = {
 					violet: colors.violet[600],
 				},
 			},
-			variables: ({ theme }) => ({
-				DEFAULT: theme("colors"),
-			}),
 			typography: ({ theme }) => ({
 				DEFAULT: {
 					css: {
@@ -53,8 +50,7 @@ module.exports = {
 		require("@tailwindcss/typography"),
 		require("@tailwindcss/forms"),
 		require("tailwindcss-3d"),
-		require("@mertasan/tailwindcss-variables"),
-		function ({ addComponents, theme }) {
+		function ({ addComponents, matchUtilities, theme }) {
 			addComponents({
 				".fill-gradient": {
 					fill: dedent`url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'>\
@@ -77,6 +73,15 @@ module.exports = {
 					`,
 				},
 			});
+
+			matchUtilities(
+				{
+					focus: (value) => ({
+						"--focus-bg": value,
+					}),
+				},
+				{ values: theme("colors") }
+			);
 		},
 	],
 };
