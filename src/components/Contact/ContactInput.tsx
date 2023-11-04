@@ -19,7 +19,7 @@ export default function ContactInput({ text, type, name, className, ...rest }: C
 				placeholder={`Enter your ${text}`}
 				autoComplete={name}
 				required
-				className="focus w-full rounded-lg border-none bg-secondary [--focus-bg:--secondary] placeholder:text-neutral-500"
+				className="focus w-full rounded-lg border-none bg-secondary focus-secondary placeholder:text-neutral-500"
 				{...rest}
 			/>
 		</div>
