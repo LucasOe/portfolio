@@ -37,7 +37,7 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 				<div className="h-full md:hidden">
 					<motion.button
 						aria-label="Open Navigation Menu"
-						className="focus-primary h-full rounded-md"
+						className="focus h-full rounded-md"
 						onTap={() => setNavbarOpen(!navbarOpen)}
 						whileTap={{ scale: 0.8 }}
 					>
