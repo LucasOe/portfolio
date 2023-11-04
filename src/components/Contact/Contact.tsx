@@ -22,7 +22,7 @@ export default function Contact({ className, ...rest }: ContactProps) {
 				<ContactTextarea text="Message" name="message" rows={8} />
 				<button
 					type="submit"
-					className="focus inline-block self-end rounded-lg bg-neutral-300 p-1 px-5 font-medium text-neutral-900 no-underline outline-none focus-neutral-300 hover:bg-neutral-100"
+					className="focus inline-block self-end rounded-lg bg-neutral-300 p-1 px-5 font-medium text-neutral-900 no-underline outline-none hover:bg-neutral-100"
 				>
 					Send Message
 				</button>
