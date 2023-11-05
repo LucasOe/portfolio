@@ -31,7 +31,7 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 	}, []);
 
 	return (
-		<div className={twMerge("not-prose py-6 px-12 w-full", className)} {...rest}>
+		<div className={twMerge("not-prose p-6 w-full", className)} {...rest}>
 			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">
