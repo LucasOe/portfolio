@@ -24,8 +24,8 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 	const mouseY = useMotionValue(0);
 	mouseX.set(mousePosRel.x);
 	mouseY.set(mousePosRel.y);
-	const x = useTransform(mouseX, [-hX, hX], [-offset, offset], { clamp: false });
-	const y = useTransform(mouseY, [-hY, hY], [-offset, offset], { clamp: false });
+	const x = useTransform(mouseX, [-hX, hX], [-offset, offset]);
+	const y = useTransform(mouseY, [-hY, hY], [-offset, offset]);
 
 	return (
 		<div ref={ref} className={className} {...rest}>
