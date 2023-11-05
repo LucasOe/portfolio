@@ -17,9 +17,13 @@ export default function Layout() {
 
 	return (
 		<>
-			<Navbar links={links} socials={socials} />
+			<div className="absolute left-0 top-0 w-full">
+				<Navbar links={links} socials={socials} />
+			</div>
 			<Outlet />
-			<Footer />
+			<div className="absolute bottom-0 left-0 w-full">
+				<Footer />
+			</div>
 		</>
 	);
 }
