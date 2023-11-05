@@ -11,41 +11,39 @@ export type ScrollIndicatorProps = React.ComponentProps<"div"> & {
 };
 
 export default function ScrollIndicator({ offset, className, ...rest }: ScrollIndicatorProps) {
+	const hX = window.innerWidth / 2;
+	const hY = window.innerHeight / 2;
+
 	const { scrollY } = useScroll();
-	const opacity = useTransform(scrollY, [0, window.innerHeight / 2], [1, 0]);
+	const opacity = useTransform(scrollY, [0, hY], [1, 0]);
 
 	const ref = useRef<ElementRef<"div">>(null);
 	const mousePos = useMousePosition();
 	const mousePosRel = getRelativeMousePos(mousePos, ref);
-
-	const mouse = {
-		x: useMotionValue(0),
-		y: useMotionValue(0),
-	};
-	mouse.x.set(mousePosRel.x);
-	mouse.y.set(mousePosRel.y);
-
-	const distance = {
-		x: useTransform(mouse.x, [-window.innerWidth / 2, window.innerWidth / 2], [-offset, offset]),
-		y: useTransform(mouse.y, [-window.innerHeight / 2, window.innerHeight / 2], [-offset, offset]),
-	};
+	const mouseX = useMotionValue(0);
+	const mouseY = useMotionValue(0);
+	mouseX.set(mousePosRel.x);
+	mouseY.set(mousePosRel.y);
+	const x = useTransform(mouseX, [-hX, hX], [-offset, offset], { clamp: false });
+	const y = useTransform(mouseY, [-hY, hY], [-offset, offset], { clamp: false });
 
 	return (
 		<div ref={ref} className={className} {...rest}>
 			<motion.div
 				style={{ opacity: opacity }}
+				whileHover={{ scale: 1.1 }}
 				className="group relative flex select-none items-center justify-center"
 			>
 				{/* Foreground */}
 				<HashLink to="#about" smooth aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
-					<div className="inline-block rounded-full border-2 border-neutral-200 group-hover:border-transparent">
+					<div className="inline-block rounded-full border-2 border-neutral-200 group-hover:background-gradient group-hover:border-[3px] group-hover:border-transparent">
 						<BsArrowDownShort className="h-16 w-16 p-2 text-neutral-200 group-hover:fill-gradient" />
 					</div>
 				</HashLink>
 				{/* Background */}
 				<motion.div
-					style={{ x: distance.x, y: distance.y }}
-					className="absolute left-0 top-0 flex h-full w-full items-center justify-center"
+					style={{ x, y }}
+					className="absolute left-0 top-0 flex h-full w-full items-center justify-center group-hover:hidden"
 				>
 					<div className="background-gradient h-full w-full rounded-full border-[3px] border-transparent" />
 				</motion.div>
