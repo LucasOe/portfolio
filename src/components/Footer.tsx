@@ -5,7 +5,10 @@ export type FooterProps = React.ComponentProps<"div">;
 
 export default function Footer({ className, ...rest }: FooterProps) {
 	return (
-		<div className={twMerge("not-prose absolute bottom-0 my-6 flex w-full justify-center", className)} {...rest}>
+		<div
+			className={twMerge("not-prose absolute bottom-0 left-0 py-6 px-12 flex w-full justify-center", className)}
+			{...rest}
+		>
 			<HashLink to="/privacy#" className="focus rounded-sm px-2 text-neutral-500 no-underline">
 				Privacy Policy
 			</HashLink>
