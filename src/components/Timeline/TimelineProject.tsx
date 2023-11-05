@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { forwardRef } from "react";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
@@ -5,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 import LinkIcon, { LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
 
-export type TimelineProjectProps = React.ComponentProps<"div"> & {
+export type TimelineProjectProps = React.ComponentProps<typeof motion.div> & {
 	description: string;
 	title: string;
 	links: LinkIconProps[];
@@ -19,8 +20,11 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 	ref
 ) {
 	return (
-		<div
-			className={twMerge("flex w-full transition-transform duration-300 hover:-translate-x-2", className)}
+		<motion.div
+			initial={{ x: -48 }}
+			whileInView={{ x: 0 }}
+			viewport={{ margin: "100% 0px 0px 0px" }}
+			className={twMerge("flex w-full", className)}
 			{...rest}
 		>
 			<div className="flex w-full flex-col space-y-4 rounded-lg bg-secondary p-4">
@@ -47,6 +51,6 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 					style={{ top: `${arrowPosition}%`, transform: `translateY(-${arrowPosition}%)` }}
 				/>
 			</div>
-		</div>
+		</motion.div>
 	);
 });
