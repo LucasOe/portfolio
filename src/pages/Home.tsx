@@ -18,7 +18,7 @@ export default function Home() {
 		<div className="pb-80">
 			<div className="flex h-screen flex-col justify-center">
 				<Hero />
-				<ScrollIndicator className="absolute top-[75vh] self-center" />
+				<ScrollIndicator offset={16} className="absolute top-[75vh] self-center" />
 			</div>
 			<Header text="About" id="about" />
 			<Markdown>
