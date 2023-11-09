@@ -61,7 +61,7 @@ module.exports = {
 							<stop offset='0%' stop-color='${theme("colors.accent[violet]").replace("#", "%23")}' />\
 							<stop offset='100%' stop-color='${theme("colors.accent[pink]").replace("#", "%23")}' />\
 						</linearGradient>\
-					</svg>#grad")`,
+					</svg>#grad") ${theme("colors.accent[pink]")}`,
 				},
 				".stroke-gradient": {
 					stroke: dedent`url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'>\
@@ -69,7 +69,7 @@ module.exports = {
 							<stop offset='0%' stop-color='${theme("colors.accent[violet]").replace("#", "%23")}' />\
 							<stop offset='100%' stop-color='${theme("colors.accent[pink]").replace("#", "%23")}' />\
 						</linearGradient>\
-					</svg>#grad")`,
+					</svg>#grad") ${theme("colors.accent[pink]")}`,
 				},
 
 				// Utility component for borders with gradients.
