@@ -37,15 +37,15 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 				{/* Foreground */}
 				<HashLink to="#about" smooth aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
 					<div className="inline-block rounded-full border-2 border-neutral-200 group-hover:background-gradient group-hover:border-[3px] group-hover:border-transparent">
-						<BsArrowDownShort className="h-16 w-16 p-2 text-neutral-200 group-hover:fill-gradient" />
+						<BsArrowDownShort className="size-16 p-2 text-neutral-200 group-hover:fill-gradient" />
 					</div>
 				</HashLink>
 				{/* Background */}
 				<motion.div
 					style={{ x, y }}
-					className="absolute left-0 top-0 flex h-full w-full items-center justify-center group-hover:hidden"
+					className="absolute left-0 top-0 flex size-full items-center justify-center group-hover:hidden"
 				>
-					<div className="background-gradient h-full w-full rounded-full border-[3px] border-transparent" />
+					<div className="background-gradient size-full rounded-full border-[3px] border-transparent" />
 				</motion.div>
 			</motion.div>
 		</div>

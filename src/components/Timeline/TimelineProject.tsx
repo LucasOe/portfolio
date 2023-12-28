@@ -47,7 +47,7 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 			<div className="hidden h-full py-4 sm:flex">
 				<div
 					ref={ref}
-					className="relative h-0 w-0 border-y-[10px] border-l-[10px] border-y-transparent border-l-secondary"
+					className="relative size-0 border-y-[10px] border-l-[10px] border-y-transparent border-l-secondary"
 					style={{ top: `${arrowPosition}%`, transform: `translateY(-${arrowPosition}%)` }}
 				/>
 			</div>

@@ -51,9 +51,9 @@ export default function Timeline({ projects, className, ...rest }: TimelineProps
 				<div className="relative -left-6 -mr-6">
 					<div ref={scrollbarRef} className="sticky top-[calc(50%-1rem)] my-2 flex">
 						{/*Dot*/}
-						<div className="mx-1 my-2 h-4 w-4 rounded-full bg-accent-pink" />
+						<div className="mx-1 my-2 size-4 rounded-full bg-accent-pink" />
 						{/*Arrow*/}
-						<div className="my-2 h-0 w-0 border-y-8 border-r-8 border-y-transparent border-r-secondary" />
+						<div className="my-2 size-0 border-y-8 border-r-8 border-y-transparent border-r-secondary" />
 						{/*Textbox*/}
 						<div className="w-28 rounded-md bg-secondary text-center">
 							<p className="m-0 font-mono font-bold">{getCurrentDate(projectOffsets, projectTimes)}</p>

@@ -7,9 +7,3 @@
 		@apply focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:background-gradient focus-visible:bg-cover focus-visible:rounded-lg focus-visible:border-[3px] focus-visible:border-transparent focus-visible:-m-[3px] focus-visible:border-solid;
 	}
 }
-
-@layer base {
-	html {
-		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	}
-}

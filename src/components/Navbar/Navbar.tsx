@@ -41,7 +41,7 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 						onTap={() => setNavbarOpen(!navbarOpen)}
 						whileTap={{ scale: 0.8 }}
 					>
-						<IconContext.Provider value={{ className: "h-full w-full" }}>
+						<IconContext.Provider value={{ className: "size-full" }}>
 							{navbarOpen ? <FiX /> : <FiMenu />}
 						</IconContext.Provider>
 					</motion.button>
