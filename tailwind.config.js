@@ -3,7 +3,7 @@ import colors from "tailwindcss/colors";
 import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
 	content: ["./src/**/*.{js,jsx,ts,tsx,svg}", "index.html"],
 	theme: {
 		extend: {
