@@ -34,6 +34,9 @@ export default {
 						"--tw-prose-pre-bg": "rgb(255 255 255 / 50%)",
 						"--tw-prose-th-borders": theme("colors.neutral[600]"),
 						"--tw-prose-td-borders": theme("colors.neutral[700]"),
+						p: {
+							textWrap: "pretty",
+						},
 					},
 				},
 			}),
