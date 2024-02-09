@@ -50,8 +50,8 @@ export default function Home() {
 						arrowPosition: 0,
 						description: dedent`
 							*Das Rezeptbuch* is a digital cookbook. The application provides an interface built in
-							JavaFX that lets you view recipes stored in a database. This project was created in a
-							team effort for the university module *Computer Science*.
+							JavaFX that allows you to view recipes stored in a database. This project was developed as a
+							team effort for the university module *Informatics*.
 						`,
 					},
 					{
@@ -73,7 +73,7 @@ export default function Home() {
 						arrowPosition: 50,
 						description: dedent`
 							*Releaf* is a website and brand identity for an online shop that sells tea for relaxation
-							and health. The project was created in a team effort for the university module *Web- and
+							and health. The project was created as a team effort for the university module *Web- and
 							Corporate Design* on the topic of health.
 						`,
 					},
@@ -90,7 +90,7 @@ export default function Home() {
 						time: 1646089200,
 						arrowPosition: 50,
 						description: dedent`
-							A 2D Physics simulation, created for the university module *Visual Computing*.  
+							A 2D physics simulation, created for the university module *Visual Computing*.  
 							The model simulates a 2D marble run with physically accurate calculations for gravity,
 							friction, collisions, and a pendulum.
 						`,
@@ -104,11 +104,11 @@ export default function Home() {
 								label: "Open on Github",
 							},
 						],
-						stack: ["Vite", "React", "Tailwind CSS", "TypeScript"],
+						stack: ["Vite", "React", "TailwindCSS", "TypeScript"],
 						time: 1659304800,
 						arrowPosition: 50,
 						description: dedent`
-							You’re looking at it right now. After building multiple websites using HTML, CSS, and
+							You’re looking at it right now. After building several websites using HTML, CSS, and
 							PHP, this project was my first deep dive into the world of modern web development,
 							using a tech stack including Vite, Typescript, React, and Tailwind CSS.
 						`,
@@ -151,11 +151,29 @@ export default function Home() {
 						],
 						stack: ["Unity", "C#"],
 						time: 1688205600,
-						arrowPosition: 100,
+						arrowPosition: 50,
 						description: dedent`
 							In *Spellbound Sprouts* you play as a witch on her farm, defending crops from waves
 							of monsters that appear at night. The game is a combination of tower defense
 							and farming game, made in Unity.
+						`,
+					},
+					{
+						title: "Dishcovery",
+						links: [
+							{
+								to: "https://github.com/LucasOe/dishcovery",
+								icon: <FaGithub />,
+								label: "Open on Github",
+							},
+						],
+						stack: ["SvelteKit", "Supabase", "TailwindCSS", "TypeScript"],
+						time: 1707001200,
+						arrowPosition: 100,
+						description: dedent`
+							*Dishcovery* is a web app made for discovering new recipes with a Tinder-like swiping
+							experience. It was built using SvelteKit, Supabase and TailwindCSS. *Dishcovery* was created
+							as a team effort for the university module Advanced Web Development.
 						`,
 					},
 				]}
