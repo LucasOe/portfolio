@@ -3,7 +3,7 @@ import Markdown from "react-markdown";
 
 import { BiBrush } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
-import { FaGithub, FaReact } from "react-icons/fa";
+import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
 import { FiExternalLink, FiMonitor } from "react-icons/fi";
 
 import Contact from "@/components/Contact/Contact";
@@ -142,6 +142,11 @@ export default function Home() {
 								to: "https://github.com/LucasOe/spellbound-sprouts",
 								icon: <FaGithub />,
 								label: "Open on Github",
+							},
+							{
+								to: "https://www.youtube.com/watch?v=l9ik5Rarx8o",
+								icon: <FaYoutube />,
+								label: "Open on YouTube",
 							},
 						],
 						stack: ["Unity", "C#"],

@@ -42,7 +42,7 @@ export default function Timeline({ projects, className, ...rest }: TimelineProps
 			</div>
 			<div className="relative hidden sm:flex">
 				{/*Progress Bar*/}
-				<div className="mx-2 my-6 flex w-2 rounded-full bg-secondary" style={{ contain: "paint" }}>
+				<div className="mx-2 my-6 flex w-2 rounded-full bg-secondary [contain:paint]">
 					<div className="sticky bottom-1/2 self-end">
 						<div className="absolute h-screen w-2 bg-accent-pink bg-gradient-to-b from-accent-violet from-50% -translate-y-full" />
 					</div>
