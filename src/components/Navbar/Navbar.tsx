@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IconContext } from "react-icons";
 import { twMerge } from "tailwind-merge";
 
@@ -21,17 +21,11 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 	const [navbarOpen, setNavbarOpen] = useState(false);
 	const closeNavbar = () => setNavbarOpen(false);
 
-	useEffect(() => {
-		window.addEventListener("resize", closeNavbar);
-		window.addEventListener("scroll", closeNavbar);
-		return () => {
-			window.removeEventListener("resize", closeNavbar);
-			window.removeEventListener("scroll", closeNavbar);
-		};
-	}, []);
+	window.addEventListener("resize", closeNavbar);
+	window.addEventListener("scroll", closeNavbar);
 
 	return (
-		<div className={twMerge("not-prose p-6 w-full", className)} {...rest}>
+		<div className={twMerge("not-prose w-full p-6", className)} {...rest}>
 			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">
@@ -49,15 +43,15 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 				{/* Site Links */}
 				<div className="hidden md:block">
 					<div className="flex flex-wrap gap-x-4">
-						{links.map((link, index) => (
-							<NavbarLink key={index} text={link.text} to={link.to} slashes />
+						{links.map((link) => (
+							<NavbarLink key={link.to} text={link.text} to={link.to} slashes />
 						))}
 					</div>
 				</div>
 				{/* Social Links */}
 				<div className="flex flex-wrap gap-x-4">
-					{socials.map((social, index) => (
-						<NavbarLink key={index} text={social.text} to={social.to} newtab />
+					{socials.map((social) => (
+						<NavbarLink key={social.to} text={social.text} to={social.to} newtab />
 					))}
 				</div>
 			</div>
@@ -84,9 +78,9 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 								},
 							}}
 						>
-							{links.map((link, index) => (
+							{links.map((link) => (
 								<motion.div
-									key={index}
+									key={link.to}
 									variants={{
 										open: { opacity: 1, x: 0 },
 										closed: { opacity: 0, x: -10 },

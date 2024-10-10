@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
 
-import LinkIcon, { LinkIconProps } from "@/components/LinkIcon";
+import LinkIcon, { type LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
 
 export type TimelineProjectProps = React.ComponentProps<typeof motion.div> & {
@@ -31,15 +31,15 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 				<div className="flex items-start justify-between">
 					<h3 className="m-0 leading-none">{title}</h3>
 					<div className="-m-1 flex gap-3">
-						{links.map((link, index) => (
-							<LinkIcon key={index} icon={link.icon} to={link.to} label={link.label} className="p-1" />
+						{links.map((link) => (
+							<LinkIcon key={link.to} icon={link.icon} to={link.to} label={link.label} className="p-1" />
 						))}
 					</div>
 				</div>
 				<Markdown>{description}</Markdown>
 				<div className="flex flex-wrap gap-2">
-					{stack.map((tech, index) => (
-						<TimelineLabel key={index} text={tech} />
+					{stack.map((tech) => (
+						<TimelineLabel key={tech} text={tech} />
 					))}
 				</div>
 			</div>

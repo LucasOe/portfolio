@@ -1,7 +1,7 @@
-import { ElementRef, useRef } from "react";
+import { useRef, type ElementRef } from "react";
 import { twMerge } from "tailwind-merge";
 
-import TimelineProject, { TimelineProjectProps } from "@/components/Timeline/TimelineProject";
+import TimelineProject, { type TimelineProjectProps } from "@/components/Timeline/TimelineProject";
 import useOffset from "@/hooks/useOffset";
 import { clamp, lerp, negativeValues } from "@/utils/math";
 
@@ -37,7 +37,7 @@ export default function Timeline({ projects, className, ...rest }: TimelineProps
 					projectOffsets[index] = useOffset(scrollbarRef, projectRef);
 					projectTimes[index] = props.time;
 
-					return <TimelineProject key={index} {...props} ref={projectRef} />;
+					return <TimelineProject key={props.title} {...props} ref={projectRef} />;
 				})}
 			</div>
 			<div className="relative hidden sm:flex">

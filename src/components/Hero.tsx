@@ -7,7 +7,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 	return (
 		<div
 			className={twMerge(
-				"select-none text-[7vw] text-neutral-50 leading-normal md:text-[4rem] lg:text-[5rem]",
+				"select-none text-[7vw] leading-normal text-neutral-50 md:text-[4rem] lg:text-[5rem]",
 				className
 			)}
 			{...rest}
@@ -30,7 +30,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 					]}
 					wrapper="span"
 					cursor={true}
-					repeat={Infinity}
+					repeat={Number.POSITIVE_INFINITY}
 					speed={1}
 					deletionSpeed={20}
 					className="inline-block bg-accent-violet bg-gradient-to-bl from-accent-pink bg-cover bg-clip-text text-transparent after:text-neutral-50"

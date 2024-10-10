@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 
 import Footer from "@/components/Footer";
-import Navbar, { TextLink } from "@/components/Navbar/Navbar";
+import Navbar, { type TextLink } from "@/components/Navbar/Navbar";
 
 export default function Layout() {
 	const links: TextLink[] = [

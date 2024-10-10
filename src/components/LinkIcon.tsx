@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { IconContext } from "react-icons";
 import { twMerge } from "tailwind-merge";
 

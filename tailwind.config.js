@@ -54,7 +54,7 @@ export default {
 		require("@tailwindcss/typography"),
 		require("@tailwindcss/forms"),
 		require("tailwindcss-3d"),
-		function ({ addComponents, matchUtilities, theme }) {
+		({ addComponents, matchUtilities, theme }) => {
 			addComponents({
 				// Utility component to fill an svg with a gradient.
 				// See: https://fvsch.com/svg-gradient-fill

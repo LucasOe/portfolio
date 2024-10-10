@@ -22,7 +22,7 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 			scale={0.95}
 			glareColor="#f472b6"
 			className={twMerge(
-				"pointer-events-none w-full rounded-lg bg-secondary p-5 transform-style-3d backface-hidden md:pointer-events-auto flex flex-col",
+				"pointer-events-none flex w-full flex-col rounded-lg bg-secondary p-5 transform-style-3d backface-hidden md:pointer-events-auto",
 				className
 			)}
 			{...rest}
