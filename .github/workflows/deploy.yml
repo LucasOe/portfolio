@@ -2,7 +2,7 @@ name: CI/CD
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   lint:
@@ -15,16 +15,16 @@ jobs:
       - name: Set up Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          cache: 'yarn'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Run Prettier and ESLint
         run: |
-          yarn format:check
-          yarn lint
+          npm run format:check
+          npm run lint
 
   build-and-deploy:
     needs: lint
@@ -37,14 +37,14 @@ jobs:
       - name: Set up Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
-          cache: 'yarn'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Build
-        run: yarn build
+        run: npm run build
 
       - name: Copying files to server
         uses: appleboy/scp-action@master

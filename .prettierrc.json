@@ -7,5 +7,14 @@
 	"trailingComma": "es5",
 	"singleAttributePerLine": false,
 	"endOfLine": "lf",
-	"plugins": ["prettier-plugin-tailwindcss"]
+	"plugins": ["prettier-plugin-tailwindcss"],
+	"overrides": [
+		{
+			"files": "*.yml",
+			"options": {
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		}
+	]
 }
