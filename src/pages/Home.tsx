@@ -58,11 +58,6 @@ export default function Home() {
 						title: "Releaf",
 						links: [
 							{
-								to: "https://releaf.lucasoe.com",
-								icon: <FiExternalLink />,
-								label: "Open Demo",
-							},
-							{
 								to: "https://github.com/LucasOe/releaf",
 								icon: <FaGithub />,
 								label: "Open on Github",
