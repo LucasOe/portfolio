@@ -15,7 +15,7 @@ import Timeline from "@/components/Timeline/Timeline";
 
 export default function Home() {
 	return (
-		<div className="pb-80">
+		<main className="pb-80">
 			<div className="flex h-screen flex-col justify-center">
 				<Hero />
 				<ScrollIndicator offset={16} className="absolute top-[75vh] self-center" />
@@ -202,6 +202,6 @@ export default function Home() {
 			</div>
 			<Header text="Contact" id="contact" />
 			<Contact />
-		</div>
+		</main>
 	);
 }
