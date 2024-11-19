@@ -6,9 +6,11 @@ import { twMerge } from "tailwind-merge";
 import { FiMenu, FiX } from "react-icons/fi";
 
 import NavbarLink from "@/components/Navbar/NavbarLink";
+import NavbarSocialLink from "@/components/Navbar/NavbarSocialLink";
 
 export type TextLink = {
 	text: string;
+	icon?: React.ReactNode;
 	to: string;
 };
 
@@ -44,14 +46,14 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 				<div className="hidden md:block">
 					<div className="flex flex-wrap gap-x-4">
 						{links.map((link) => (
-							<NavbarLink key={link.to} text={link.text} to={link.to} slashes />
+							<NavbarLink key={link.to} text={link.text} to={link.to} />
 						))}
 					</div>
 				</div>
 				{/* Social Links */}
-				<div className="flex flex-wrap gap-x-4">
+				<div className="flex flex-wrap">
 					{socials.map((social) => (
-						<NavbarLink key={social.to} text={social.text} to={social.to} newtab />
+						<NavbarSocialLink key={social.to} text={social.text} icon={social.icon} to={social.to} />
 					))}
 				</div>
 			</div>
@@ -86,7 +88,7 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 										closed: { opacity: 0, x: -10 },
 									}}
 								>
-									<NavbarLink text={link.text} to={link.to} onClick={closeNavbar} slashes />
+									<NavbarLink text={link.text} to={link.to} onClick={closeNavbar} />
 								</motion.div>
 							))}
 						</motion.div>
