@@ -4,7 +4,7 @@ import Markdown from "react-markdown";
 import { BiBrush } from "react-icons/bi";
 import { BsPeople } from "react-icons/bs";
 import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
-import { FiExternalLink, FiMonitor } from "react-icons/fi";
+import { FiMonitor } from "react-icons/fi";
 
 import Contact from "@/components/Contact/Contact";
 import Header from "@/components/Header";
@@ -33,143 +33,131 @@ export default function Home() {
 					development of technical systems as well as their conceptual and design perspective.
 				`}
 			</Markdown>
-			<Header text="Project Timeline" id="projects" />
+			<Header text="Projects" id="projects" />
 			<Timeline
-				projects={[
+				data={[
 					{
-						title: "Das Rezeptbuch",
-						links: [
+						name: "Web Development",
+						projects: [
 							{
-								to: "https://github.com/LucasOe/das-rezeptbuch",
-								icon: <FaGithub />,
-								label: "Open on Github",
+								title: "Das Rezeptbuch",
+								links: [
+									{
+										to: "https://github.com/LucasOe/das-rezeptbuch",
+										icon: <FaGithub />,
+										label: "Open on Github",
+									},
+								],
+								stack: ["Java", "JavaFX", "MySQL"],
+								time: 1619820000,
+								arrowPosition: 0,
+								description: dedent`
+									*Das Rezeptbuch* is a digital cookbook. The application provides an interface built in
+									JavaFX that allows you to view recipes stored in a database. This project was developed as a
+									team effort for the university module *Informatics*.
+								`,
+							},
+							{
+								title: "Releaf",
+								links: [
+									{
+										to: "https://github.com/LucasOe/releaf",
+										icon: <FaGithub />,
+										label: "Open on Github",
+									},
+								],
+								stack: ["HTML", "SASS", "JavaScript", "PHP", "MySQL"],
+								time: 1635721200,
+								arrowPosition: 50,
+								description: dedent`
+									*Releaf* is a website and brand identity for an online shop that sells tea for relaxation
+									and health. The project was created as a team effort for the university module *Web- and
+									Corporate Design* on the topic of health.
+								`,
+							},
+							{
+								title: "Portfolio",
+								links: [
+									{
+										to: "https://github.com/LucasOe/portfolio",
+										icon: <FaGithub />,
+										label: "Open on Github",
+									},
+								],
+								stack: ["Vite", "React", "TailwindCSS", "TypeScript"],
+								time: 1659304800,
+								arrowPosition: 50,
+								description: dedent`
+									You’re looking at it right now. After building several websites using HTML, CSS, and
+									PHP, this project was my first deep dive into the world of modern web development,
+									using a tech stack including Vite, Typescript, React, and Tailwind CSS.
+								`,
+							},
+							{
+								title: "Dishcovery",
+								links: [
+									{
+										to: "https://github.com/LucasOe/dishcovery",
+										icon: <FaGithub />,
+										label: "Open on Github",
+									},
+								],
+								stack: ["SvelteKit", "Supabase", "TailwindCSS", "TypeScript"],
+								time: 1707001200,
+								arrowPosition: 100,
+								description: dedent`
+									*Dishcovery* is a web app made for discovering new recipes with a Tinder-like swiping
+									experience. It was built using SvelteKit, Supabase and TailwindCSS. *Dishcovery* was created
+									as a team effort for the university module Advanced Web Development.
+								`,
 							},
 						],
-						stack: ["Java", "JavaFX", "MySQL"],
-						time: 1619820000,
-						arrowPosition: 0,
-						description: dedent`
-							*Das Rezeptbuch* is a digital cookbook. The application provides an interface built in
-							JavaFX that allows you to view recipes stored in a database. This project was developed as a
-							team effort for the university module *Informatics*.
-						`,
 					},
 					{
-						title: "Releaf",
-						links: [
+						name: "Game Development",
+						projects: [
 							{
-								to: "https://github.com/LucasOe/releaf",
-								icon: <FaGithub />,
-								label: "Open on Github",
+								title: "Marble Physics Simulation",
+								links: [
+									{
+										to: "https://github.com/LucasOe/marble-simulation",
+										icon: <FaGithub />,
+										label: "Open on Github",
+									},
+								],
+								stack: ["Java"],
+								time: 1646089200,
+								arrowPosition: 0,
+								description: dedent`
+									A 2D physics simulation, created for the university module *Visual Computing*.  
+									The model simulates a 2D marble run with physically accurate calculations for gravity,
+									friction, collisions, and a pendulum.
+								`,
+							},
+							{
+								title: "Spellbound Sprouts",
+								links: [
+									{
+										to: "https://github.com/LucasOe/spellbound-sprouts",
+										icon: <FaGithub />,
+										label: "Open on Github",
+									},
+									{
+										to: "https://www.youtube.com/watch?v=l9ik5Rarx8o",
+										icon: <FaYoutube />,
+										label: "Open on YouTube",
+									},
+								],
+								stack: ["Unity", "C#"],
+								time: 1688205600,
+								arrowPosition: 100,
+								description: dedent`
+									In *Spellbound Sprouts* you play as a witch on her farm, defending crops from waves
+									of monsters that appear at night. The game is a combination of tower defense
+									and farming game, made in Unity.
+								`,
 							},
 						],
-						stack: ["HTML", "SASS", "JavaScript", "PHP", "MySQL"],
-						time: 1635721200,
-						arrowPosition: 50,
-						description: dedent`
-							*Releaf* is a website and brand identity for an online shop that sells tea for relaxation
-							and health. The project was created as a team effort for the university module *Web- and
-							Corporate Design* on the topic of health.
-						`,
-					},
-					{
-						title: "Marble Physics Simulation",
-						links: [
-							{
-								to: "https://github.com/LucasOe/marble-simulation",
-								icon: <FaGithub />,
-								label: "Open on Github",
-							},
-						],
-						stack: ["Java"],
-						time: 1646089200,
-						arrowPosition: 50,
-						description: dedent`
-							A 2D physics simulation, created for the university module *Visual Computing*.  
-							The model simulates a 2D marble run with physically accurate calculations for gravity,
-							friction, collisions, and a pendulum.
-						`,
-					},
-					{
-						title: "Portfolio",
-						links: [
-							{
-								to: "https://github.com/LucasOe/portfolio",
-								icon: <FaGithub />,
-								label: "Open on Github",
-							},
-						],
-						stack: ["Vite", "React", "TailwindCSS", "TypeScript"],
-						time: 1659304800,
-						arrowPosition: 50,
-						description: dedent`
-							You’re looking at it right now. After building several websites using HTML, CSS, and
-							PHP, this project was my first deep dive into the world of modern web development,
-							using a tech stack including Vite, Typescript, React, and Tailwind CSS.
-						`,
-					},
-					{
-						title: "Tabletop Simulator API",
-						links: [
-							{
-								to: "https://crates.io/crates/tts-external-api",
-								icon: <FiExternalLink />,
-								label: "Open on Crates.io",
-							},
-							{
-								to: "https://github.com/LucasOe/tts-external-api",
-								icon: <FaGithub />,
-								label: "Open on Github",
-							},
-						],
-						stack: ["Rust"],
-						time: 1673910000,
-						arrowPosition: 50,
-						description: dedent`
-							A Rust API for interacting with the game Tabletop Simulator using TCP messages.  
-							I created this project as an opportunity to learn more about Rust and API design.
-						`,
-					},
-					{
-						title: "Spellbound Sprouts",
-						links: [
-							{
-								to: "https://github.com/LucasOe/spellbound-sprouts",
-								icon: <FaGithub />,
-								label: "Open on Github",
-							},
-							{
-								to: "https://www.youtube.com/watch?v=l9ik5Rarx8o",
-								icon: <FaYoutube />,
-								label: "Open on YouTube",
-							},
-						],
-						stack: ["Unity", "C#"],
-						time: 1688205600,
-						arrowPosition: 50,
-						description: dedent`
-							In *Spellbound Sprouts* you play as a witch on her farm, defending crops from waves
-							of monsters that appear at night. The game is a combination of tower defense
-							and farming game, made in Unity.
-						`,
-					},
-					{
-						title: "Dishcovery",
-						links: [
-							{
-								to: "https://github.com/LucasOe/dishcovery",
-								icon: <FaGithub />,
-								label: "Open on Github",
-							},
-						],
-						stack: ["SvelteKit", "Supabase", "TailwindCSS", "TypeScript"],
-						time: 1707001200,
-						arrowPosition: 100,
-						description: dedent`
-							*Dishcovery* is a web app made for discovering new recipes with a Tinder-like swiping
-							experience. It was built using SvelteKit, Supabase and TailwindCSS. *Dishcovery* was created
-							as a team effort for the university module Advanced Web Development.
-						`,
 					},
 				]}
 			/>
