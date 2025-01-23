@@ -21,7 +21,7 @@ export default function Home() {
 				<ScrollIndicator offset={16} className="absolute top-[75vh] self-center" />
 			</div>
 			<Header text="About" id="about" />
-			<Markdown>
+			<Markdown className="prose prose-lg max-w-none">
 				{dedent`
 					My name is Lucas Oelker and I’m a software developer currently studying Visual Computing and
 					Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a

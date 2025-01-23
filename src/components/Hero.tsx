@@ -12,8 +12,8 @@ export default function Hero({ className, ...rest }: HeroProps) {
 			)}
 			{...rest}
 		>
-			<p className="m-0 font-bold">Hey, I’m Lucas Oelker.</p>
-			<p className="m-0 font-normal">
+			<p className="font-bold">Hey, I’m Lucas Oelker.</p>
+			<p className="font-normal">
 				{"I’m a "}
 				<TypeAnimation
 					sequence={[

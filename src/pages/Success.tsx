@@ -7,8 +7,8 @@ import LinkButton from "@/components/LinkButton";
 
 export default function SuccessPage() {
 	return (
-		<main className="not-prose mb-24 text-center">
-			<SlCheck className="fill-gradient m-8 mx-auto size-32" />
+		<main className="mb-24 text-center">
+			<SlCheck className="size-32 m-8 mx-auto fill-accent-pink" />
 			<Markdown className="mb-2 inline-block bg-accent-pink bg-gradient-to-r from-accent-violet bg-clip-text text-2xl font-medium text-transparent">
 				Form submitted successfully!
 			</Markdown>

@@ -27,7 +27,7 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 	window.addEventListener("scroll", closeNavbar);
 
 	return (
-		<div className={twMerge("not-prose w-full p-6", className)} {...rest}>
+		<div className={twMerge("w-full p-6", className)} {...rest}>
 			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">

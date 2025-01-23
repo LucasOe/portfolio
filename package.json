@@ -29,6 +29,7 @@
 	"devDependencies": {
 		"@tailwindcss/forms": "^0.5.7",
 		"@tailwindcss/typography": "^0.5.10",
+		"@tailwindcss/vite": "^4.0.0",
 		"@types/node": "^20.10.5",
 		"@types/react": "^18.2.46",
 		"@types/react-dom": "^18.2.18",
@@ -41,14 +42,11 @@
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-react": "^7.33.2",
-		"eslint-plugin-tailwindcss": "^3.13.0",
-		"postcss": "^8.4.32",
 		"prettier": "^3.1.1",
 		"prettier-plugin-tailwindcss": "^0.5.9",
-		"tailwindcss": "^3.4.0",
-		"tailwindcss-3d": "^1.0.4",
+		"tailwindcss": "^4.0.0",
 		"typescript": "^5.3.3",
-		"vite": "^5.0.12",
+		"vite": "^6.0.11",
 		"vite-plugin-webfont-dl": "^3.9.1"
 	}
 }

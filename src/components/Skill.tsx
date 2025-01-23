@@ -22,23 +22,23 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 			scale={0.95}
 			glareColor="#f472b6"
 			className={twMerge(
-				"pointer-events-none flex w-full flex-col rounded-lg bg-secondary p-5 transform-style-3d backface-hidden md:pointer-events-auto",
+				"transform-3d backface-hidden pointer-events-none flex w-full flex-col rounded-lg bg-secondary p-5 md:pointer-events-auto",
 				className
 			)}
 			{...rest}
 		>
-			<div className="mb-2 flex items-center justify-between gap-4 translate-z-8">
-				<h3 className="m-0 font-mono">{title}</h3>
+			<div className="translate-z-8 mb-2 flex items-center justify-between gap-4">
+				<h3 className="font-mono text-2xl font-bold">{title}</h3>
 				<IconContext.Provider value={{ className: "size-10" }}>{icon}</IconContext.Provider>
 			</div>
-			<div className="flex h-full gap-2 transform-style-3d translate-z-4">
-				<div aria-hidden="true" className="not-prose flex select-none flex-col items-center justify-between">
+			<div className="transform-3d translate-z-4 flex h-full gap-2">
+				<div aria-hidden="true" className="flex select-none flex-col items-center justify-between">
 					<p className="whitespace-nowrap font-mono text-sm font-semibold text-neutral-600">{"<h3>"}</p>
 					<div className="m-1 h-full w-[2px] rounded-full bg-neutral-600" />
 					<p className="whitespace-nowrap font-mono text-sm font-semibold text-neutral-600">{"</h3>"}</p>
 				</div>
-				<div className="translate-z-4">
-					<Markdown className="[&>p]:text-balance">{children}</Markdown>
+				<div className="translate-z-4 py-6">
+					<Markdown className="prose prose-lg [&>p]:text-balance">{children}</Markdown>
 				</div>
 			</div>
 		</Tilt>

@@ -1,9 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+@config "../tailwind.config.js";
+
+@theme {
+	--font-sans: "Fira Sans", sans-serif;
+	--font-serif: "Libre Baskerville", serif;
+	--font-mono: "Fira Code", monospace;
+
+	--color-primary: var(--color-neutral-900);
+	--color-secondary: var(--color-neutral-800);
+	--color-accent-pink: var(--color-pink-600);
+	--color-accent-violet: var(--color-violet-600);
+}
+
+/* Sets the `--bg` var to the background color, so it can be
+   used inside the `background-gradient` component */
+@utility bg-* {
+	--bg: --value(--color);
+}
+
+/* Utility component for borders with gradients.
+   See: https://codyhouse.co/nuggets/css-gradient-borders
+   Uses `var(--bg)` set by the bg utility, or uses the primary color as fallback. */
+@utility background-gradient {
+	background:
+		linear-gradient(var(--bg, --color-primary), var(--bg, --color-primary)) padding-box,
+		linear-gradient(to bottom left, var(--color-accent-pink), var(--color-accent-violet)) border-box;
+	border-style: solid !important;
+	border-color: transparent !important;
+}
 
 @layer components {
 	.focus {
-		@apply focus:outline-none focus:ring-0 focus:ring-offset-0 focus-visible:background-gradient focus-visible:bg-cover focus-visible:rounded-lg focus-visible:border-[3px] focus-visible:border-transparent focus-visible:-m-[3px] focus-visible:border-solid;
+		@apply focus:outline-none focus:ring-0; /* disable default focus style */
+		@apply focus:background-gradient focus:-m-[3px] focus:rounded-lg focus:border-[3px];
 	}
 }

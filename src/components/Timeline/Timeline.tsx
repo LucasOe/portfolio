@@ -64,19 +64,19 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 					{/* Progress Bar */}
 					<div className="mx-2 my-6 flex w-2 rounded-full bg-secondary [contain:paint]">
 						<div className="sticky bottom-1/2 self-end">
-							<div className="absolute h-screen w-2 bg-accent-pink bg-gradient-to-b from-accent-violet from-50% -translate-y-full" />
+							<div className="absolute h-screen w-2 -translate-y-full bg-accent-pink bg-gradient-to-b from-accent-violet from-50%" />
 						</div>
 					</div>
 					{/* Sticky Date Display */}
 					<div className="relative -left-6 -mr-6">
 						<div ref={scrollbarRef} className="sticky top-[calc(50%-1rem)] my-2 flex">
 							{/* Dot */}
-							<div className="mx-1 my-2 size-4 rounded-full bg-accent-pink" />
+							<div className="size-4 mx-1 my-2 rounded-full bg-accent-pink" />
 							{/* Arrow */}
-							<div className="my-2 size-0 border-y-8 border-r-8 border-y-transparent border-r-secondary" />
+							<div className="size-0 my-2 border-y-8 border-r-8 border-y-transparent border-r-secondary" />
 							{/* Textbox */}
-							<div className="w-28 rounded-md bg-secondary text-center">
-								<p className="m-0 font-mono font-bold">{currentDate}</p>
+							<div className="w-28 rounded-md bg-secondary text-center leading-8">
+								<span className="font-mono text-lg font-bold">{currentDate}</span>
 							</div>
 						</div>
 					</div>
