@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { forwardRef } from "react";
+import type { ComponentRef, Ref } from "react";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
 
@@ -13,12 +13,19 @@ export type TimelineProjectProps = React.ComponentProps<typeof motion.div> & {
 	stack: string[];
 	time: number;
 	arrowPosition: number;
+	ref: Ref<ComponentRef<"div">>;
 };
 
-export default forwardRef<HTMLDivElement, TimelineProjectProps>(function TimelineProject(
-	{ description, title, links, stack, arrowPosition, className, ...rest }: TimelineProjectProps,
-	ref
-) {
+export default function TimelineProject({
+	description,
+	title,
+	links,
+	stack,
+	arrowPosition,
+	ref,
+	className,
+	...rest
+}: TimelineProjectProps) {
 	return (
 		<motion.div
 			initial={{ x: -48 }}
@@ -27,9 +34,9 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 			className={twMerge("flex w-full", className)}
 			{...rest}
 		>
-			<div className="flex w-full flex-col space-y-4 rounded-lg bg-secondary p-4">
+			<div className="bg-secondary flex w-full flex-col space-y-4 rounded-lg p-4">
 				<div className="flex items-start justify-between">
-					<h3 className="text-2xl font-bold leading-none">{title}</h3>
+					<h3 className="text-2xl leading-none font-bold">{title}</h3>
 					<div className="-m-1 flex gap-3">
 						{links.map((link) => (
 							<LinkIcon key={link.to} icon={link.icon} to={link.to} label={link.label} className="p-1" />
@@ -47,10 +54,10 @@ export default forwardRef<HTMLDivElement, TimelineProjectProps>(function Timelin
 			<div className="hidden h-full py-4 sm:flex">
 				<div
 					ref={ref}
-					className="size-0 relative border-y-[10px] border-l-[10px] border-y-transparent border-l-secondary"
+					className="border-l-secondary relative size-0 border-y-[10px] border-l-[10px] border-y-transparent"
 					style={{ top: `${arrowPosition}%`, transform: `translateY(-${arrowPosition}%)` }}
 				/>
 			</div>
 		</motion.div>
 	);
-});
+}

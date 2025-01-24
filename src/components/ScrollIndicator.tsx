@@ -3,7 +3,7 @@ import { HashLink } from "react-router-hash-link";
 
 import useMousePosition from "@/hooks/useMousePosition";
 import { getRelativeMousePos } from "@/utils/utils";
-import { useRef, type ElementRef } from "react";
+import { type ComponentRef, useRef } from "react";
 import { BsArrowDownShort } from "react-icons/bs";
 
 export type ScrollIndicatorProps = React.ComponentProps<"div"> & {
@@ -17,7 +17,7 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 	const { scrollY } = useScroll();
 	const opacity = useTransform(scrollY, [0, hY], [1, 0]);
 
-	const ref = useRef<ElementRef<"div">>(null);
+	const ref = useRef<ComponentRef<"div">>(null);
 	const mousePos = useMousePosition();
 	const mousePosRel = getRelativeMousePos(mousePos, ref);
 	const mouseX = useMotionValue(0);

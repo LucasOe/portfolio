@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ElementRef } from "react";
+import { type ComponentRef, useEffect, useRef, useState } from "react";
 
 import TimelineProject, { type TimelineProjectProps } from "@/components/Timeline/TimelineProject";
 import Button from "@/components/Button";
@@ -30,11 +30,11 @@ function getCurrentDate(offsets: number[], times: number[]): string {
 }
 
 export default function Timeline({ data, className, ...rest }: TimelineProps) {
-	const scrollbarRef = useRef<ElementRef<"div">>(null);
+	const scrollbarRef = useRef<ComponentRef<"div">>(null);
 	const [selected, setSelected] = useState(0);
 	const [currentDate, setCurrentDate] = useState("");
 
-	const projectRefs = data.map((category) => category.projects.map(() => useRef<ElementRef<"div">>(null)));
+	const projectRefs = data.map((category) => category.projects.map(() => useRef<ComponentRef<"div">>(null)));
 	const projectOffsets = data.map((_, index) => projectRefs[index].map((ref) => useOffset(scrollbarRef, ref)));
 	const projectTimes = data.map((category) => category.projects.map((props) => props.time));
 
@@ -62,20 +62,20 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 				{/* Progress Bar and Date Display */}
 				<div className="relative hidden sm:flex">
 					{/* Progress Bar */}
-					<div className="mx-2 my-6 flex w-2 rounded-full bg-secondary [contain:paint]">
+					<div className="bg-secondary mx-2 my-6 flex w-2 rounded-full [contain:paint]">
 						<div className="sticky bottom-1/2 self-end">
-							<div className="absolute h-screen w-2 -translate-y-full bg-accent-pink bg-gradient-to-b from-accent-violet from-50%" />
+							<div className="bg-accent-pink from-accent-violet absolute h-screen w-2 -translate-y-full bg-gradient-to-b from-50%" />
 						</div>
 					</div>
 					{/* Sticky Date Display */}
 					<div className="relative -left-6 -mr-6">
 						<div ref={scrollbarRef} className="sticky top-[calc(50%-1rem)] my-2 flex">
 							{/* Dot */}
-							<div className="size-4 mx-1 my-2 rounded-full bg-accent-pink" />
+							<div className="bg-accent-pink mx-1 my-2 size-4 rounded-full" />
 							{/* Arrow */}
-							<div className="size-0 my-2 border-y-8 border-r-8 border-y-transparent border-r-secondary" />
+							<div className="border-r-secondary my-2 size-0 border-y-8 border-r-8 border-y-transparent" />
 							{/* Textbox */}
-							<div className="w-28 rounded-md bg-secondary text-center leading-8">
+							<div className="bg-secondary w-28 rounded-md text-center leading-8">
 								<span className="font-mono text-lg font-bold">{currentDate}</span>
 							</div>
 						</div>

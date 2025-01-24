@@ -1,9 +1,9 @@
-import type { ElementRef, RefObject } from "react";
+import type { ComponentRef, RefObject } from "react";
 
 type Pos = { x: number; y: number };
 
 // Returns the distance of the cursor relative to the center of the ref object
-export function getRelativeMousePos(mosePos: Pos, ref: RefObject<ElementRef<"div">>): Pos {
+export function getRelativeMousePos(mosePos: Pos, ref: RefObject<ComponentRef<"div"> | null>): Pos {
 	if (ref.current) {
 		const boundingRect = ref.current.getBoundingClientRect();
 		return {
