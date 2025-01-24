@@ -18,7 +18,7 @@ export default function NavbarSocialLink({ icon, to, className, ...rest }: Navba
 			className={twMerge("focus px-2 no-underline outline-hidden", className)}
 			{...rest}
 		>
-			<IconContext.Provider value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext.Provider>
+			<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext>
 		</HashLink>
 	);
 }

@@ -18,7 +18,7 @@ export default function LinkIcon({ icon, to, label, className, ...rest }: LinkIc
 			className={twMerge("focus", className)}
 			{...rest}
 		>
-			<IconContext.Provider value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext.Provider>
+			<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext>
 		</a>
 	);
 }
