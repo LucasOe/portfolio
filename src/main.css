@@ -33,7 +33,7 @@
 
 @layer components {
 	.focus {
-		@apply focus:outline-none focus:ring-0; /* disable default focus style */
-		@apply focus:background-gradient focus:-m-[3px] focus:rounded-lg focus:border-[3px];
+		@apply focus:ring-0 focus:outline-none; /* disable default focus style */
+		@apply focus-visible:background-gradient focus-visible:-m-[3px] focus-visible:rounded-lg focus-visible:border-[3px];
 	}
 }

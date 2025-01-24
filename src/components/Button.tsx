@@ -9,7 +9,7 @@ export default function Button({ children, className, ...rest }: ButtonProps) {
 		<button
 			type="button"
 			className={twMerge(
-				"focus inline-block rounded-lg bg-neutral-300 px-5 py-1 font-medium text-neutral-900 no-underline outline-hidden hover:bg-neutral-100",
+				"focus inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline outline-hidden hover:bg-neutral-100",
 				className
 			)}
 			{...rest}
