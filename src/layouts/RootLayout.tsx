@@ -21,7 +21,7 @@ export default function Layout() {
 
 	return (
 		<>
-			<div className="absolute left-0 top-0 w-full">
+			<div className="absolute top-0 left-0 w-full">
 				<Navbar links={links} socials={socials} />
 			</div>
 			<Outlet />

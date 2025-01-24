@@ -9,7 +9,7 @@ export default function Header({ text, id, className, ...rest }: HeaderProps) {
 	return (
 		<h2
 			id={id}
-			className={twMerge("mb-8 mt-24 scroll-m-[12vh] font-mono text-3xl font-bold leading-10", className)}
+			className={twMerge("mt-24 mb-8 scroll-m-[12vh] font-mono text-3xl leading-10 font-bold", className)}
 			{...rest}
 		>
 			{`# ${text}`}
