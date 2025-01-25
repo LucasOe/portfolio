@@ -1,6 +1,6 @@
+import Button from "@/components/Button";
 import ContactInput from "@/components/Contact/ContactInput";
 import ContactTextarea from "@/components/Contact/ContactTextarea";
-import Button from "@/components/Button";
 
 export type ContactProps = React.ComponentProps<"form">;
 

@@ -1,9 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { IconContext } from "react-icons";
-import { twMerge } from "tailwind-merge";
-
 import { FiMenu, FiX } from "react-icons/fi";
+import { twMerge } from "tailwind-merge";
 
 import NavbarLink from "@/components/Navbar/NavbarLink";
 import NavbarSocialLink from "@/components/Navbar/NavbarSocialLink";

@@ -1,10 +1,10 @@
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { type ComponentRef, useRef } from "react";
+import { BsArrowDownShort } from "react-icons/bs";
 import { HashLink } from "react-router-hash-link";
 
 import useMousePosition from "@/hooks/useMousePosition";
 import { getRelativeMousePos } from "@/utils/utils";
-import { type ComponentRef, useRef } from "react";
-import { BsArrowDownShort } from "react-icons/bs";
 
 export type ScrollIndicatorProps = React.ComponentProps<"div"> & {
 	offset: number;

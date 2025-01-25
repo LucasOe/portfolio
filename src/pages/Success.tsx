@@ -1,7 +1,7 @@
 import dedent from "dedent";
+import { SlCheck } from "react-icons/sl";
 import Markdown from "react-markdown";
 
-import { SlCheck } from "react-icons/sl";
 
 import LinkButton from "@/components/LinkButton";
 

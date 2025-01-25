@@ -1,7 +1,7 @@
 import { type ComponentRef, useEffect, useRef, useState } from "react";
 
-import TimelineProject, { type TimelineProjectProps } from "@/components/Timeline/TimelineProject";
 import Button from "@/components/Button";
+import TimelineProject, { type TimelineProjectProps } from "@/components/Timeline/TimelineProject";
 import useOffset from "@/hooks/useOffset";
 import { clamp, lerp, negativeValues } from "@/utils/math";
 
