@@ -13,7 +13,7 @@ export type TimelineProjectProps = React.ComponentProps<typeof motion.div> & {
 	stack: string[];
 	time: number;
 	arrowPosition: number;
-	ref: Ref<ComponentRef<"div">>;
+	ref?: Ref<ComponentRef<"div">>;
 };
 
 export default function TimelineProject({
