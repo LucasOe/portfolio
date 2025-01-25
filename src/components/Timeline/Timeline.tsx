@@ -22,6 +22,7 @@ function convertUnixTime(time: number): string {
 
 function calculateDate(offsets: number[], times: number[]): string {
 	// Interpolate between times based on the offset
+	offsets = offsets.filter((offset) => offset !== null);
 	const index = clamp(negativeValueCount(offsets), 1, offsets.length - 1) - 1;
 	const percentage = -offsets[index] / (offsets[index + 1] - offsets[index]);
 	const currentTime = lerp(times[index], times[index + 1], percentage);
@@ -36,7 +37,7 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 	const [currentDate, setCurrentDate] = useState("");
 
 	const projectRefs = useRef<(ComponentRef<"div"> | null)[]>([]);
-	const projectOffsets = useOffsets(progressBarRef, projectRefs);
+	const projectOffsets = useOffsets(progressBarRef, projectRefs, selected);
 	const projectTimes = data[selected].projects.map((project) => project.time);
 
 	useEffect(() => {

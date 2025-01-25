@@ -3,7 +3,8 @@ import { type ComponentRef, useEffect, useState, type RefObject } from "react";
 // Calculate the distance between the target ref and other refs
 export default function useOffsets(
 	targetRef: RefObject<ComponentRef<"div"> | null>,
-	otherRefs: RefObject<(ComponentRef<"div"> | null)[]>
+	otherRefs: RefObject<(ComponentRef<"div"> | null)[]>,
+	state: number // Used to manually trigger hook when refs change as useRef doesn't trigger a re-render
 ): number[] {
 	const [offsets, setOffsets] = useState<number[]>([]);
 
@@ -34,7 +35,7 @@ export default function useOffsets(
 			window.removeEventListener("resize", calculateDistances);
 			window.removeEventListener("scroll", calculateDistances);
 		};
-	}, [targetRef, otherRefs]);
+	}, [targetRef, otherRefs, state]);
 
 	return offsets;
 }
