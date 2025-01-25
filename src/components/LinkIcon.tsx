@@ -14,7 +14,7 @@ export default function LinkIcon({ icon, to, label, className, ...rest }: LinkIc
 			target="_blank"
 			rel="noreferrer"
 			aria-label={label}
-			className={twMerge("focus", className)}
+			className={twMerge("focus p-1", className)}
 			{...rest}
 		>
 			<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext>

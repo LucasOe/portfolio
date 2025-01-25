@@ -30,6 +30,9 @@ export default function Home() {
 					Java and the basics of web development in high school. Today I’m studying Visual Computing
 					and Design, which allows me to think about the integrated approach to the conception and
 					development of technical systems as well as their conceptual and design perspective.
+					
+					Between June and September 2024, I completed an internship at the [Painless Developments GmbH](https://www.paindevs.com/)
+					in Berlin, where I worked as a Gameplay Programmer and Backend Developer. 
 				`}
 			</Markdown>
 			<Header text="Projects" id="projects" />
@@ -103,11 +106,24 @@ export default function Home() {
 								],
 								stack: ["SvelteKit", "Supabase", "TailwindCSS", "TypeScript"],
 								time: 1707001200,
-								arrowPosition: 100,
+								arrowPosition: 50,
 								description: dedent`
 									*Dishcovery* is a web app made for discovering new recipes with a Tinder-like swiping
 									experience. It was built using SvelteKit, Supabase and TailwindCSS. *Dishcovery* was created
 									as a team effort for the university module Advanced Web Development.
+								`,
+							},
+							{
+								title: "Leaderboard Backend & Dashboard",
+								stack: ["Rust", "Actix Web", "React", "Vite", "shadcn/ui", "PostgreSQL"],
+								time: 1727733600,
+								arrowPosition: 100,
+								description: dedent`
+									During my internship at *Painless Developments*, I developed the backend and management
+									dashboard for the leaderboard of a mobile puzzle game.  
+									I built a scalable RESTful API using Rust and Actix Web to enable secure and efficient
+									CRUD operations, with authentication managed through JSON Web Tokens. The React dashboard
+									provides administrators with an intuitive interface for seamlessly managing leaderboard data.
 								`,
 							},
 						],
@@ -149,11 +165,23 @@ export default function Home() {
 								],
 								stack: ["Unity", "C#"],
 								time: 1688205600,
-								arrowPosition: 100,
+								arrowPosition: 50,
 								description: dedent`
 									In *Spellbound Sprouts* you play as a witch on her farm, defending crops from waves
 									of monsters that appear at night. The game is a combination of tower defense
 									and farming game, made in Unity.
+								`,
+							},
+							{
+								title: "Mobile Puzzle Game",
+								stack: ["Unity", "C#"],
+								time: 1727733600,
+								arrowPosition: 100,
+								description: dedent`
+									During my internship at *Painless Developments*, I worked on an upcoming mobile puzzle game,
+									contributing to gameplay programming, UI/UX design, and bug fixing. I implemented new features,
+									refined mechanics, and improved the user experience. Collaborating closely with the team,
+									I gained valuable insight into professional game development workflows.
 								`,
 							},
 						],
