@@ -1,9 +1,9 @@
-import { type ComponentRef, useEffect, useState, type RefObject } from "react";
+import { useEffect, useState } from "react";
 
 // Calculate the distance between the target ref and other refs
 export default function useOffsets(
-	targetRef: RefObject<ComponentRef<"div"> | null>,
-	otherRefs: RefObject<(ComponentRef<"div"> | null)[]>,
+	targetRef: React.RefObject<HTMLElement | null>,
+	otherRefs: React.RefObject<(HTMLElement | null)[]>,
 	state: number // Used to manually trigger hook when refs change as useRef doesn't trigger a re-render
 ): number[] {
 	const [offsets, setOffsets] = useState<number[]>([]);

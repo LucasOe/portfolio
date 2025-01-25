@@ -1,9 +1,9 @@
 import { twMerge } from "tailwind-merge";
 
-export type ContactTextareaProps = React.ComponentProps<"textarea"> & {
+export interface ContactTextareaProps extends React.ComponentProps<"textarea"> {
 	text: string;
 	name: string;
-};
+}
 
 export default function ContactTextArea({ text, name, className, ...rest }: ContactTextareaProps) {
 	return (

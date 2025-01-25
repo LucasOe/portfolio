@@ -1,9 +1,9 @@
 import { twMerge } from "tailwind-merge";
 
-export type HeaderProps = React.ComponentProps<"div"> & {
+export interface HeaderProps extends React.ComponentProps<"div"> {
 	text: string;
 	id: string;
-};
+}
 
 export default function Header({ text, id, className, ...rest }: HeaderProps) {
 	return (

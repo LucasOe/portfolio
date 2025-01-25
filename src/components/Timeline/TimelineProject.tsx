@@ -1,20 +1,19 @@
-import { motion } from "framer-motion";
-import type { ComponentRef, Ref } from "react";
+import { motion, HTMLMotionProps } from "framer-motion";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
 
 import LinkIcon, { type LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
 
-export type TimelineProjectProps = React.ComponentProps<typeof motion.div> & {
+export interface TimelineProjectProps extends HTMLMotionProps<"div"> {
 	description: string;
 	title: string;
 	links: LinkIconProps[];
 	stack: string[];
 	time: number;
 	arrowPosition: number;
-	ref?: Ref<ComponentRef<"div">>;
-};
+	ref?: React.Ref<HTMLDivElement>;
+}
 
 export default function TimelineProject({
 	description,

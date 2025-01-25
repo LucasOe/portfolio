@@ -1,8 +1,8 @@
 import { twMerge } from "tailwind-merge";
 
-export type TimelineLabelProps = React.ComponentProps<"div"> & {
+export interface TimelineLabelProps extends React.ComponentProps<"div"> {
 	text: string;
-};
+}
 
 export default function Label({ text, className, ...rest }: TimelineLabelProps) {
 	return (

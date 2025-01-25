@@ -1,4 +1,4 @@
-import { type ComponentRef, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Button from "@/components/Button";
 import TimelineProject, { type TimelineProjectProps } from "@/components/Timeline/TimelineProject";
@@ -10,9 +10,9 @@ export interface TimelineData {
 	projects: TimelineProjectProps[];
 }
 
-export type TimelineProps = React.ComponentProps<"div"> & {
+export interface TimelineProps extends React.ComponentProps<"div"> {
 	data: TimelineData[];
-};
+}
 
 function convertUnixTime(time: number): string {
 	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -32,11 +32,11 @@ function calculateDate(offsets: number[], times: number[]): string {
 }
 
 export default function Timeline({ data, className, ...rest }: TimelineProps) {
-	const progressBarRef = useRef<ComponentRef<"div">>(null);
+	const progressBarRef = useRef<HTMLDivElement | null>(null);
 	const [selected, setSelected] = useState(0);
 	const [currentDate, setCurrentDate] = useState("");
 
-	const projectRefs = useRef<(ComponentRef<"div"> | null)[]>([]);
+	const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
 	const projectOffsets = useOffsets(progressBarRef, projectRefs, selected);
 	const projectTimes = data[selected].projects.map((project) => project.time);
 

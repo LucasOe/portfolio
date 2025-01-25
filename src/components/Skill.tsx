@@ -1,13 +1,13 @@
 import { IconContext } from "react-icons";
 import Markdown from "react-markdown";
-import Tilt from "react-parallax-tilt";
+import Tilt, { ReactParallaxTiltProps } from "react-parallax-tilt";
 import { twMerge } from "tailwind-merge";
 
-export type SkillProps = React.ComponentProps<typeof Tilt> & {
+export interface SkillProps extends ReactParallaxTiltProps {
 	children: string;
 	title: string;
 	icon: React.ReactNode;
-};
+}
 
 export default function Skill({ children, title, icon, className, ...rest }: SkillProps) {
 	return (

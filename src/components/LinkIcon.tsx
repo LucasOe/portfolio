@@ -1,12 +1,11 @@
-import type { ReactNode } from "react";
 import { IconContext } from "react-icons";
 import { twMerge } from "tailwind-merge";
 
-export type LinkIconProps = React.ComponentProps<"a"> & {
-	icon: ReactNode;
+export interface LinkIconProps extends React.ComponentProps<"a"> {
+	icon: React.ReactNode;
 	to: string;
 	label?: string;
-};
+}
 
 export default function LinkIcon({ icon, to, label, className, ...rest }: LinkIconProps) {
 	return (

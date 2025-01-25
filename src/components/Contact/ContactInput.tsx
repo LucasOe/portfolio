@@ -1,10 +1,10 @@
 import { twMerge } from "tailwind-merge";
 
-export type ContactInputProps = React.ComponentProps<"input"> & {
+export interface ContactInputProps extends React.ComponentProps<"input"> {
 	text: string;
 	name: string;
 	type: string;
-};
+}
 
 export default function ContactInput({ text, type, name, className, ...rest }: ContactInputProps) {
 	return (

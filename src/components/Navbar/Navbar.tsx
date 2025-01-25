@@ -13,10 +13,10 @@ export interface TextLink {
 	to: string;
 }
 
-export type NavbarProps = React.ComponentProps<"div"> & {
+export interface NavbarProps extends React.ComponentProps<"div"> {
 	links: TextLink[];
 	socials: TextLink[];
-};
+}
 
 export default function Navbar({ links, socials, className, ...rest }: NavbarProps) {
 	const [navbarOpen, setNavbarOpen] = useState(false);

@@ -1,12 +1,12 @@
 import { IconContext } from "react-icons";
-import { HashLink } from "react-router-hash-link";
+import { HashLink, HashLinkProps } from "react-router-hash-link";
 import { twMerge } from "tailwind-merge";
 
-export type NavbarSocialLinkProps = React.ComponentProps<typeof HashLink> & {
+export interface NavbarSocialLinkProps extends HashLinkProps {
 	text: string;
 	icon?: React.ReactNode;
 	to: string;
-};
+}
 
 export default function NavbarSocialLink({ icon, to, className, ...rest }: NavbarSocialLinkProps) {
 	return (

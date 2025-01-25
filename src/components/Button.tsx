@@ -1,9 +1,9 @@
 import { twMerge } from "tailwind-merge";
 
-export type ButtonProps = React.ComponentProps<"button"> & {
+export interface ButtonProps extends React.ComponentProps<"button"> {
 	children: React.ReactNode;
 	outline?: boolean;
-};
+}
 
 export default function Button({ children, outline, className, ...rest }: ButtonProps) {
 	return (
