@@ -23,14 +23,23 @@
 /* Utility component for borders with gradients.
    See: https://codyhouse.co/nuggets/css-gradient-borders
    Uses `var(--bg)` set by the bg utility, or uses the primary color as fallback. */
+/* prettier-ignore */
 @utility border-gradient-* {
 	background:
 		linear-gradient(var(--bg, --color-primary), var(--bg, --color-primary)) padding-box,
-		linear-gradient(to bottom left, var(--color-accent-pink), var(--color-accent-violet)) border-box;
-	/* prettier-ignore */
+		linear-gradient(to bottom left in oklab, var(--color-accent-pink), var(--color-accent-violet)) border-box;
 	border: --value(number)px solid transparent !important;
-	/* prettier-ignore */
-	margin: calc(-1 * --value(number)px);
+	margin: calc(-1 * --value(number)px) !important;
+}
+
+/* Utility component for text with gradients.
+   See: https://cssgradient.io/blog/css-gradient-text */
+/* prettier-ignore */
+@utility text-gradient {
+	background-image:
+		linear-gradient(to bottom left in oklab, var(--color-accent-pink), var(--color-accent-violet));
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
 }
 
 @layer components {
