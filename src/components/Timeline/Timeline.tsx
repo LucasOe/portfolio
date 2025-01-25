@@ -49,7 +49,12 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 			{/* Category Buttons */}
 			<div className="mb-6 flex gap-3">
 				{data.map((category, index) => (
-					<Button key={category.name} onClick={() => setSelected(index)}>
+					<Button
+						key={category.name}
+						outline={selected === index}
+						disabled={selected === index}
+						onClick={() => setSelected(index)}
+					>
 						{category.name}
 					</Button>
 				))}
