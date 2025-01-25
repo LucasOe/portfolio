@@ -15,7 +15,7 @@ export default function NavbarSocialLink({ icon, to, className, ...rest }: Navba
 			smooth
 			target="_blank"
 			rel="noreferrer"
-			className={twMerge("focus px-2 no-underline outline-hidden", className)}
+			className={twMerge("focus p-2 no-underline outline-hidden", className)}
 			{...rest}
 		>
 			<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext>

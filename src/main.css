@@ -23,17 +23,19 @@
 /* Utility component for borders with gradients.
    See: https://codyhouse.co/nuggets/css-gradient-borders
    Uses `var(--bg)` set by the bg utility, or uses the primary color as fallback. */
-@utility border-gradient {
+@utility border-gradient-* {
 	background:
 		linear-gradient(var(--bg, --color-primary), var(--bg, --color-primary)) padding-box,
 		linear-gradient(to bottom left, var(--color-accent-pink), var(--color-accent-violet)) border-box;
-	border-style: solid !important;
-	border-color: transparent !important;
+	/* prettier-ignore */
+	border: --value(number)px solid transparent !important;
+	/* prettier-ignore */
+	margin: calc(-1 * --value(number)px);
 }
 
 @layer components {
 	.focus {
 		@apply focus:ring-0 focus:outline-none; /* disable default focus style */
-		@apply focus-visible:border-gradient focus-visible:-m-[3px] focus-visible:rounded-lg focus-visible:border-[3px];
+		@apply focus-visible:border-gradient-3 focus-visible:rounded-lg;
 	}
 }
