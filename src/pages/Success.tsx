@@ -2,14 +2,13 @@ import dedent from "dedent";
 import { SlCheck } from "react-icons/sl";
 import Markdown from "react-markdown";
 
-
 import LinkButton from "@/components/LinkButton";
 
 export default function SuccessPage() {
 	return (
 		<main className="mb-24 text-center">
 			<SlCheck className="fill-accent-pink m-8 mx-auto size-32" />
-			<Markdown className="bg-accent-pink from-accent-violet mb-2 inline-block bg-gradient-to-r bg-clip-text text-2xl font-medium text-transparent">
+			<Markdown className="text-gradient mb-2 inline-block text-2xl font-medium">
 				Form submitted successfully!
 			</Markdown>
 			<Markdown>
