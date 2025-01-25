@@ -8,11 +8,11 @@ import { FiMenu, FiX } from "react-icons/fi";
 import NavbarLink from "@/components/Navbar/NavbarLink";
 import NavbarSocialLink from "@/components/Navbar/NavbarSocialLink";
 
-export type TextLink = {
+export interface TextLink {
 	text: string;
 	icon?: React.ReactNode;
 	to: string;
-};
+}
 
 export type NavbarProps = React.ComponentProps<"div"> & {
 	links: TextLink[];

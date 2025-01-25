@@ -5,10 +5,10 @@ import Button from "@/components/Button";
 import useOffset from "@/hooks/useOffset";
 import { clamp, lerp, negativeValues } from "@/utils/math";
 
-export type TimelineData = {
+export interface TimelineData {
 	name: string;
 	projects: TimelineProjectProps[];
-};
+}
 
 export type TimelineProps = React.ComponentProps<"div"> & {
 	data: TimelineData[];

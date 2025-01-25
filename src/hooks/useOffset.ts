@@ -24,7 +24,7 @@ export default function useOffset(
 			window.removeEventListener("resize", updatePosition);
 			window.removeEventListener("scroll", updatePosition);
 		};
-	}, [selfRef.current, otherRef.current]);
+	}, [selfRef, otherRef]);
 
 	return scrollPosition;
 }

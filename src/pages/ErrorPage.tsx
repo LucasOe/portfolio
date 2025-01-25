@@ -2,10 +2,10 @@ import { useRouteError } from "react-router-dom";
 
 import LinkButton from "@/components/LinkButton";
 
-type ErrorResponse = {
+interface ErrorResponse {
 	status: number;
 	statusText: string;
-};
+}
 
 export default function ErrorPage() {
 	const error: ErrorResponse = useRouteError() as ErrorResponse;
