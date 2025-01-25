@@ -1,5 +1,5 @@
-export const negativeValues = (array: number[]): number => {
-	return array.filter((num) => num <= 0).length;
+export const negativeValueCount = (array: number[]): number => {
+	return array.filter((num) => num < 0).length;
 };
 
 export const lerp = (x: number, y: number, t: number): number => {

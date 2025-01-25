@@ -2,8 +2,8 @@ import { type ComponentRef, useEffect, useRef, useState } from "react";
 
 import Button from "@/components/Button";
 import TimelineProject, { type TimelineProjectProps } from "@/components/Timeline/TimelineProject";
-import useOffset from "@/hooks/useOffset";
-import { clamp, lerp, negativeValues } from "@/utils/math";
+import useOffsets from "@/hooks/useOffsets";
+import { clamp, lerp, negativeValueCount } from "@/utils/math";
 
 export interface TimelineData {
 	name: string;
@@ -20,8 +20,9 @@ function convertUnixTime(time: number): string {
 	return `${months[date.getMonth()]} ${date.getFullYear()}`;
 }
 
-function getCurrentDate(offsets: number[], times: number[]): string {
-	const index = clamp(negativeValues(offsets) - 1, 0, offsets.length);
+function calculateDate(offsets: number[], times: number[]): string {
+	// Interpolate between times based on the offset
+	const index = clamp(negativeValueCount(offsets), 1, offsets.length - 1) - 1;
 	const percentage = -offsets[index] / (offsets[index + 1] - offsets[index]);
 	const currentTime = lerp(times[index], times[index + 1], percentage);
 
@@ -30,17 +31,17 @@ function getCurrentDate(offsets: number[], times: number[]): string {
 }
 
 export default function Timeline({ data, className, ...rest }: TimelineProps) {
-	const scrollbarRef = useRef<ComponentRef<"div">>(null);
+	const progressBarRef = useRef<ComponentRef<"div">>(null);
 	const [selected, setSelected] = useState(0);
 	const [currentDate, setCurrentDate] = useState("");
 
-	const projectRefs = data.map((category) => category.projects.map(() => useRef<ComponentRef<"div">>(null)));
-	const projectOffsets = data.map((_, index) => projectRefs[index].map((ref) => useOffset(scrollbarRef, ref)));
-	const projectTimes = data.map((category) => category.projects.map((props) => props.time));
+	const projectRefs = useRef<(ComponentRef<"div"> | null)[]>([]);
+	const projectOffsets = useOffsets(progressBarRef, projectRefs);
+	const projectTimes = data[selected].projects.map((project) => project.time);
 
 	useEffect(() => {
-		setCurrentDate(getCurrentDate(projectOffsets[selected], projectTimes[selected]));
-	}, [selected, projectOffsets, projectTimes]);
+		setCurrentDate(calculateDate(projectOffsets, projectTimes));
+	}, [projectTimes, projectOffsets]);
 
 	return (
 		<div className={className} {...rest}>
@@ -56,7 +57,13 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 				{/* Project List */}
 				<div className="flex grow flex-col gap-3">
 					{data[selected].projects.map((props, index) => (
-						<TimelineProject key={props.title} {...props} ref={projectRefs[selected][index]} />
+						<TimelineProject
+							key={props.title}
+							{...props}
+							ref={(el) => {
+								projectRefs.current[index] = el;
+							}}
+						/>
 					))}
 				</div>
 				{/* Progress Bar and Date Display */}
@@ -69,11 +76,14 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 					</div>
 					{/* Sticky Date Display */}
 					<div className="relative -left-6 -mr-6">
-						<div ref={scrollbarRef} className="sticky top-[calc(50%-1rem)] my-2 flex">
+						<div className="sticky top-[calc(50%-1rem)] my-2 flex">
 							{/* Dot */}
 							<div className="bg-accent-pink mx-1 my-2 size-4 rounded-full" />
 							{/* Arrow */}
-							<div className="border-r-secondary my-2 size-0 border-y-8 border-r-8 border-y-transparent" />
+							<div
+								ref={progressBarRef}
+								className="border-r-secondary my-2 size-0 border-y-8 border-r-8 border-y-transparent"
+							/>
 							{/* Textbox */}
 							<div className="bg-secondary w-28 rounded-md text-center leading-8">
 								<span className="font-mono text-lg font-bold">{currentDate}</span>
