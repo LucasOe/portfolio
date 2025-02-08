@@ -1,6 +1,8 @@
 import { IconContext } from "react-icons";
-import { HashLink, HashLinkProps } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import { twMerge } from "tailwind-merge";
+
+import type { HashLinkProps } from "react-router-hash-link";
 
 export interface NavbarSocialLinkProps extends HashLinkProps {
 	text: string;

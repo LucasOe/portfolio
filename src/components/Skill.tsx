@@ -1,7 +1,9 @@
 import { IconContext } from "react-icons";
 import Markdown from "react-markdown";
-import Tilt, { ReactParallaxTiltProps } from "react-parallax-tilt";
+import Tilt from "react-parallax-tilt";
 import { twMerge } from "tailwind-merge";
+
+import type { ReactParallaxTiltProps } from "react-parallax-tilt";
 
 export interface SkillProps extends ReactParallaxTiltProps {
 	children: string;

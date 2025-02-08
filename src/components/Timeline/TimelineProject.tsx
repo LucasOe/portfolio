@@ -1,6 +1,8 @@
-import { motion, HTMLMotionProps } from "framer-motion";
+import { motion } from "framer-motion";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
+
+import type { HTMLMotionProps } from "framer-motion";
 
 import LinkIcon, { type LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";

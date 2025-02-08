@@ -1,5 +1,7 @@
-import { HashLink, HashLinkProps } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import { twMerge } from "tailwind-merge";
+
+import type { HashLinkProps } from "react-router-hash-link";
 
 export interface LinkButtonProps extends HashLinkProps {
 	text: string;

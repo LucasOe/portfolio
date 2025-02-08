@@ -46,9 +46,11 @@ export default [
 				...react.configs["jsx-runtime"].rules,
 				...reactHooks.configs.recommended.rules,
 				"react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+				"@typescript-eslint/consistent-type-imports": "error",
 				"import/order": [
 					"error",
 					{
+						groups: ["builtin", "external", "parent", "sibling", "index", "type"],
 						"newlines-between": "always",
 						alphabetize: { order: "asc", caseInsensitive: true },
 					},
