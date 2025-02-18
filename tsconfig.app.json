@@ -24,6 +24,7 @@
 		"noUncheckedSideEffectImports": true,
 
 		/* Path Alias */
+		"rootDirs": [".", "./.react-router/types"],
 		"baseUrl": "src",
 		"paths": {
 			"@/*": ["*"]
