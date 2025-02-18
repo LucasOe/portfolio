@@ -4,12 +4,11 @@ import { BsPeople } from "react-icons/bs";
 import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
 import { FiMonitor } from "react-icons/fi";
 import Markdown from "react-markdown";
-import { ClientOnly } from "remix-utils/client-only";
 
 import Contact from "@/components/Contact/Contact";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ScrollIndicator from "@/components/ScrollIndicator.client.tsx";
+import ScrollIndicator from "@/components/ScrollIndicator";
 import Skill from "@/components/Skill";
 import Timeline from "@/components/Timeline/Timeline";
 
@@ -18,9 +17,7 @@ export default function Home() {
 		<main className="pb-80">
 			<div className="flex h-screen flex-col justify-center">
 				<Hero />
-				<ClientOnly>
-					{() => <ScrollIndicator offset={16} className="absolute top-[75vh] self-center" />}
-				</ClientOnly>
+				<ScrollIndicator offset={16} className="absolute top-[75vh] self-center" />
 			</div>
 			<Header text="About" id="about" />
 			<Markdown className="prose prose-lg max-w-none">

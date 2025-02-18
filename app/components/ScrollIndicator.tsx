@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BsArrowDownShort } from "react-icons/bs";
 import { Link } from "react-router";
 
@@ -11,11 +11,24 @@ export interface ScrollIndicatorProps extends React.ComponentProps<"div"> {
 }
 
 export default function ScrollIndicator({ offset, className, ...rest }: ScrollIndicatorProps) {
-	const hX = window.innerWidth / 2;
-	const hY = window.innerHeight / 2;
+	const [windowSize, setWindowSize] = useState({ x: 1, y: 1 });
+
+	useEffect(() => {
+		const handleResize = () => {
+			setWindowSize({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+		};
+
+		// Call immediately on mount (after hydration)
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
 	const { scrollY } = useScroll();
-	const opacity = useTransform(scrollY, [0, hY], [1, 0]);
+	const opacity = useTransform(scrollY, [0, windowSize.y], [1, 0]);
 
 	const ref = useRef<HTMLDivElement | null>(null);
 	const mousePos = useMousePosition();
@@ -24,8 +37,8 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 	const mouseY = useMotionValue(0);
 	mouseX.set(mousePosRel.x);
 	mouseY.set(mousePosRel.y);
-	const x = useTransform(mouseX, [-hX, hX], [-offset, offset]);
-	const y = useTransform(mouseY, [-hY, hY], [-offset, offset]);
+	const x = useTransform(mouseX, [-windowSize.x, windowSize.x], [-offset, offset]);
+	const y = useTransform(mouseY, [-windowSize.y, windowSize.y], [-offset, offset]);
 
 	return (
 		<div ref={ref} className={className} {...rest}>
@@ -35,7 +48,7 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 				className="group relative flex items-center justify-center select-none"
 			>
 				{/* Foreground */}
-				<Link to="#about" aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
+				<Link to="/#about" aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
 					<div className="group-hover:border-gradient-3.5 rounded-full border-2 border-neutral-200">
 						<BsArrowDownShort className="group-hover:fill-accent-pink size-16 p-2 text-neutral-200" />
 					</div>
