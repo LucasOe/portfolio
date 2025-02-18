@@ -4,13 +4,13 @@ import LinkButton from "./components/LinkButton";
 
 import type { Route } from "./+types/root";
 
-import "@fontsource-variable/open-sans/index.css";
+import "@fontsource-variable/roboto-flex/index.css";
 import "@fontsource-variable/fira-code/index.css";
 import "@/main.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="en">
+		<html lang="en" className="scroll-smooth">
 			<head>
 				<meta charSet="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />

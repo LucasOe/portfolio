@@ -4,7 +4,7 @@
 @config "../tailwind.config.js";
 
 @theme {
-	--font-sans: "Open Sans Variable", sans-serif;
+	--font-sans: "Roboto Flex Variable", sans-serif;
 	--font-mono: "Fira Code Variable", monospace;
 
 	--color-primary: var(--color-neutral-900);
