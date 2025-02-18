@@ -1,7 +1,7 @@
 import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { BsArrowDownShort } from "react-icons/bs";
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router";
 
 import useMousePosition from "@/hooks/useMousePosition";
 import { getRelativeMousePos } from "@/utils/utils";
@@ -35,11 +35,11 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 				className="group relative flex items-center justify-center select-none"
 			>
 				{/* Foreground */}
-				<HashLink to="#about" smooth aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
+				<Link to="#about" aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
 					<div className="group-hover:border-gradient-3.5 rounded-full border-2 border-neutral-200">
 						<BsArrowDownShort className="group-hover:fill-accent-pink size-16 p-2 text-neutral-200" />
 					</div>
-				</HashLink>
+				</Link>
 				{/* Background */}
 				<motion.div
 					style={{ x, y }}

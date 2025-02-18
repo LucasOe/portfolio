@@ -1,24 +1,23 @@
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router";
 import { twMerge } from "tailwind-merge";
 
-import type { HashLinkProps } from "react-router-hash-link";
+import type { LinkProps } from "react-router";
 
-export interface NavbarLinkProps extends HashLinkProps {
+export interface NavbarLinkProps extends LinkProps {
 	text: string;
 	to: string;
 }
 
 export default function NavbarLink({ text, to, className, ...rest }: NavbarLinkProps) {
 	return (
-		<HashLink
+		<Link
 			to={to}
-			smooth
 			target="_self"
 			rel="noreferrer"
 			className={twMerge("focus p-2 no-underline outline-hidden", className)}
 			{...rest}
 		>
 			<span className="hover:text-gradient font-mono text-lg font-semibold">{`//${text}`}</span>
-		</HashLink>
+		</Link>
 	);
 }

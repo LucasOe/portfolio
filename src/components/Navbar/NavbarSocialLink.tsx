@@ -1,10 +1,10 @@
 import { IconContext } from "react-icons";
-import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router";
 import { twMerge } from "tailwind-merge";
 
-import type { HashLinkProps } from "react-router-hash-link";
+import type { LinkProps } from "react-router";
 
-export interface NavbarSocialLinkProps extends HashLinkProps {
+export interface NavbarSocialLinkProps extends LinkProps {
 	text: string;
 	icon?: React.ReactNode;
 	to: string;
@@ -12,15 +12,14 @@ export interface NavbarSocialLinkProps extends HashLinkProps {
 
 export default function NavbarSocialLink({ icon, to, className, ...rest }: NavbarSocialLinkProps) {
 	return (
-		<HashLink
+		<Link
 			to={to}
-			smooth
 			target="_blank"
 			rel="noreferrer"
 			className={twMerge("focus p-2 no-underline outline-hidden", className)}
 			{...rest}
 		>
 			<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext>
-		</HashLink>
+		</Link>
 	);
 }
