@@ -4,29 +4,9 @@ import LinkButton from "./components/LinkButton";
 
 import type { Route } from "./+types/root";
 
-import stylesheet from "@/main.css?url";
-
-export const links: Route.LinksFunction = () => [
-	{ rel: "preconnect", href: "https://fonts.googleapis.com" },
-	{
-		rel: "preconnect",
-		href: "https://fonts.gstatic.com",
-		crossOrigin: "anonymous",
-	},
-	{
-		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap",
-	},
-	{
-		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap",
-	},
-	{
-		rel: "stylesheet",
-		href: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap",
-	},
-	{ rel: "stylesheet", href: stylesheet },
-];
+import "@fontsource/fira-sans/index.css";
+import "@fontsource-variable/fira-code/index.css";
+import "@/main.css";
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -36,10 +16,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 				<title>LucasOe&apos;s Portfolio</title>
-				<meta
-					name="description"
-					content="The portfolio of Lucas Oelker - Visual Computing and Design student."
-				/>
+				<meta name="description" content="Portfolio of Lucas Oelker – Visual Computing and Design student." />
 				<Meta />
 				<Links />
 			</head>

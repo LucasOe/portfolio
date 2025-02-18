@@ -5,7 +5,6 @@
 
 @theme {
 	--font-sans: "Fira Sans", sans-serif;
-	--font-serif: "Libre Baskerville", serif;
 	--font-mono: "Fira Code", monospace;
 
 	--color-primary: var(--color-neutral-900);
