@@ -9,7 +9,7 @@ import importPlugin from "eslint-plugin-import";
 
 export default [
 	...tseslint.config(
-		{ ignores: ["dist"] },
+		{ ignores: ["build"] },
 		{
 			extends: [
 				js.configs.recommended,
@@ -22,10 +22,19 @@ export default [
 			files: ["app/**/*.{ts,tsx}"],
 			settings: {
 				react: { version: "19.0" },
+				"import/resolver": {
+					typescript: {
+						project: ["./tsconfig.json"],
+					},
+				},
 			},
 			languageOptions: {
 				ecmaVersion: 2020,
 				globals: globals.browser,
+				parserOptions: {
+					project: ["./tsconfig.json"],
+					tsconfigRootDir: import.meta.dirname,
+				},
 			},
 			plugins: {
 				react,
@@ -38,6 +47,10 @@ export default [
 				...reactHooks.configs.recommended.rules,
 				"react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
 				"@typescript-eslint/consistent-type-imports": "error",
+				"react-refresh/only-export-components": [
+					"error",
+					{ allowExportNames: ["meta", "links", "headers", "loader", "action"] },
+				],
 				"import/order": [
 					"error",
 					{
