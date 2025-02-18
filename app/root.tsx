@@ -4,7 +4,7 @@ import LinkButton from "./components/LinkButton";
 
 import type { Route } from "./+types/root";
 
-import "@fontsource/fira-sans/index.css";
+import "@fontsource-variable/open-sans/index.css";
 import "@fontsource-variable/fira-code/index.css";
 import "@/main.css";
 

@@ -7,7 +7,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 	return (
 		<div
 			className={twMerge(
-				"text-[7vw] leading-normal text-neutral-50 select-none md:text-[4rem] lg:text-[5rem]",
+				"text-[7vw] leading-normal text-neutral-50 select-none md:text-[4rem] lg:text-[4.8rem]",
 				className
 			)}
 			{...rest}
