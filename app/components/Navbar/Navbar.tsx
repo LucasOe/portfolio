@@ -30,7 +30,7 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 			window.removeEventListener("resize", closeNavbar);
 			window.removeEventListener("scroll", closeNavbar);
 		};
-	});
+	}, []);
 
 	return (
 		<div className={twMerge("w-full p-6", className)} {...rest}>
