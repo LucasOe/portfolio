@@ -1,22 +1,8 @@
+import { index, layout, route } from "@react-router/dev/routes";
+
 import type { RouteConfig } from "@react-router/dev/routes";
 
 export default [
-	{
-		path: "/",
-		file: "./layouts/RootLayout.tsx",
-		children: [
-			{
-				index: true,
-				file: "./pages/Home.tsx",
-			},
-			{
-				path: "privacy",
-				file: "./pages/Privacy.tsx",
-			},
-		],
-	},
-	{
-		path: "/success",
-		file: "./pages/Success.tsx",
-	},
+	layout("./layouts/RootLayout.tsx", [index("./pages/Home.tsx"), route("privacy", "./pages/Privacy.tsx")]),
+	route("success", "./pages/Success.tsx"),
 ] satisfies RouteConfig;
