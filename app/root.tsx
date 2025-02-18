@@ -1,8 +1,8 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from "react-router";
 
-import type { Route } from "./+types/root";
-
 import LinkButton from "./components/LinkButton";
+
+import type { Route } from "./+types/root";
 
 import stylesheet from "@/main.css?url";
 
