@@ -1,10 +1,9 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RiBlueskyFill } from "react-icons/ri";
 import { Outlet } from "react-router";
-import { ClientOnly } from "remix-utils/client-only";
 
 import Footer from "../components/Footer";
-import Navbar, { type TextLink } from "../components/Navbar/Navbar.client";
+import Navbar, { type TextLink } from "../components/Navbar/Navbar";
 
 export default function Layout() {
 	const links: TextLink[] = [
@@ -22,7 +21,7 @@ export default function Layout() {
 	return (
 		<>
 			<div className="absolute top-0 left-0 w-full">
-				<ClientOnly>{() => <Navbar links={links} socials={socials} />}</ClientOnly>
+				<Navbar links={links} socials={socials} />
 			</div>
 			<Outlet />
 			<div className="absolute bottom-0 left-0 w-full">
