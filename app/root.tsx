@@ -2,7 +2,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse }
 
 import type { Route } from "./+types/root";
 
-import LinkButton from "@/components/LinkButton";
+import LinkButton from "./components/LinkButton";
 
 import "@/main.css";
 

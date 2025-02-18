@@ -28,9 +28,9 @@
 
 		/* Path Alias */
 		"rootDirs": [".", "./.react-router/types"],
-		"baseUrl": "src",
+		"baseUrl": ".",
 		"paths": {
-			"@/*": ["*"]
+			"@/*": ["./app/*"]
 		}
 	}
 }
