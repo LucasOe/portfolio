@@ -1,3 +1,4 @@
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from "react-router";
 
 import LinkButton from "./components/LinkButton";
@@ -26,6 +27,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						{children}
 						<ScrollRestoration />
 						<Scripts />
+						<SpeedInsights />
 					</div>
 				</div>
 			</body>
