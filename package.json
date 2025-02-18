@@ -4,17 +4,19 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
-		"build": "tsc && vite build",
-		"preview": "vite preview",
+		"dev": "react-router dev",
+		"build": "tsc && react-router build",
+		"preview": "react-router preview",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
 		"format": "prettier . --write",
 		"format:check": "prettier . --check"
 	},
 	"dependencies": {
+		"@react-router/node": "^7.1.5",
 		"dedent": "^1.5.3",
 		"framer-motion": "^12.4.1",
+		"isbot": "^5",
 		"prop-types": "^15.8.1",
 		"react": "^19.0.0",
 		"react-dom": "^19.0.0",
@@ -27,6 +29,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.20.0",
+		"@react-router/dev": "^7.1.5",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tailwindcss/vite": "^4.0.5",
@@ -35,7 +38,6 @@
 		"@types/react-dom": "^19.0.3",
 		"@typescript-eslint/eslint-plugin": "^8.23.0",
 		"@typescript-eslint/parser": "^8.23.0",
-		"@vitejs/plugin-react-swc": "^3.8.0",
 		"eslint": "^9.20.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-import-resolver-typescript": "^3.7.0",

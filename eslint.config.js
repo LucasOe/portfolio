@@ -19,7 +19,7 @@ export default [
 				importPlugin.flatConfigs.react,
 				importPlugin.flatConfigs.typescript,
 			],
-			files: ["**/*.{ts,tsx}"],
+			files: ["src/**/*.{ts,tsx}"],
 			settings: {
 				react: { version: "19.0" },
 				"import/resolver": {
