@@ -1,8 +1,8 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, isRouteErrorResponse } from "react-router";
 
-import LinkButton from "./components/LinkButton";
-
 import type { Route } from "./+types/root";
+
+import LinkButton from "@/components/LinkButton";
 
 import "@fontsource-variable/roboto-flex/index.css";
 import "@fontsource-variable/fira-code/index.css";

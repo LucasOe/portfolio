@@ -2,8 +2,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RiBlueskyFill } from "react-icons/ri";
 import { Outlet } from "react-router";
 
-import Footer from "../components/Footer";
-import Navbar, { type TextLink } from "../components/Navbar/Navbar";
+import Footer from "@/components/Footer";
+import Navbar, { type TextLink } from "@/components/Navbar/Navbar";
 
 export default function Layout() {
 	const links: TextLink[] = [
