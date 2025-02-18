@@ -6,7 +6,6 @@
 	"scripts": {
 		"dev": "react-router dev",
 		"build": "react-router build",
-		"start": "react-router-serve ./build/server/index.js",
 		"typecheck": "react-router typegen && tsc",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix",
@@ -15,7 +14,6 @@
 	},
 	"dependencies": {
 		"@react-router/node": "^7.1.5",
-		"@react-router/serve": "^7.1.5",
 		"@vercel/react-router": "^1.0.2",
 		"dedent": "^1.5.3",
 		"framer-motion": "^12.4.3",
