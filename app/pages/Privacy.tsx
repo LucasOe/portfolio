@@ -4,7 +4,7 @@ import Markdown from "react-markdown";
 export default function Privacy() {
 	return (
 		<main className="py-80">
-			<Markdown className="prose prose-lg max-w-none">
+			<Markdown className="prose prose-lg max-w-none [&>h1]:text-[2.5rem]">
 				{dedent`
 					# Privacy Policy for LucasOe’s Portfolio
 
