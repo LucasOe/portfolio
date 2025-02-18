@@ -3,8 +3,8 @@ import { RiBlueskyFill } from "react-icons/ri";
 import { Outlet } from "react-router";
 import { ClientOnly } from "remix-utils/client-only";
 
-import Footer from "@/components/Footer";
-import Navbar, { type TextLink } from "@/components/Navbar/Navbar.client.tsx";
+import Footer from "../components/Footer";
+import Navbar, { type TextLink } from "../components/Navbar/Navbar.client";
 
 export default function Layout() {
 	const links: TextLink[] = [

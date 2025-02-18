@@ -19,22 +19,13 @@ export default [
 				importPlugin.flatConfigs.react,
 				importPlugin.flatConfigs.typescript,
 			],
-			files: ["src/**/*.{ts,tsx}"],
+			files: ["app/**/*.{ts,tsx}"],
 			settings: {
 				react: { version: "19.0" },
-				"import/resolver": {
-					typescript: {
-						project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-					},
-				},
 			},
 			languageOptions: {
 				ecmaVersion: 2020,
 				globals: globals.browser,
-				parserOptions: {
-					project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-					tsconfigRootDir: import.meta.dirname,
-				},
 			},
 			plugins: {
 				react,
