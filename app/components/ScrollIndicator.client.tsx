@@ -3,8 +3,8 @@ import { useRef } from "react";
 import { BsArrowDownShort } from "react-icons/bs";
 import { Link } from "react-router";
 
-import useMousePosition from "../hooks/useMousePosition";
-import { getRelativeMousePos } from "../utils/utils";
+import useMousePosition from "@/hooks/useMousePosition";
+import { getRelativeMousePos } from "@/utils/utils";
 
 export interface ScrollIndicatorProps extends React.ComponentProps<"div"> {
 	offset: number;
