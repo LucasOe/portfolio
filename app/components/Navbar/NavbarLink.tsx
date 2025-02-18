@@ -14,10 +14,10 @@ export default function NavbarLink({ text, to, className, ...rest }: NavbarLinkP
 			to={to}
 			target="_self"
 			rel="noreferrer"
-			className={twMerge("focus p-2 no-underline outline-hidden", className)}
+			className={twMerge("focus p-2 text-lg no-underline outline-hidden", className)}
 			{...rest}
 		>
-			<span className="hover:text-gradient font-mono text-lg font-semibold">{`//${text}`}</span>
+			<span className="hover:text-gradient font-mono font-semibold">{`//${text}`}</span>
 		</Link>
 	);
 }

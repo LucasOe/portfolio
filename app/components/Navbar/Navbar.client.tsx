@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { FiMenu, FiX } from "react-icons/fi";
 import { twMerge } from "tailwind-merge";
@@ -20,10 +20,17 @@ export interface NavbarProps extends React.ComponentProps<"div"> {
 
 export default function Navbar({ links, socials, className, ...rest }: NavbarProps) {
 	const [navbarOpen, setNavbarOpen] = useState(false);
-	const closeNavbar = () => setNavbarOpen(false);
 
-	window.addEventListener("resize", closeNavbar);
-	window.addEventListener("scroll", closeNavbar);
+	useEffect(() => {
+		const closeNavbar = () => setNavbarOpen(false);
+
+		window.addEventListener("resize", closeNavbar);
+		window.addEventListener("scroll", closeNavbar);
+		return () => {
+			window.removeEventListener("resize", closeNavbar);
+			window.removeEventListener("scroll", closeNavbar);
+		};
+	});
 
 	return (
 		<div className={twMerge("w-full p-6", className)} {...rest}>
@@ -59,7 +66,7 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 			{/* Collapsable Menu */}
 			<AnimatePresence>
 				{navbarOpen && (
-					<div className="mt-6 flex flex-col gap-y-2 text-[1.35rem] md:hidden">
+					<div className="mt-6 md:hidden">
 						<motion.div
 							initial="closed"
 							animate="open"
@@ -86,8 +93,9 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 										open: { opacity: 1, x: 0 },
 										closed: { opacity: 0, x: -10 },
 									}}
+									className="flex flex-col gap-y-4"
 								>
-									<NavbarLink text={link.text} to={link.to} onClick={closeNavbar} />
+									<NavbarLink text={link.text} to={link.to} className="text-xl" />
 								</motion.div>
 							))}
 						</motion.div>
