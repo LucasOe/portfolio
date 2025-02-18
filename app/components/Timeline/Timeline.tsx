@@ -17,7 +17,7 @@ export interface TimelineProps extends React.ComponentProps<"div"> {
 function convertUnixTime(time: number): string {
 	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 	const date = new Date(time * 1000);
-	return `${months[date.getMonth()]} ${date.getFullYear()}`;
+	return `${months[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
 }
 
 function calculateDate(offsets: number[], times: number[]): string {
