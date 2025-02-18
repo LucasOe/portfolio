@@ -4,8 +4,8 @@
 @config "../tailwind.config.js";
 
 @theme {
-	--font-sans: "Fira Sans", sans-serif;
-	--font-mono: "Fira Code", monospace;
+	--font-sans: "Open Sans Variable", sans-serif;
+	--font-mono: "Fira Code Variable", monospace;
 
 	--color-primary: var(--color-neutral-900);
 	--color-secondary: var(--color-neutral-800);

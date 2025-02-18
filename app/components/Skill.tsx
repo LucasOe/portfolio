@@ -29,7 +29,7 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 			)}
 			{...rest}
 		>
-			<div className="mb-2 flex translate-z-8 items-center justify-between gap-4">
+			<div className="mb-2 flex translate-z-8 items-center justify-between">
 				<h3 className="font-mono text-2xl font-bold">{title}</h3>
 				<IconContext value={{ className: "size-10" }}>{icon}</IconContext>
 			</div>
@@ -39,8 +39,8 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 					<div className="m-1 h-full w-[2px] rounded-full bg-neutral-600" />
 					<p className="font-mono text-sm font-semibold whitespace-nowrap text-neutral-600">{"</h3>"}</p>
 				</div>
-				<div className="translate-z-4 py-6">
-					<Markdown className="prose prose-lg [&>p]:text-balance">{children}</Markdown>
+				<div className="flex translate-z-4 py-6">
+					<Markdown className="prose prose-lg tracking-tight [&>p]:text-balance">{children}</Markdown>
 				</div>
 			</div>
 		</Tilt>
