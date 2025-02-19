@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { FiMenu, FiX } from "react-icons/fi";
