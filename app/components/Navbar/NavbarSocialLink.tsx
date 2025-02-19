@@ -7,13 +7,11 @@ import type { LinkProps } from "react-router";
 export interface NavbarSocialLinkProps extends LinkProps {
 	text: string;
 	icon?: React.ReactNode;
-	to: string;
 }
 
-export default function NavbarSocialLink({ icon, to, className, ...rest }: NavbarSocialLinkProps) {
+export default function NavbarSocialLink({ icon, className, ...rest }: NavbarSocialLinkProps) {
 	return (
 		<Link
-			to={to}
 			target="_blank"
 			rel="noreferrer"
 			className={twMerge("focus p-2 no-underline outline-hidden", className)}
