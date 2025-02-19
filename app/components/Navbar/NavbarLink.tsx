@@ -5,13 +5,11 @@ import type { LinkProps } from "react-router";
 
 export interface NavbarLinkProps extends LinkProps {
 	text: string;
-	to: string;
 }
 
-export default function NavbarLink({ text, to, className, ...rest }: NavbarLinkProps) {
+export default function NavbarLink({ text, className, ...rest }: NavbarLinkProps) {
 	return (
 		<Link
-			to={to}
 			target="_self"
 			rel="noreferrer"
 			className={twMerge("focus p-2 text-lg no-underline outline-hidden", className)}

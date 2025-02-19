@@ -1,6 +1,7 @@
 import dedent from "dedent";
 import { SlCheck } from "react-icons/sl";
 import Markdown from "react-markdown";
+import { href } from "react-router";
 
 import LinkButton from "@/components/LinkButton";
 
@@ -18,7 +19,7 @@ export default function SuccessPage() {
 				`}
 			</Markdown>
 			<div className="p-10">
-				<LinkButton text={"Go Home"} to={"/"} />
+				<LinkButton text={"Go Home"} to={href("/")} />
 			</div>
 		</main>
 	);
