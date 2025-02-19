@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 import Button from "@/components/Button";
@@ -61,7 +62,12 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 			</div>
 			<div className="flex">
 				{/* Project List */}
-				<div className="flex grow flex-col gap-3">
+				<motion.ul
+					className="flex grow flex-col gap-3"
+					initial={{
+						transition: { staggerChildren: 0.2 },
+					}}
+				>
 					{data[selected].projects.map((props, index) => (
 						<TimelineProject
 							key={props.title}
@@ -71,7 +77,7 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 							}}
 						/>
 					))}
-				</div>
+				</motion.ul>
 				{/* Progress Bar and Date Display */}
 				<div className="relative hidden sm:flex">
 					{/* Progress Bar */}
