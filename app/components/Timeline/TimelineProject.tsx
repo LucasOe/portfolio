@@ -7,7 +7,7 @@ import type { HTMLMotionProps } from "motion/react";
 import LinkIcon, { type LinkIconProps } from "@/components/LinkIcon";
 import TimelineLabel from "@/components/Timeline/TimelineLabel";
 
-export interface TimelineProjectProps extends HTMLMotionProps<"div"> {
+export interface TimelineProjectProps extends Omit<HTMLMotionProps<"li">, "ref"> {
 	description: string;
 	title: string;
 	links?: LinkIconProps[];
@@ -28,9 +28,9 @@ export default function TimelineProject({
 	...rest
 }: TimelineProjectProps) {
 	return (
-		<motion.div
-			initial={{ x: -48 }}
-			whileInView={{ x: 0 }}
+		<motion.li
+			initial={{ x: -48, opacity: 0 }}
+			whileInView={{ x: 0, opacity: 1 }}
 			viewport={{ margin: "100% 0px 0px 0px" }}
 			className={twMerge("flex w-full", className)}
 			{...rest}
@@ -57,6 +57,6 @@ export default function TimelineProject({
 					style={{ top: `${arrowPosition}%`, transform: `translateY(-${arrowPosition}%)` }}
 				/>
 			</div>
-		</motion.div>
+		</motion.li>
 	);
 }
