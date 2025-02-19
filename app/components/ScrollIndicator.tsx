@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionValue, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { BsArrowDownShort } from "react-icons/bs";
 import { Link } from "react-router";
