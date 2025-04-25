@@ -40,7 +40,9 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 					<p className="font-mono text-sm font-semibold whitespace-nowrap text-neutral-600">{"</h3>"}</p>
 				</div>
 				<div className="flex translate-z-4 py-6">
-					<Markdown className="prose prose-lg tracking-tight [&>p]:text-balance">{children}</Markdown>
+					<div className="prose prose-lg tracking-tight [&>p]:text-balance">
+						<Markdown>{children}</Markdown>
+					</div>
 				</div>
 			</div>
 		</Tilt>

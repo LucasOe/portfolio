@@ -20,8 +20,9 @@ export default function Home() {
 				<ScrollIndicator offset={16} className="absolute top-[75vh] self-center" />
 			</div>
 			<Header text="About" id="about" />
-			<Markdown className="prose prose-lg max-w-none">
-				{dedent`
+			<div className="prose prose-lg max-w-none">
+				<Markdown>
+					{dedent`
 					My name is Lucas Oelker and I’m a software developer currently studying Visual Computing and
 					Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a
 					computer and some creative thinking I’m interested!
@@ -34,7 +35,8 @@ export default function Home() {
 					Between June and September 2024, I completed an internship at the [Painless Developments GmbH](https://www.paindevs.com/)
 					in Berlin, where I worked as a Gameplay Programmer and Backend Developer. 
 				`}
-			</Markdown>
+				</Markdown>
+			</div>
 			<Header text="Projects" id="projects" />
 			<Timeline
 				data={[
