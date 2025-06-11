@@ -1,7 +1,5 @@
-import { Link } from "react-router";
+import { Link, type LinkProps } from "react-router";
 import { twMerge } from "tailwind-merge";
-
-import type { LinkProps } from "react-router";
 
 export interface LinkButtonProps extends LinkProps {
 	text: string;

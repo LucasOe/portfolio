@@ -1,9 +1,7 @@
 import { IconContext } from "react-icons";
 import Markdown from "react-markdown";
-import Tilt from "react-parallax-tilt";
+import Tilt, { type ReactParallaxTiltProps } from "react-parallax-tilt";
 import { twMerge } from "tailwind-merge";
-
-import type { ReactParallaxTiltProps } from "react-parallax-tilt";
 
 export interface SkillProps extends ReactParallaxTiltProps {
 	children: string;
@@ -14,10 +12,10 @@ export interface SkillProps extends ReactParallaxTiltProps {
 export default function Skill({ children, title, icon, className, ...rest }: SkillProps) {
 	return (
 		<Tilt
-			tiltReverse={true}
+			tiltReverse
 			tiltMaxAngleX={6}
 			tiltMaxAngleY={6}
-			glareEnable={true}
+			glareEnable
 			glareMaxOpacity={0.1}
 			glareBorderRadius="0.375rem"
 			transitionSpeed={1500}

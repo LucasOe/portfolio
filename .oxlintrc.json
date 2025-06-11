@@ -1,0 +1,51 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["react", "unicorn", "oxc", "import", "jsx-a11y"],
+	"env": {
+		"browser": true,
+		"es2022": true
+	},
+	"categories": {
+		"correctness": "error",
+		"suspicious": "error",
+		"perf": "error"
+	},
+	"rules": {
+		"no-unassigned-import": "off",
+		"prefer-rest-params": "error",
+		"prefer-spread": "error",
+		"require-await": "error",
+		"no-empty-function": "error",
+		// React
+		"react/jsx-boolean-value": "error",
+		"react/no-unknown-property": "warn",
+		"react/react-in-jsx-scope": "off",
+		"react/rules-of-hooks": "error",
+		"react/self-closing-comp": "error",
+		// Imports
+		"import/no-duplicates": "warn",
+		"import/no-named-as-default-member": "warn",
+		"import/no-named-as-default": "warn"
+	},
+	"overrides": [
+		{
+			// Enable TypeScript-specific rules for TypeScript files
+			"files": ["**/*.{ts,tsx}"],
+			"plugins": ["typescript"],
+			"rules": {
+				"import/consistent-type-specifier-style": ["error", "prefer-inline"],
+				"typescript/adjacent-overload-signatures": "error",
+				"typescript/array-type": "error",
+				"typescript/ban-types": "error",
+				"typescript/consistent-generic-constructors": "error",
+				"typescript/consistent-indexed-object-style": "error",
+				"typescript/consistent-type-definitions": "error",
+				"typescript/consistent-type-imports": "error",
+				"typescript/no-confusing-non-null-assertion": "error",
+				"typescript/no-inferrable-types": "error",
+				"typescript/prefer-for-of": "error",
+				"typescript/prefer-function-type": "error"
+			}
+		}
+	]
+}

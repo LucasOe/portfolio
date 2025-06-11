@@ -29,7 +29,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 						2000,
 					]}
 					wrapper="span"
-					cursor={true}
+					cursor
 					repeat={Number.POSITIVE_INFINITY}
 					speed={1}
 					deletionSpeed={20}
