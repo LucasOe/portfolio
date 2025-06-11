@@ -45,12 +45,8 @@ export default [
 				...react.configs.recommended.rules,
 				...react.configs["jsx-runtime"].rules,
 				...reactHooks.configs.recommended.rules,
-				"react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
 				"@typescript-eslint/consistent-type-imports": "error",
-				"react-refresh/only-export-components": [
-					"error",
-					{ allowExportNames: ["meta", "links", "headers", "loader", "action"] },
-				],
+				"react-refresh/only-export-components": ["error", { allowConstantExport: true }],
 				"import/order": [
 					"error",
 					{
