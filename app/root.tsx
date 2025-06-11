@@ -14,7 +14,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<meta charSet="UTF-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-				<title>LucasOe&apos;s Portfolio</title>
+				<title>{"LucasOe's Portfolio"}</title>
 				<meta name="description" content="Portfolio of Lucas Oelker – Visual Computing and Design student." />
 				<Meta />
 				<Links />
