@@ -18,6 +18,8 @@
 		"no-empty-function": "error",
 		// React
 		"react/jsx-boolean-value": "error",
+		"react/jsx-no-useless-fragment": "error",
+		"react/no-unescaped-entities": "error",
 		"react/no-unknown-property": "warn",
 		"react/react-in-jsx-scope": "off",
 		"react/rules-of-hooks": "error",
@@ -33,7 +35,6 @@
 			"files": ["**/*.{ts,tsx}"],
 			"plugins": ["typescript"],
 			"rules": {
-				"import/consistent-type-specifier-style": ["error", "prefer-inline"],
 				"typescript/adjacent-overload-signatures": "error",
 				"typescript/array-type": "error",
 				"typescript/ban-types": "error",
