@@ -46,7 +46,9 @@ export default function TimelineProject({
 					<Markdown>{description}</Markdown>
 				</div>
 				<div className="flex flex-wrap gap-2">
-					{stack?.map((tech) => <TimelineLabel key={tech} text={tech} />)}
+					{stack?.map((tech) => (
+						<TimelineLabel key={tech} text={tech} />
+					))}
 				</div>
 			</div>
 			{/*Arrow*/}
