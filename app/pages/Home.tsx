@@ -1,6 +1,5 @@
 import dedent from "dedent";
-import { BiBrush } from "react-icons/bi";
-import { BsPeople } from "react-icons/bs";
+import { BiBrush, BiServer } from "react-icons/bi";
 import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
 import { FiMonitor } from "react-icons/fi";
 import Markdown from "react-markdown";
@@ -194,26 +193,27 @@ export default function Home() {
 			<div className="grid gap-3 sm:grid-cols-2">
 				<Skill title="Software Development" icon={<FiMonitor />}>
 					{dedent`
-						I have five years of academic education in **Java** and I’m currently learning **Rust**.
-						I also have experience in game development using **Unity** and **C#**.
+						I have five years of academic experience with **Java** and currently focus on systems programming in **Rust**.
+						I also have practical experience in game development using **Unity** and **C#**.
 					`}
 				</Skill>
 				<Skill title="Frontend Development" icon={<FaReact />}>
 					{dedent`
-						I am proficient in web development using **HTML**, **CSS**, and **PHP**. Currently, I’m
-						learning to use modern frameworks like **React** and **Tailwind CSS**.
+						I work with modern frameworks like **React** and **SvelteKit**, as well as vanilla **JavaScript**/**TypeScript**.
+						I build accessible, responsive interfaces using **TailwindCSS** and libraries like **shadcn/ui** and **Radix**.
+					`}
+				</Skill>
+				<Skill title="Backend Development" icon={<BiServer />}>
+					{dedent`
+						I’ve developed a RESTful API in **Rust** with **Actix Web**, integrating **JWT** authentication and **PostgreSQL**.
+						I also have experience with **Supabase** and **PHP** for server-side logic in web projects.
 					`}
 				</Skill>
 				<Skill title="Design" icon={<BiBrush />}>
 					{dedent`
-						The university degree I’m pursuing doesn’t just cover Computer Science but also Design
-						and User Experience! I have worked with **Adobe XD** and **Figma** in the past.
-					`}
-				</Skill>
-				<Skill title="Cooperation" icon={<BsPeople />}>
-					{dedent`
-						I have worked in groups on many projects for school and university. In my free time I
-						like to work on Open Source projects on Github.
+						My degree combines Computer Science with **Design** and **User Experience**.
+						I have experience prototyping and designing interfaces in **Figma** and **Adobe XD**,
+						with an emphasis on usability and accessibility.
 					`}
 				</Skill>
 			</div>
