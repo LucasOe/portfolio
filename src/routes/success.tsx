@@ -1,9 +1,11 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SlCheck } from "react-icons/sl";
-import { href } from "react-router";
 
-import LinkButton from "@/components/LinkButton";
+export const Route = createFileRoute("/success")({
+	component: RouteComponent,
+});
 
-export default function SuccessPage() {
+function RouteComponent() {
 	return (
 		<main className="mb-24 text-center">
 			<SlCheck className="fill-accent-pink m-8 mx-auto size-32" />
@@ -13,7 +15,12 @@ export default function SuccessPage() {
 				<br />I will reply to you soon!
 			</p>
 			<div className="p-10">
-				<LinkButton text={"Go Home"} to={href("/")} />
+				<Link
+					to="/"
+					className="focus m-10 inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline outline-hidden hover:bg-neutral-100"
+				>
+					Go Home
+				</Link>
 			</div>
 		</main>
 	);

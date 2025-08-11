@@ -12,8 +12,10 @@ dist
 dist-ssr
 *.local
 
-# React Router
-/.react-router/
+# Tanstack
+/.tanstack/
+/.output/
+/.nitro/
 /build/
 
 # Vercel

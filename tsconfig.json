@@ -1,12 +1,11 @@
 {
-	"include": ["**/*", "**/.server/**/*", "**/.client/**/*", ".react-router/types/**/*"],
+	"include": ["**/*.ts", "**/*.tsx", "src/root.tsx.old", "src/routes.ts.old"],
 	"compilerOptions": {
 		"lib": ["DOM", "DOM.Iterable", "ES2022"],
 		"types": ["node", "vite/client"],
 		"target": "ES2022",
-		"module": "ES2022",
+		"module": "ESNext",
 		"esModuleInterop": true,
-		"verbatimModuleSyntax": true,
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"useDefineForClassFields": true,
@@ -21,16 +20,16 @@
 
 		/* Linting */
 		"strict": true,
+		"strictNullChecks": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
 		"noUncheckedSideEffectImports": true,
 
 		/* Path Alias */
-		"rootDirs": [".", "./.react-router/types"],
 		"baseUrl": ".",
 		"paths": {
-			"@/*": ["./app/*"]
+			"@/*": ["./src/*"]
 		}
 	}
 }

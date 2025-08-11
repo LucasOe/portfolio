@@ -1,7 +1,12 @@
+import { createFileRoute } from "@tanstack/react-router";
 import dedent from "dedent";
 import Markdown from "react-markdown";
 
-export default function Privacy() {
+export const Route = createFileRoute("/privacy")({
+	component: RouteComponent,
+});
+
+function RouteComponent() {
 	return (
 		<main className="py-80">
 			<div className="prose prose-lg max-w-none [&>h1]:text-[2.5rem]">

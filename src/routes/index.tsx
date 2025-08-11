@@ -1,3 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
 import dedent from "dedent";
 import { BiBrush, BiServer } from "react-icons/bi";
 import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
@@ -11,7 +12,11 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import Skill from "@/components/Skill";
 import Timeline from "@/components/Timeline/Timeline";
 
-export default function Home() {
+export const Route = createFileRoute("/")({
+	component: Home,
+});
+
+function Home() {
 	return (
 		<main className="pb-80">
 			<div className="flex h-screen flex-col justify-center">

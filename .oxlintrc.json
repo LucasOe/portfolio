@@ -10,6 +10,7 @@
 		"suspicious": "error",
 		"perf": "error"
 	},
+	"ignorePatterns": ["**/*.gen.ts"],
 	"rules": {
 		"no-unassigned-import": "off",
 		"prefer-rest-params": "error",

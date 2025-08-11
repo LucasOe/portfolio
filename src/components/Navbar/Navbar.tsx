@@ -1,24 +1,41 @@
+import type { LinkProps } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
+import { RiBlueskyFill } from "react-icons/ri";
 import { twMerge } from "tailwind-merge";
 
-import NavbarLink from "@/components/Navbar/NavbarLink";
-import NavbarSocialLink from "@/components/Navbar/NavbarSocialLink";
-
-export interface TextLink {
+export interface TextLink extends LinkProps {
 	text: string;
-	icon?: React.ReactNode;
+}
+
+export interface SocialLink {
+	text: string;
+	icon: React.ReactNode;
 	to: string;
 }
 
-export interface NavbarProps extends React.ComponentProps<"div"> {
-	links: TextLink[];
-	socials: TextLink[];
-}
+export type NavbarProps = React.ComponentProps<"div">;
 
-export default function Navbar({ links, socials, className, ...rest }: NavbarProps) {
+// prettier-ignore
+const links: TextLink[] = [
+	{ text: "about",    to: "/", hash: "about" },
+	{ text: "projects", to: "/", hash: "projects" },
+	{ text: "skills",   to: "/", hash: "skills" },
+	{ text: "contact",  to: "/", hash: "contact" },
+];
+
+// prettier-ignore
+const socials: SocialLink[] = [
+	{ text: "Github",   icon: <FaGithub />,      to: "https://github.com/LucasOe" },
+	{ text: "Bluesky",  icon: <RiBlueskyFill />, to: "https://bsky.app/profile/lucasoe.com" },
+	{ text: "LinkedIn", icon: <FaLinkedin />,    to: "https://www.linkedin.com/in/lucasoe/" },
+];
+
+export default function Navbar({ className, ...rest }: NavbarProps) {
 	const [navbarOpen, setNavbarOpen] = useState(false);
 
 	useEffect(() => {
@@ -52,14 +69,25 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 				<div className="hidden md:block">
 					<div className="flex flex-wrap gap-x-4">
 						{links.map((link) => (
-							<NavbarLink key={link.to} text={link.text} to={link.to} />
+							<Link
+								key={link.text}
+								to={link.to}
+								hash={link.hash}
+								className="focus p-2 text-lg no-underline outline-hidden"
+							>
+								<span className="hover:text-gradient font-mono font-semibold">{`//${link.text}`}</span>
+							</Link>
 						))}
 					</div>
 				</div>
 				{/* Social Links */}
 				<div className="flex flex-wrap">
 					{socials.map((social) => (
-						<NavbarSocialLink key={social.to} text={social.text} icon={social.icon} to={social.to} />
+						<a key={social.text} href={social.to} className="focus p-2 no-underline outline-hidden">
+							<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>
+								{social.icon}
+							</IconContext>
+						</a>
 					))}
 				</div>
 			</div>
@@ -88,14 +116,18 @@ export default function Navbar({ links, socials, className, ...rest }: NavbarPro
 						>
 							{links.map((link) => (
 								<motion.div
-									key={link.to}
+									key={link.text}
 									variants={{
 										open: { opacity: 1, x: 0 },
 										closed: { opacity: 0, x: -10 },
 									}}
 									className="flex flex-col gap-y-4"
 								>
-									<NavbarLink text={link.text} to={link.to} className="text-xl" />
+									<Link to={link.to} className="focus p-2 text-xl no-underline outline-hidden">
+										<span className="hover:text-gradient font-mono font-semibold">
+											{`//${link.text}`}
+										</span>
+									</Link>
 								</motion.div>
 							))}
 						</motion.div>
