@@ -6,6 +6,9 @@ import Navbar from "@/components/Navbar/Navbar";
 import mainCss from "@/main.css?url";
 import { seo } from "@/utils/seo";
 
+import "@fontsource-variable/roboto-flex/index.css";
+import "@fontsource-variable/fira-code/index.css";
+
 export const Route = createRootRoute({
 	head: () => ({
 		meta: [
