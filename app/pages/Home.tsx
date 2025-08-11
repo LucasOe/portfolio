@@ -22,18 +22,18 @@ export default function Home() {
 			<div className="prose prose-lg max-w-none">
 				<Markdown>
 					{dedent`
-					My name is Lucas Oelker and I’m a software developer currently studying Visual Computing and
-					Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a
-					computer and some creative thinking I’m interested!
-					
-					I have a deep passion for programming and I like solving problems. I first started learning
-					Java and the basics of web development in high school. Today I’m studying Visual Computing
-					and Design, which allows me to think about the integrated approach to the conception and
-					development of technical systems as well as their conceptual and design perspective.
-					
-					Between June and September 2024, I completed an internship at the [Painless Developments GmbH](https://www.paindevs.com/)
-					in Berlin, where I worked as a Gameplay Programmer and Backend Developer. 
-				`}
+						My name is Lucas Oelker and I’m a software developer currently studying Visual Computing and
+						Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a
+						computer and some creative thinking I’m interested!
+						
+						I have a deep passion for programming and I like solving problems. I first started learning
+						Java and the basics of web development in high school. Today I’m studying Visual Computing
+						and Design, which allows me to think about the integrated approach to the conception and
+						development of technical systems as well as their conceptual and design perspective.
+						
+						Between June and September 2024, I completed an internship at the [Painless Developments GmbH](https://www.paindevs.com/)
+						in Berlin, where I worked as a Gameplay Programmer and Backend Developer. 
+					`}
 				</Markdown>
 			</div>
 			<Header text="Projects" id="projects" />
