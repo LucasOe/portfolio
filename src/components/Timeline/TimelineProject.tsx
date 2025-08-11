@@ -27,9 +27,10 @@ export default function TimelineProject({
 }: TimelineProjectProps) {
 	return (
 		<motion.li
-			initial={{ x: -48, opacity: 0 }}
-			whileInView={{ x: 0, opacity: 1 }}
-			viewport={{ margin: "100% 0px 0px 0px" }}
+			variants={{
+				hidden: { x: -48, opacity: 0 },
+				visible: { x: 0, opacity: 1 },
+			}}
 			className={twMerge("flex w-full", className)}
 			{...rest}
 		>

@@ -1,6 +1,6 @@
 import type { LinkProps } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion, stagger } from "motion/react";
 import { useEffect, useState } from "react";
 import { IconContext } from "react-icons";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -102,14 +102,12 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 							variants={{
 								open: {
 									transition: {
-										staggerChildren: 0.05,
-										staggerDirection: 1,
+										delayChildren: stagger(0.05, { from: "first" }),
 									},
 								},
 								closed: {
 									transition: {
-										staggerChildren: 0.05,
-										staggerDirection: -1,
+										delayChildren: stagger(0.05, { from: "last" }),
 									},
 								},
 							}}

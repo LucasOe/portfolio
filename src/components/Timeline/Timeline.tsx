@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, stagger } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 import Button from "@/components/Button";
@@ -63,10 +63,17 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 			<div className="flex">
 				{/* Project List */}
 				<motion.ul
-					className="flex grow flex-col gap-3"
-					initial={{
-						transition: { staggerChildren: 0.2 },
+					key={selected}
+					initial="hidden"
+					animate="visible"
+					variants={{
+						visible: {
+							transition: {
+								delayChildren: stagger(0.1),
+							},
+						},
 					}}
+					className="flex grow flex-col gap-3"
 				>
 					{data[selected].projects.map((props, index) => (
 						<TimelineProject
