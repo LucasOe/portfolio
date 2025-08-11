@@ -6,6 +6,13 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	esbuild: {
+		supported: {
+			// Disable minified newlines
+			// https://esbuild.github.io/faq/#minified-newlines
+			"template-literal": false,
+		},
+	},
 	plugins: [
 		tailwindcss(),
 		tsconfigPaths({
