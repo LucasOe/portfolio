@@ -41,7 +41,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 	useEffect(() => {
 		const handleScroll = () => {
 			setIsMenuOpen(false);
-			setIsScrolled(window.scrollY > 0);
+			setIsScrolled(window.scrollY > 40);
 		};
 
 		window.addEventListener("resize", handleScroll);
@@ -56,7 +56,6 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 		<motion.nav
 			initial={{ opacity: 0, y: -50 }}
 			animate={{ opacity: 1, y: 0 }}
-			transition={{ type: "spring", stiffness: 300, damping: 30 }}
 			className={twMerge(
 				"bg-primary/80 fixed top-0 left-0 z-50 w-full p-4 backdrop-blur-md transition-all duration-300",
 				isScrolled ? "border-secondary border-b" : "border-b border-transparent",
