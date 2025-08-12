@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
 import { twMerge } from "tailwind-merge";
 
@@ -12,8 +13,20 @@ export default function Hero({ className, ...rest }: HeroProps) {
 			)}
 			{...rest}
 		>
-			<p className="font-bold">Hey, I’m Lucas Oelker.</p>
-			<p className="font-normal">
+			<motion.p
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ duration: 0.6 }}
+				className="font-bold"
+			>
+				Hey, I’m Lucas Oelker.
+			</motion.p>
+			<motion.p
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{ delay: 0.3, duration: 0.6 }}
+				className="font-normal"
+			>
 				{"I’m a "}
 				<TypeAnimation
 					sequence={[
@@ -35,7 +48,7 @@ export default function Hero({ className, ...rest }: HeroProps) {
 					deletionSpeed={20}
 					className="bg-accent-violet from-accent-pink inline-block bg-gradient-to-bl bg-cover bg-clip-text text-transparent after:text-neutral-50"
 				/>
-			</p>
+			</motion.p>
 		</div>
 	);
 }

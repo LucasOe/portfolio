@@ -1,4 +1,5 @@
-import { motion, type HTMLMotionProps } from "motion/react";
+import type { HTMLMotionProps } from "motion/react";
+import { motion } from "motion/react";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
 
@@ -28,8 +29,8 @@ export default function TimelineProject({
 	return (
 		<motion.li
 			variants={{
-				hidden: { x: -48, opacity: 0 },
-				visible: { x: 0, opacity: 1 },
+				hidden: { opacity: 0, x: -50 },
+				visible: { opacity: 1, x: 0 },
 			}}
 			className={twMerge("flex w-full", className)}
 			{...rest}
@@ -57,7 +58,10 @@ export default function TimelineProject({
 				<div
 					ref={ref}
 					className="border-l-secondary relative size-0 border-y-[10px] border-l-[10px] border-y-transparent"
-					style={{ top: `${arrowPosition}%`, transform: `translateY(-${arrowPosition}%)` }}
+					style={{
+						top: `${arrowPosition}%`,
+						transform: `translateY(-${arrowPosition}%)`,
+					}}
 				/>
 			</div>
 		</motion.li>

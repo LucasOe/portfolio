@@ -4,6 +4,7 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { LinkProps } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
+import type { HTMLMotionProps } from "motion/react";
 import { AnimatePresence, motion, stagger } from "motion/react";
 import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -18,7 +19,7 @@ export interface SocialLink {
 	to: string;
 }
 
-export type NavbarProps = React.ComponentProps<"div">;
+export type NavbarProps = HTMLMotionProps<"nav">;
 
 const links: TextLink[] = [
 	{ text: "about", to: "/", hash: "about" },
@@ -48,7 +49,13 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 	}, []);
 
 	return (
-		<div className={twMerge("w-full p-6", className)} {...rest}>
+		<motion.nav
+			initial={{ opacity: 0, y: -50 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ type: "spring", stiffness: 300, damping: 30 }}
+			className={twMerge("w-full p-6", className)}
+			{...rest}
+		>
 			<div className="flex h-8 items-center justify-between">
 				{/* Hamburger Menu */}
 				<div className="h-full md:hidden">
@@ -126,6 +133,6 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 					</div>
 				)}
 			</AnimatePresence>
-		</div>
+		</motion.nav>
 	);
 }

@@ -1,13 +1,14 @@
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "@tanstack/react-router";
+import type { HTMLMotionProps } from "motion/react";
 import { motion, useMotionValue, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 import useMousePosition from "@/hooks/useMousePosition";
 import { getRelativeMousePos } from "@/utils/utils";
 
-export interface ScrollIndicatorProps extends React.ComponentProps<"div"> {
+export interface ScrollIndicatorProps extends HTMLMotionProps<"div"> {
 	offset: number;
 }
 
@@ -42,7 +43,14 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 	const y = useTransform(mouseY, [-windowSize.y, windowSize.y], [-offset, offset]);
 
 	return (
-		<div ref={ref} className={className} {...rest}>
+		<motion.div
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ delay: 0.6, duration: 0.6 }}
+			ref={ref}
+			className={className}
+			{...rest}
+		>
 			<motion.div
 				style={{ opacity: opacity }}
 				whileHover={{ scale: 1.1 }}
@@ -66,6 +74,6 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 					<div className="border-gradient-3 size-full rounded-full border-transparent" />
 				</motion.div>
 			</motion.div>
-		</div>
+		</motion.div>
 	);
 }
