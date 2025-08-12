@@ -59,18 +59,14 @@ function RootComponent() {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="bg-primary text-neutral-200">
-				<div className="relative flex min-h-dvh flex-col items-center justify-center">
+			<body className="bg-primary relative min-h-screen text-neutral-200">
+				<Navbar />
+				<div className="flex min-h-dvh flex-col items-center justify-center">
 					<div className="max-w-4xl px-6">
-						<div className="absolute top-0 left-0 w-full">
-							<Navbar />
-						</div>
 						<Outlet />
-						<div className="absolute bottom-0 left-0 w-full">
-							<Footer />
-						</div>
 					</div>
 				</div>
+				<Footer />
 				<Scripts />
 			</body>
 		</html>

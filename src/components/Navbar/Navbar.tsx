@@ -35,16 +35,20 @@ const socials: SocialLink[] = [
 ];
 
 export default function Navbar({ className, ...rest }: NavbarProps) {
-	const [navbarOpen, setNavbarOpen] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
 
 	useEffect(() => {
-		const closeNavbar = () => setNavbarOpen(false);
+		const handleScroll = () => {
+			setIsMenuOpen(false);
+			setIsScrolled(window.scrollY > 0);
+		};
 
-		window.addEventListener("resize", closeNavbar);
-		window.addEventListener("scroll", closeNavbar);
+		window.addEventListener("resize", handleScroll);
+		window.addEventListener("scroll", handleScroll);
 		return () => {
-			window.removeEventListener("resize", closeNavbar);
-			window.removeEventListener("scroll", closeNavbar);
+			window.removeEventListener("resize", handleScroll);
+			window.removeEventListener("scroll", handleScroll);
 		};
 	}, []);
 
@@ -53,7 +57,11 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 			initial={{ opacity: 0, y: -50 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ type: "spring", stiffness: 300, damping: 30 }}
-			className={twMerge("w-full p-6", className)}
+			className={twMerge(
+				"bg-primary/80 fixed top-0 left-0 z-50 w-full p-4 backdrop-blur-md transition-all duration-300",
+				isScrolled ? "border-secondary border-b" : "border-b border-transparent",
+				className
+			)}
 			{...rest}
 		>
 			<div className="flex h-8 items-center justify-between">
@@ -62,10 +70,10 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 					<motion.button
 						aria-label="Open Navigation Menu"
 						className="focus h-full rounded-md"
-						onTap={() => setNavbarOpen(!navbarOpen)}
+						onTap={() => setIsMenuOpen(!isMenuOpen)}
 						whileTap={{ scale: 0.8 }}
 					>
-						<FontAwesomeIcon icon={navbarOpen ? faXmark : faBars} size="xl" />
+						<FontAwesomeIcon icon={isMenuOpen ? faXmark : faBars} size="xl" />
 					</motion.button>
 				</div>
 				{/* Site Links */}
@@ -94,7 +102,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 			</div>
 			{/* Collapsable Menu */}
 			<AnimatePresence>
-				{navbarOpen && (
+				{isMenuOpen && (
 					<div className="mt-6 md:hidden">
 						<motion.div
 							initial="closed"
