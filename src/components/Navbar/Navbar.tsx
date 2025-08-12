@@ -1,11 +1,11 @@
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { faBluesky, faGithub, faSquareLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { LinkProps } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import { AnimatePresence, motion, stagger } from "motion/react";
 import { useEffect, useState } from "react";
-import { IconContext } from "react-icons";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FiMenu, FiX } from "react-icons/fi";
-import { RiBlueskyFill } from "react-icons/ri";
 import { twMerge } from "tailwind-merge";
 
 export interface TextLink extends LinkProps {
@@ -14,25 +14,23 @@ export interface TextLink extends LinkProps {
 
 export interface SocialLink {
 	text: string;
-	icon: React.ReactNode;
+	icon: IconDefinition;
 	to: string;
 }
 
 export type NavbarProps = React.ComponentProps<"div">;
 
-// prettier-ignore
 const links: TextLink[] = [
-	{ text: "about",    to: "/", hash: "about" },
+	{ text: "about", to: "/", hash: "about" },
 	{ text: "projects", to: "/", hash: "projects" },
-	{ text: "skills",   to: "/", hash: "skills" },
-	{ text: "contact",  to: "/", hash: "contact" },
+	{ text: "skills", to: "/", hash: "skills" },
+	{ text: "contact", to: "/", hash: "contact" },
 ];
 
-// prettier-ignore
 const socials: SocialLink[] = [
-	{ text: "Github",   icon: <FaGithub />,      to: "https://github.com/LucasOe" },
-	{ text: "Bluesky",  icon: <RiBlueskyFill />, to: "https://bsky.app/profile/lucasoe.com" },
-	{ text: "LinkedIn", icon: <FaLinkedin />,    to: "https://www.linkedin.com/in/lucasoe/" },
+	{ text: "Github", icon: faGithub, to: "https://github.com/LucasOe" },
+	{ text: "Bluesky", icon: faBluesky, to: "https://bsky.app/profile/lucasoe.com" },
+	{ text: "LinkedIn", icon: faSquareLinkedin, to: "https://www.linkedin.com/in/lucasoe/" },
 ];
 
 export default function Navbar({ className, ...rest }: NavbarProps) {
@@ -60,9 +58,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 						onTap={() => setNavbarOpen(!navbarOpen)}
 						whileTap={{ scale: 0.8 }}
 					>
-						<IconContext value={{ className: "size-full" }}>
-							{navbarOpen ? <FiX /> : <FiMenu />}
-						</IconContext>
+						<FontAwesomeIcon icon={navbarOpen ? faXmark : faBars} size="xl" />
 					</motion.button>
 				</div>
 				{/* Site Links */}
@@ -84,9 +80,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 				<div className="flex flex-wrap">
 					{socials.map((social) => (
 						<a key={social.text} href={social.to} className="focus p-2 no-underline outline-hidden">
-							<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>
-								{social.icon}
-							</IconContext>
+							<FontAwesomeIcon icon={social.icon} size="xl" className="hover:text-accent-pink" />
 						</a>
 					))}
 				</div>

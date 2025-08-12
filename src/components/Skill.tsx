@@ -1,4 +1,5 @@
-import { IconContext } from "react-icons";
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Markdown from "react-markdown";
 import Tilt, { type ReactParallaxTiltProps } from "react-parallax-tilt";
 import { twMerge } from "tailwind-merge";
@@ -6,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 export interface SkillProps extends ReactParallaxTiltProps {
 	children: string;
 	title: string;
-	icon: React.ReactNode;
+	icon: IconDefinition;
 }
 
 export default function Skill({ children, title, icon, className, ...rest }: SkillProps) {
@@ -29,7 +30,7 @@ export default function Skill({ children, title, icon, className, ...rest }: Ski
 		>
 			<div className="mb-2 flex translate-z-8 items-center justify-between">
 				<h3 className="font-mono text-2xl font-bold">{title}</h3>
-				<IconContext value={{ className: "size-10" }}>{icon}</IconContext>
+				<FontAwesomeIcon icon={icon} size="2xl" />
 			</div>
 			<div className="flex h-full translate-z-4 gap-2 transform-3d">
 				<div aria-hidden="true" className="flex flex-col items-center justify-between select-none">

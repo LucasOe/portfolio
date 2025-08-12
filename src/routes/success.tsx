@@ -1,5 +1,6 @@
+import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SlCheck } from "react-icons/sl";
 
 export const Route = createFileRoute("/success")({
 	component: RouteComponent,
@@ -8,7 +9,9 @@ export const Route = createFileRoute("/success")({
 function RouteComponent() {
 	return (
 		<main className="mb-24 text-center">
-			<SlCheck className="fill-accent-pink m-8 mx-auto size-32" />
+			<div className="m-8 mx-auto">
+				<FontAwesomeIcon icon={faCircleCheck} className="text-accent-pink text-9xl" />
+			</div>
 			<p className="text-gradient mb-2 inline-block text-2xl font-medium">Form submitted successfully!</p>
 			<p>
 				Thank you! The form has been submitted successfully.

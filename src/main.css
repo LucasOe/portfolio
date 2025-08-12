@@ -13,6 +13,10 @@
 	--color-accent-violet: var(--color-violet-600);
 }
 
+:root {
+	--fa-width: 1em;
+}
+
 /* Sets the `--bg` var to the background color, so it can be
    used inside the `border-gradient` component */
 @utility bg-* {

@@ -1,7 +1,8 @@
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "@tanstack/react-router";
 import { motion, useMotionValue, useScroll, useTransform } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { BsArrowDownShort } from "react-icons/bs";
 
 import useMousePosition from "@/hooks/useMousePosition";
 import { getRelativeMousePos } from "@/utils/utils";
@@ -49,8 +50,12 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 			>
 				{/* Foreground */}
 				<Link to="." hash="about" aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
-					<div className="group-hover:border-gradient-3.5 rounded-full border-2 border-neutral-200">
-						<BsArrowDownShort className="group-hover:fill-accent-pink size-16 p-2 text-neutral-200" />
+					<div className="group-hover:border-gradient-3.5 rounded-full border-2 border-neutral-200 p-5">
+						<FontAwesomeIcon
+							icon={faChevronDown}
+							size="xl"
+							className="group-hover:text-accent-pink text-neutral-200"
+						/>
 					</div>
 				</Link>
 				{/* Background */}

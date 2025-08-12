@@ -1,8 +1,9 @@
-import { IconContext } from "react-icons";
+import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { twMerge } from "tailwind-merge";
 
 export interface LinkIconProps extends React.ComponentProps<"a"> {
-	icon: React.ReactNode;
+	icon: IconDefinition;
 	to: string;
 	label?: string;
 }
@@ -17,7 +18,7 @@ export default function LinkIcon({ icon, to, label, className, ...rest }: LinkIc
 			className={twMerge("focus p-1", className)}
 			{...rest}
 		>
-			<IconContext value={{ className: "size-6 hover:text-accent-pink" }}>{icon}</IconContext>
+			<FontAwesomeIcon icon={icon} size="xl" className="hover:text-accent-pink" />
 		</a>
 	);
 }

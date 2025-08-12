@@ -1,8 +1,7 @@
+import { faGithub, faReact, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faDesktop, faPaintBrush, faServer } from "@fortawesome/free-solid-svg-icons";
 import { createFileRoute } from "@tanstack/react-router";
 import dedent from "dedent";
-import { BiBrush, BiServer } from "react-icons/bi";
-import { FaGithub, FaReact, FaYoutube } from "react-icons/fa";
-import { FiMonitor } from "react-icons/fi";
 import Markdown from "react-markdown";
 
 import Contact from "@/components/Contact/Contact";
@@ -52,7 +51,7 @@ function Home() {
 								links: [
 									{
 										to: "https://github.com/LucasOe/das-rezeptbuch",
-										icon: <FaGithub />,
+										icon: faGithub,
 										label: "Open on Github",
 									},
 								],
@@ -70,7 +69,7 @@ function Home() {
 								links: [
 									{
 										to: "https://github.com/LucasOe/releaf",
-										icon: <FaGithub />,
+										icon: faGithub,
 										label: "Open on Github",
 									},
 								],
@@ -88,7 +87,7 @@ function Home() {
 								links: [
 									{
 										to: "https://github.com/LucasOe/portfolio",
-										icon: <FaGithub />,
+										icon: faGithub,
 										label: "Open on Github",
 									},
 								],
@@ -106,7 +105,7 @@ function Home() {
 								links: [
 									{
 										to: "https://github.com/LucasOe/dishcovery",
-										icon: <FaGithub />,
+										icon: faGithub,
 										label: "Open on Github",
 									},
 								],
@@ -142,7 +141,7 @@ function Home() {
 								links: [
 									{
 										to: "https://github.com/LucasOe/marble-simulation",
-										icon: <FaGithub />,
+										icon: faGithub,
 										label: "Open on Github",
 									},
 								],
@@ -160,12 +159,12 @@ function Home() {
 								links: [
 									{
 										to: "https://github.com/LucasOe/spellbound-sprouts",
-										icon: <FaGithub />,
+										icon: faGithub,
 										label: "Open on Github",
 									},
 									{
 										to: "https://www.youtube.com/watch?v=l9ik5Rarx8o",
-										icon: <FaYoutube />,
+										icon: faYoutube,
 										label: "Open on YouTube",
 									},
 								],
@@ -196,25 +195,25 @@ function Home() {
 			/>
 			<Header text="Skills" id="skills" />
 			<div className="grid gap-3 sm:grid-cols-2">
-				<Skill title="Software Development" icon={<FiMonitor />}>
+				<Skill title="Software Development" icon={faDesktop}>
 					{dedent`
 						I have five years of academic experience with **Java** and currently focus on systems programming in **Rust**.
 						I also have practical experience in game development using **Unity** and **C#**.
 					`}
 				</Skill>
-				<Skill title="Frontend Development" icon={<FaReact />}>
+				<Skill title="Frontend Development" icon={faReact}>
 					{dedent`
 						I work with modern frameworks like **React** and **SvelteKit**, as well as vanilla **JavaScript**/**TypeScript**.
 						I build accessible, responsive interfaces using **TailwindCSS** and libraries like **shadcn/ui** and **Radix**.
 					`}
 				</Skill>
-				<Skill title="Backend Development" icon={<BiServer />}>
+				<Skill title="Backend Development" icon={faServer}>
 					{dedent`
 						I’ve developed a RESTful API in **Rust** with **Actix Web**, integrating **JWT** authentication and **PostgreSQL**.
 						I also have experience with **Supabase** and **PHP** for server-side logic in web projects.
 					`}
 				</Skill>
-				<Skill title="Design" icon={<BiBrush />}>
+				<Skill title="Design" icon={faPaintBrush}>
 					{dedent`
 						My degree combines Computer Science with **Design** and **User Experience**.
 						I have experience prototyping and designing interfaces in **Figma** and **Adobe XD**,
