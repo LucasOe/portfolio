@@ -1,13 +1,13 @@
 {
-	"include": ["**/*.ts", "**/*.tsx", "src/root.tsx.old", "src/routes.ts.old"],
+	"include": ["**/*.ts", "**/*.tsx", "vite.config.js"],
 	"compilerOptions": {
-		"lib": ["DOM", "DOM.Iterable", "ES2022"],
-		"types": ["node", "vite/client"],
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
+		"types": ["vite/client"],
 		"target": "ES2022",
 		"module": "ESNext",
+		"jsx": "react-jsx",
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
-		"skipLibCheck": true,
 		"useDefineForClassFields": true,
 
 		/* Bundler mode */
@@ -16,9 +16,9 @@
 		"isolatedModules": true,
 		"moduleDetection": "force",
 		"noEmit": true,
-		"jsx": "react-jsx",
 
 		/* Linting */
+		"skipLibCheck": true,
 		"strict": true,
 		"strictNullChecks": true,
 		"noUnusedLocals": true,

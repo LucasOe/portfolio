@@ -1,8 +1,9 @@
 import tailwindcss from "@tailwindcss/vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import react from "@vitejs/plugin-react";
+import viteReact from "@vitejs/plugin-react";
+import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+import viteTsConfigPaths from "vite-tsconfig-paths";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,14 +15,17 @@ export default defineConfig({
 		},
 	},
 	plugins: [
-		tailwindcss(),
-		tsconfigPaths({
+		// this is the plugin that enables path aliases
+		viteTsConfigPaths({
 			projects: ["./tsconfig.json"],
 		}),
-		tanstackStart({
-			target: "vercel",
-			customViteReactPlugin: true,
+		tailwindcss(),
+		tanstackStart(),
+		nitro(),
+		viteReact({
+			babel: {
+				plugins: ["babel-plugin-react-compiler"],
+			},
 		}),
-		react(),
 	],
 });
