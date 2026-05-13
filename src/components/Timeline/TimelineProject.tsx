@@ -35,7 +35,7 @@ export default function TimelineProject({
 			className={twMerge("flex w-full", className)}
 			{...rest}
 		>
-			<div className="bg-secondary flex w-full flex-col space-y-4 rounded-lg p-4">
+			<div className="flex w-full flex-col space-y-4 rounded-lg bg-secondary p-4">
 				<div className="flex items-start justify-between">
 					<h3 className="text-2xl leading-none font-bold">{title}</h3>
 					<div className="-m-1 flex gap-3">
@@ -57,7 +57,7 @@ export default function TimelineProject({
 			<div className="hidden h-full py-4 sm:flex">
 				<div
 					ref={ref}
-					className="border-l-secondary relative size-0 border-y-[10px] border-l-[10px] border-y-transparent"
+					className="relative size-0 border-y-10 border-l-10 border-y-transparent border-l-secondary"
 					style={{
 						top: `${arrowPosition}%`,
 						transform: `translateY(-${arrowPosition}%)`,

@@ -10,9 +10,9 @@ function RouteComponent() {
 	return (
 		<main className="mb-24 text-center">
 			<div className="m-8 mx-auto">
-				<FontAwesomeIcon icon={faCircleCheck} className="text-accent-pink text-9xl" />
+				<FontAwesomeIcon icon={faCircleCheck} className="text-9xl text-accent-pink" />
 			</div>
-			<p className="text-gradient mb-2 inline-block text-2xl font-medium">Form submitted successfully!</p>
+			<p className="mb-2 inline-block text-gradient text-2xl font-medium">Form submitted successfully!</p>
 			<p>
 				Thank you! The form has been submitted successfully.
 				<br />I will reply to you soon!

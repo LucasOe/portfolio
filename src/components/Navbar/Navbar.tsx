@@ -57,9 +57,9 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 			initial={{ opacity: 0, y: -50 }}
 			animate={{ opacity: 1, y: 0 }}
 			className={twMerge(
-				"bg-primary/80 fixed top-0 left-0 z-50 w-full p-4 backdrop-blur-md transition-all duration-300",
-				isScrolled ? "border-secondary border-b" : "border-b border-transparent",
-				className
+				"fixed top-0 left-0 z-50 w-full bg-primary/80 p-4 backdrop-blur-md transition-all duration-300",
+				isScrolled ? "border-b border-secondary" : "border-b border-transparent",
+				className,
 			)}
 			{...rest}
 		>
@@ -85,7 +85,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 								hash={link.hash}
 								className="focus p-2 text-lg no-underline outline-hidden"
 							>
-								<span className="hover:text-gradient font-mono font-semibold">{`//${link.text}`}</span>
+								<span className="font-mono font-semibold hover:text-gradient">{`//${link.text}`}</span>
 							</Link>
 						))}
 					</div>
@@ -130,9 +130,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 									className="flex flex-col gap-y-4"
 								>
 									<Link to={link.to} className="focus p-2 text-xl no-underline outline-hidden">
-										<span className="hover:text-gradient font-mono font-semibold">
-											{`//${link.text}`}
-										</span>
+										<span className="font-mono font-semibold hover:text-gradient">{`//${link.text}`}</span>
 									</Link>
 								</motion.div>
 							))}

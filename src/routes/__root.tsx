@@ -3,9 +3,9 @@ import { createRootRoute, HeadContent, Link, Outlet, Scripts } from "@tanstack/r
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar/Navbar";
-import mainCss from "@/main.css?url";
 import { seo } from "@/utils/seo";
 
+import mainCss from "@/main.css?url";
 import "@fontsource-variable/roboto-flex/index.css";
 import "@fontsource-variable/fira-code/index.css";
 
@@ -59,7 +59,7 @@ function RootComponent() {
 			<head>
 				<HeadContent />
 			</head>
-			<body className="bg-primary relative min-h-screen text-neutral-200">
+			<body className="relative min-h-screen bg-primary text-neutral-200">
 				<Navbar />
 				<div className="flex min-h-dvh flex-col items-center justify-center">
 					<div className="max-w-4xl px-6">

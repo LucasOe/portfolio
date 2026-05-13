@@ -88,23 +88,23 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 				{/* Progress Bar and Date Display */}
 				<div className="relative hidden sm:flex">
 					{/* Progress Bar */}
-					<div className="bg-secondary mx-2 my-6 flex w-2 rounded-full [contain:paint]">
+					<div className="mx-2 my-6 flex w-2 rounded-full bg-secondary contain-[paint]">
 						<div className="sticky bottom-1/2 self-end">
-							<div className="bg-accent-pink from-accent-violet absolute h-screen w-2 -translate-y-full bg-gradient-to-b from-50%" />
+							<div className="absolute h-screen w-2 -translate-y-full bg-accent-pink bg-linear-to-b from-accent-violet from-50%" />
 						</div>
 					</div>
 					{/* Sticky Date Display */}
 					<div className="relative -left-6 -mr-6">
 						<div className="sticky top-[calc(50%-1rem)] my-2 flex">
 							{/* Dot */}
-							<div className="bg-accent-pink mx-1 my-2 size-4 rounded-full" />
+							<div className="mx-1 my-2 size-4 rounded-full bg-accent-pink" />
 							{/* Arrow */}
 							<div
 								ref={progressBarRef}
-								className="border-r-secondary my-2 size-0 border-y-8 border-r-8 border-y-transparent"
+								className="my-2 size-0 border-y-8 border-r-8 border-y-transparent border-r-secondary"
 							/>
 							{/* Textbox */}
-							<div className="bg-secondary w-28 rounded-md text-center leading-8">
+							<div className="w-28 rounded-md bg-secondary text-center leading-8">
 								<span className="font-mono text-lg font-bold">{currentDate}</span>
 							</div>
 						</div>
