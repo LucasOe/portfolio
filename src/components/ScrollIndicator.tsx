@@ -57,7 +57,7 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 				className="group relative flex items-center justify-center select-none"
 			>
 				{/* Foreground */}
-				<Link to="." hash="about" aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
+				<Link to="." hash="about" reloadDocument aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
 					<div className="rounded-full border-2 border-neutral-200 p-5 group-hover:border-gradient-3.5">
 						<FontAwesomeIcon icon={faChevronDown} size="xl" className="text-neutral-200 group-hover:text-accent-pink" />
 					</div>
