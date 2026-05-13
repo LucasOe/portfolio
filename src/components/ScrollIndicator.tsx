@@ -16,17 +16,10 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 	const [windowSize, setWindowSize] = useState({ x: 1, y: 1 });
 
 	useEffect(() => {
-		const handleResize = () => {
-			setWindowSize({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
-		};
-
-		// Call immediately on mount (after hydration)
-		handleResize();
-
+		const handleResize = () => setWindowSize({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+		handleResize(); // Call immediately on mount (after hydration)
 		window.addEventListener("resize", handleResize);
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
+		return () => window.removeEventListener("resize", handleResize);
 	}, []);
 
 	const { scrollY } = useScroll();
