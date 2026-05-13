@@ -61,7 +61,7 @@ export default defineConfig({
 	},
 	// https://oxc.rs/docs/guide/usage/formatter/config.html
 	fmt: {
-		ignorePatterns: [],
+		ignorePatterns: ["**/*.gen.ts"],
 		printWidth: 120,
 		useTabs: true,
 		sortImports: true,
