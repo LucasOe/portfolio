@@ -2,6 +2,7 @@ import { faGithub, faReact, faYoutube } from "@fortawesome/free-brands-svg-icons
 import { faDesktop, faPaintBrush, faServer } from "@fortawesome/free-solid-svg-icons";
 import { createFileRoute } from "@tanstack/react-router";
 import dedent from "dedent";
+import { DitheredWaves } from "ditherwave";
 import Markdown from "react-markdown";
 
 import Contact from "@/components/Contact/Contact";
@@ -18,9 +19,22 @@ export const Route = createFileRoute("/")({
 function Home() {
 	return (
 		<main className="pb-80">
+			<div className="absolute top-0 left-0 h-dvh w-full">
+				<DitheredWaves
+					mode="ascii"
+					waveColor="#7c3aed"
+					baseColor="#171717"
+					pixelSize={2}
+					enableMouseInteraction
+					mouseRadius={0.5}
+				/>
+				{/* Gradient */}
+				<div className="pointer-events-none absolute top-0 left-0 h-dvh w-full bg-linear-to-b from-transparent to-primary mix-blend-color-burn" />
+				<div className="pointer-events-none absolute top-0 left-0 h-dvh w-full bg-linear-to-b from-transparent to-primary mix-blend-normal" />
+			</div>
 			<div className="flex h-screen flex-col justify-center">
-				<Hero />
-				<ScrollIndicator offset={16} className="absolute top-[75vh] self-center" />
+				<Hero className="pointer-events-none z-10" />
+				<ScrollIndicator offset={16} className="absolute top-[75vh] z-10 self-center" />
 			</div>
 			<Header text="About" id="about" />
 			<div className="prose prose-lg max-w-none">
@@ -29,14 +43,14 @@ function Home() {
 						My name is Lucas Oelker and I’m a software developer currently studying Visual Computing and
 						Design in Lippstadt, Germany. Programming, rendering, or web design — if it requires a
 						computer and some creative thinking I’m interested!
-						
+
 						I have a deep passion for programming and I like solving problems. I first started learning
 						Java and the basics of web development in high school. Today I’m studying Visual Computing
 						and Design, which allows me to think about the integrated approach to the conception and
 						development of technical systems as well as their conceptual and design perspective.
-						
+
 						Between June and September 2024, I completed an internship at the [Painless Developments GmbH](https://www.paindevs.com/)
-						in Berlin, where I worked as a Gameplay Programmer and Backend Developer. 
+						in Berlin, where I worked as a Gameplay Programmer and Backend Developer.
 					`}
 				</Markdown>
 			</div>
@@ -125,7 +139,7 @@ function Home() {
 								arrowPosition: 100,
 								description: dedent`
 									During my internship at *Painless Developments*, I developed the backend and management
-									dashboard for the leaderboard of a mobile puzzle game.  
+									dashboard for the leaderboard of a mobile puzzle game.
 									I built a scalable RESTful API using Rust and Actix Web to enable secure and efficient
 									CRUD operations, with authentication managed through JSON Web Tokens. The React dashboard
 									provides administrators with an intuitive interface for seamlessly managing leaderboard data.
@@ -149,7 +163,7 @@ function Home() {
 								time: 1646089200,
 								arrowPosition: 0,
 								description: dedent`
-									A 2D physics simulation, created for the university module *Visual Computing*.  
+									A 2D physics simulation, created for the university module *Visual Computing*.
 									The model simulates a 2D marble run with physically accurate calculations for gravity,
 									friction, collisions, and a pendulum.
 								`,
