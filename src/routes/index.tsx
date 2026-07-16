@@ -51,6 +51,8 @@ function Home() {
 
 						Between June and September 2024, I completed an internship at the [Painless Developments GmbH](https://www.paindevs.com/)
 						in Berlin, where I worked as a Gameplay Programmer and Backend Developer.
+
+						This website was made by me. I do not use AI for programming.
 					`}
 				</Markdown>
 			</div>
