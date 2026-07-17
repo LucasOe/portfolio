@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export default function useOffsets(
 	targetRef: React.RefObject<HTMLElement | null>,
 	otherRefs: React.RefObject<(HTMLElement | null)[]>,
-	state: number, // Used to manually trigger hook when refs change as useRef doesn't trigger a re-render
+	update: number, // Used to manually trigger hook when refs change as useRef doesn't trigger a re-render
 ): number[] {
 	const [offsets, setOffsets] = useState<number[]>([]);
 
@@ -37,7 +37,7 @@ export default function useOffsets(
 			window.removeEventListener("resize", calculateDistances);
 			window.removeEventListener("scroll", calculateDistances);
 		};
-	}, [targetRef, otherRefs, state]);
+	}, [targetRef, otherRefs, update]);
 
 	return offsets;
 }

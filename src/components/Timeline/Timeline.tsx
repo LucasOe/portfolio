@@ -1,5 +1,5 @@
 import { motion, stagger } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 import Button from "@/components/Button";
 import TimelineProject, { type TimelineProjectProps } from "@/components/Timeline/TimelineProject";
@@ -35,15 +35,15 @@ function calculateDate(offsets: number[], times: number[]): string {
 export default function Timeline({ data, className, ...rest }: TimelineProps) {
 	const progressBarRef = useRef<HTMLDivElement | null>(null);
 	const [selected, setSelected] = useState(0);
-	const [currentDate, setCurrentDate] = useState("");
+
+	// Incremented to force recalculation of project offsets after layout changes
+	const [layoutVersion, bumpLayoutVersion] = useState(0);
 
 	const projectRefs = useRef<(HTMLDivElement | null)[]>([]);
-	const projectOffsets = useOffsets(progressBarRef, projectRefs, selected);
+	const projectOffsets = useOffsets(progressBarRef, projectRefs, layoutVersion);
 	const projectTimes = data[selected].projects.map((project) => project.time);
 
-	useEffect(() => {
-		setCurrentDate(calculateDate(projectOffsets, projectTimes));
-	}, [projectTimes, projectOffsets]);
+	const currentDate = useMemo(() => calculateDate(projectOffsets, projectTimes), [projectOffsets, projectTimes]);
 
 	return (
 		<div className={className} {...rest}>
@@ -54,7 +54,10 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 						key={category.name}
 						outline={selected === index}
 						disabled={selected === index}
-						onClick={() => setSelected(index)}
+						onClick={() => {
+							setSelected(index);
+							bumpLayoutVersion((v) => v + 1);
+						}}
 					>
 						{category.name}
 					</Button>
@@ -79,6 +82,7 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 						<TimelineProject
 							key={props.title}
 							{...props}
+							onExpand={(_state) => bumpLayoutVersion((v) => v + 1)}
 							ref={(el) => {
 								projectRefs.current[index] = el;
 							}}

@@ -1,5 +1,6 @@
 import type { HTMLMotionProps } from "motion/react";
 import { motion } from "motion/react";
+import { useState } from "react";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
 
@@ -10,9 +11,11 @@ export interface TimelineProjectProps extends Omit<HTMLMotionProps<"li">, "ref">
 	description: string;
 	title: string;
 	links?: LinkIconProps[];
+	extendedInfo?: React.ReactNode;
 	stack?: string[];
 	time: number;
 	arrowPosition: number;
+	onExpand?: (state: boolean) => void;
 	ref?: React.Ref<HTMLDivElement>;
 }
 
@@ -20,12 +23,16 @@ export default function TimelineProject({
 	description,
 	title,
 	links,
+	extendedInfo,
 	stack,
 	arrowPosition,
+	onExpand,
 	ref,
 	className,
 	...rest
 }: TimelineProjectProps) {
+	const [isExpanded, setIsExpanded] = useState(false);
+
 	return (
 		<motion.li
 			variants={{
@@ -46,6 +53,19 @@ export default function TimelineProject({
 				</div>
 				<div className="prose prose-lg">
 					<Markdown>{description}</Markdown>
+					{isExpanded && <div className="mb-4">{extendedInfo}</div>}
+					{extendedInfo && (
+						<button
+							type="button"
+							onClick={() => {
+								setIsExpanded(!isExpanded);
+								if (onExpand) onExpand(isExpanded); // callback
+							}}
+							className="cursor-pointer"
+						>
+							<span className="underline">{isExpanded ? "Show less" : "Show more"}</span>
+						</button>
+					)}
 				</div>
 				<div className="flex flex-wrap gap-2">
 					{stack?.map((tech) => (

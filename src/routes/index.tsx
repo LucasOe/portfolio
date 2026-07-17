@@ -8,6 +8,7 @@ import Markdown from "react-markdown";
 import Contact from "@/components/Contact/Contact";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Image from "@/components/Image";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Skill from "@/components/Skill";
 import Timeline from "@/components/Timeline/Timeline";
@@ -79,6 +80,18 @@ function Home() {
 									JavaFX that allows you to view recipes stored in a database. This project was developed as a
 									team effort for the university module *Informatics*.
 								`,
+								extendedInfo: (
+									<div>
+										<Image
+											src="projects/das-rezeptbuch/1.png" //
+											alt="The home page, showing a list of various recipes."
+										/>
+										<Image
+											src="projects/das-rezeptbuch/2.png" //
+											alt="A list of ingredients and preperation instructions for one of the recipes."
+										/>
+									</div>
+								),
 							},
 							{
 								title: "Releaf",
