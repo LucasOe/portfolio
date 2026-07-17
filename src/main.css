@@ -45,9 +45,14 @@
 	-webkit-text-fill-color: transparent !important;
 }
 
-@layer components {
-	.focus {
-		@apply focus:ring-0 focus:outline-none; /* disable default focus style */
-		@apply focus-visible:border-gradient-3 focus-visible:rounded-lg;
+/* Apply border-gradient on focus */
+@utility focus-gradient {
+	@apply focus:ring-0; /* disable default focus style for inputs */
+	@apply focus-visible:border-gradient-3 focus-visible:rounded-lg;
+}
+
+@layer base {
+	*:focus-visible {
+		@apply rounded-md outline-2 outline-blue-500;
 	}
 }

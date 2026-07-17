@@ -10,14 +10,7 @@ export interface LinkIconProps extends React.ComponentProps<"a"> {
 
 export default function LinkIcon({ icon, to, label, className, ...rest }: LinkIconProps) {
 	return (
-		<a
-			href={to}
-			target="_blank"
-			rel="noreferrer"
-			aria-label={label}
-			className={twMerge("focus p-1", className)}
-			{...rest}
-		>
+		<a href={to} target="_blank" rel="noreferrer" aria-label={label} className={twMerge("p-1", className)} {...rest}>
 			<FontAwesomeIcon icon={icon} size="xl" className="hover:text-accent-pink" />
 		</a>
 	);

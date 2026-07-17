@@ -80,7 +80,7 @@ function ErrorComponent({ error }: ErrorComponentProps) {
 			<p className="text-5xl font-medium text-neutral-500">{error.message}</p>
 			<Link
 				to="/"
-				className="focus m-10 inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline outline-hidden hover:bg-neutral-100"
+				className="m-10 inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline hover:bg-neutral-100"
 			>
 				Go Home
 			</Link>
@@ -95,7 +95,7 @@ function NotFoundComponent() {
 			<p className="text-5xl font-medium text-neutral-500">Not Found</p>
 			<Link
 				to="/"
-				className="focus m-10 inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline outline-hidden hover:bg-neutral-100"
+				className="m-10 inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline hover:bg-neutral-100"
 			>
 				Go Home
 			</Link>

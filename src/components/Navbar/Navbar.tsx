@@ -68,7 +68,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 				<div className="h-full md:hidden">
 					<motion.button
 						aria-label="Open Navigation Menu"
-						className="focus h-full rounded-md"
+						className="h-full rounded-md"
 						onTap={() => setIsMenuOpen(!isMenuOpen)}
 						whileTap={{ scale: 0.8 }}
 					>
@@ -79,12 +79,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 				<div className="hidden md:block">
 					<div className="flex flex-wrap gap-x-4">
 						{links.map((link) => (
-							<Link
-								key={link.text}
-								to={link.to}
-								hash={link.hash}
-								className="focus p-2 text-lg no-underline outline-hidden"
-							>
+							<Link key={link.text} to={link.to} hash={link.hash} className="p-2 text-lg no-underline">
 								<span className="font-mono font-semibold hover:text-gradient">{`//${link.text}`}</span>
 							</Link>
 						))}
@@ -93,7 +88,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 				{/* Social Links */}
 				<div className="flex flex-wrap">
 					{socials.map((social) => (
-						<a key={social.text} href={social.to} className="focus p-2 no-underline outline-hidden">
+						<a key={social.text} href={social.to} className="focus p-2 no-underline">
 							<FontAwesomeIcon icon={social.icon} size="xl" className="hover:text-accent-pink" />
 						</a>
 					))}
@@ -129,7 +124,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 									}}
 									className="flex flex-col gap-y-4"
 								>
-									<Link to={link.to} className="focus p-2 text-xl no-underline outline-hidden">
+									<Link to={link.to} className="p-2 text-xl no-underline">
 										<span className="font-mono font-semibold hover:text-gradient">{`//${link.text}`}</span>
 									</Link>
 								</motion.div>

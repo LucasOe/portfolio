@@ -20,7 +20,7 @@ function RouteComponent() {
 			<div className="p-10">
 				<Link
 					to="/"
-					className="focus m-10 inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline outline-hidden hover:bg-neutral-100"
+					className="m-10 inline-block rounded-lg bg-neutral-300 px-5 py-2 font-medium text-neutral-900 no-underline hover:bg-neutral-100"
 				>
 					Go Home
 				</Link>
