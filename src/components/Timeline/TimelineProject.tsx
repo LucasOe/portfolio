@@ -1,5 +1,5 @@
 import type { HTMLMotionProps } from "motion/react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import Markdown from "react-markdown";
 import { twMerge } from "tailwind-merge";
@@ -53,7 +53,19 @@ export default function TimelineProject({
 				</div>
 				<div className="prose prose-lg">
 					<Markdown>{description}</Markdown>
-					{isExpanded && <div className="mb-4">{extendedInfo}</div>}
+					<AnimatePresence initial={false}>
+						{isExpanded && (
+							<motion.div
+								key="extended"
+								initial={{ height: 0, opacity: 0 }}
+								animate={{ height: "auto", opacity: 1 }}
+								exit={{ height: 0, opacity: 0 }}
+								className="overflow-hidden"
+							>
+								<div className="mb-6">{extendedInfo}</div>
+							</motion.div>
+						)}
+					</AnimatePresence>
 					{extendedInfo && (
 						<button
 							type="button"
