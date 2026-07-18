@@ -192,6 +192,41 @@ function Home() {
 									provides administrators with an intuitive interface for seamlessly managing leaderboard data.
 								`,
 							},
+							{
+								title: "Time Canvas",
+								stack: ["TypeScript", "React", "Supabase", "TailwindCSS"],
+								time: 1769900400,
+								arrowPosition: 100,
+								description: dedent`
+									*Time Canvas* is a minimalist web application for personal time tracking and reflection.
+									It enables users to manually log activities, visualize them in an interactive timeline,
+									and explore time usage through statistical insights.
+								`,
+								extendedInfo: (
+									<div>
+										<div className="flex">
+											<Image
+												src="projects/time-canvas/1.webp" //
+												alt="Time Canvas Image 1"
+											/>
+											<Image
+												src="projects/time-canvas/2.webp" //
+												alt="Time Canvas Image 2"
+											/>
+										</div>
+										<div className="flex">
+											<Image
+												src="projects/time-canvas/3.webp" //
+												alt="Time Canvas Image 3"
+											/>
+											<Image
+												src="projects/time-canvas/4.webp" //
+												alt="Time Canvas Image 4"
+											/>
+										</div>
+									</div>
+								),
+							},
 						],
 					},
 					{
