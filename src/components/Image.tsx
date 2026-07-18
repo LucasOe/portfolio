@@ -38,15 +38,10 @@ export default function Image({ src, alt, showAlt, ...rest }: ImageProps) {
 										<motion.div
 											initial={{ scale: 0.8 }}
 											animate={{ scale: 1.0 }}
-											className="pointer-events-none flex h-full max-h-[80dvh] max-w-[80dvw] items-center"
+											className="pointer-events-none flex items-center"
 										>
-											<div className="pointer-events-auto relative border-gradient-3 block size-max overflow-hidden rounded-xl">
-												<img
-													src={src}
-													alt={alt}
-													className="flex size-full max-h-full max-w-full object-contain"
-													{...rest}
-												/>
+											<div className="pointer-events-auto relative border-gradient-3 box-content size-full overflow-hidden rounded-xl">
+												<img src={src} alt={alt} className="max-h-[80dvh] max-w-[80dvw]" {...rest} />
 												<Dialog.Close className="absolute top-0 right-0 m-2" aria-label="Close">
 													<div className="flex rounded-full bg-primary/80 p-2 hover:bg-primary/60">
 														<FontAwesomeIcon icon={faX} size="1x" />
