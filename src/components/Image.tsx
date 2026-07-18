@@ -5,9 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export interface ImageProps extends React.ComponentProps<"img"> {
 	src: string;
 	alt: string;
+	showAlt: false;
 }
 
-export default function Image({ src, alt, ...rest }: ImageProps) {
+export default function Image({ src, alt, showAlt, ...rest }: ImageProps) {
 	return (
 		<div className="mb-4 flex flex-col">
 			<Dialog.Root>
@@ -30,7 +31,7 @@ export default function Image({ src, alt, ...rest }: ImageProps) {
 					</Dialog.Viewport>
 				</Dialog.Portal>
 			</Dialog.Root>
-			<span className="px-2 leading-6">{alt}</span>
+			{showAlt && <span className="px-2 leading-6">{alt}</span>}
 		</div>
 	);
 }
