@@ -7,7 +7,7 @@ import { useState } from "react";
 export interface ImageProps extends React.ComponentProps<"img"> {
 	src: string;
 	alt: string;
-	showAlt: false;
+	showAlt?: false;
 }
 
 export default function Image({ src, alt, showAlt, ...rest }: ImageProps) {
@@ -38,9 +38,9 @@ export default function Image({ src, alt, showAlt, ...rest }: ImageProps) {
 										<motion.div
 											initial={{ scale: 0.8 }}
 											animate={{ scale: 1.0 }}
-											className="h-full max-h-[80dvh] max-w-[80dvw] flex items-center pointer-events-none"
+											className="pointer-events-none flex h-full max-h-[80dvh] max-w-[80dvw] items-center"
 										>
-											<div className="size-max block relative border-gradient-3 rounded-xl overflow-hidden pointer-events-auto">
+											<div className="pointer-events-auto relative border-gradient-3 block size-max overflow-hidden rounded-xl">
 												<img
 													src={src}
 													alt={alt}
