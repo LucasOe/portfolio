@@ -83,12 +83,12 @@ function Home() {
 								extendedInfo: (
 									<div>
 										<Image
-											src="projects/das-rezeptbuch/1.png" //
-											alt="The home page, showing a list of various recipes."
+											src="projects/das-rezeptbuch/1.webp" //
+											alt="Das Rezeptbuch Image 1"
 										/>
 										<Image
-											src="projects/das-rezeptbuch/2.png" //
-											alt="A list of ingredients and preperation instructions for one of the recipes."
+											src="projects/das-rezeptbuch/2.webp" //
+											alt="Das Rezeptbuch Image 2"
 										/>
 									</div>
 								),
@@ -110,6 +110,14 @@ function Home() {
 									and health. The project was created as a team effort for the university module *Web- and
 									Corporate Design* on the topic of health.
 								`,
+								extendedInfo: (
+									<div>
+										<Image
+											src="projects/releaf/1.webp" //
+											alt="Releaf Image 1"
+										/>
+									</div>
+								),
 							},
 							{
 								title: "Portfolio",
@@ -146,6 +154,30 @@ function Home() {
 									experience. It was built using SvelteKit, Supabase and TailwindCSS. *Dishcovery* was created
 									as a team effort for the university module Advanced Web Development.
 								`,
+								extendedInfo: (
+									<div>
+										<div className="flex">
+											<Image
+												src="projects/dishcovery/1.webp" //
+												alt="Dishcovery Image 1"
+											/>
+											<Image
+												src="projects/dishcovery/2.webp" //
+												alt="Dishcovery Image 2"
+											/>
+										</div>
+										<div className="flex">
+											<Image
+												src="projects/dishcovery/3.webp" //
+												alt="Dishcovery Image 3"
+											/>
+											<Image
+												src="projects/dishcovery/4.webp" //
+												alt="Dishcovery Image 4"
+											/>
+										</div>
+									</div>
+								),
 							},
 							{
 								title: "Leaderboard Backend & Dashboard",
