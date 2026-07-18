@@ -12,6 +12,7 @@
 		"check": "vp check"
 	},
 	"dependencies": {
+		"@base-ui/react": "^1.6.0",
 		"@fontsource-variable/fira-code": "^5.2.7",
 		"@fontsource-variable/roboto-flex": "^5.2.8",
 		"@fortawesome/fontawesome-svg-core": "^7.3.1",

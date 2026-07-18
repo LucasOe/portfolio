@@ -70,7 +70,18 @@
 }
 
 @layer base {
+	/* Set global focus style */
 	*:focus-visible {
 		@apply rounded-md outline-2 outline-blue-500;
+	}
+
+	/* Base UI Portals */
+	.root {
+		@apply isolate;
+	}
+
+	/* Base UI iOS 26+ Safari fix */
+	body {
+		@apply absolute;
 	}
 }
