@@ -183,7 +183,7 @@ function Home() {
 								title: "Leaderboard Backend & Dashboard",
 								stack: ["Rust", "Actix Web", "React", "Vite", "shadcn/ui", "PostgreSQL"],
 								time: 1727733600,
-								arrowPosition: 100,
+								arrowPosition: 50,
 								description: dedent`
 									During my internship at *Painless Developments*, I developed the backend and management
 									dashboard for the leaderboard of a mobile puzzle game.
