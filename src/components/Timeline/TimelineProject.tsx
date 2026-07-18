@@ -73,7 +73,6 @@ export default function TimelineProject({
 								setIsExpanded(!isExpanded);
 								if (onExpand) onExpand(isExpanded); // callback
 							}}
-							className="cursor-pointer"
 						>
 							<span className="underline">{isExpanded ? "Show less" : "Show more"}</span>
 						</button>

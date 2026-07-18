@@ -70,6 +70,12 @@
 }
 
 @layer base {
+	/* We don't play by the rules */
+	/* https://github.com/tailwindlabs/tailwindcss/issues/8961 */
+	button {
+		@apply cursor-pointer;
+	}
+
 	/* Set global focus style */
 	*:focus-visible {
 		@apply rounded-md outline-2 outline-blue-500;

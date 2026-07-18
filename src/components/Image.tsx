@@ -11,7 +11,7 @@ export default function Image({ src, alt, ...rest }: ImageProps) {
 	return (
 		<div className="mb-4 flex flex-col">
 			<Dialog.Root>
-				<Dialog.Trigger className="cursor-pointer p-2">
+				<Dialog.Trigger className="p-2">
 					<img src={src} alt={alt} className="border-gradient-3 rounded-md border-2" {...rest} />
 				</Dialog.Trigger>
 				<Dialog.Portal>
@@ -20,7 +20,7 @@ export default function Image({ src, alt, ...rest }: ImageProps) {
 						<Dialog.Popup className="h-full max-h-[80dvh] max-w-[80dvw] flex items-center pointer-events-none">
 							<div className="size-max block relative border-gradient-3 rounded-xl overflow-hidden pointer-events-auto">
 								<img src={src} alt={alt} className="flex size-full max-h-full max-w-full object-contain" {...rest} />
-								<Dialog.Close className="absolute top-0 right-0 m-2 cursor-pointer" aria-label="Close">
+								<Dialog.Close className="absolute top-0 right-0 m-2" aria-label="Close">
 									<div className="flex rounded-full bg-primary/80 p-2 hover:bg-primary/60">
 										<FontAwesomeIcon icon={faX} size="1x" />
 									</div>
