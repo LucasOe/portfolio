@@ -15,7 +15,6 @@ export interface TimelineProjectProps extends Omit<HTMLMotionProps<"li">, "ref">
 	stack?: string[];
 	time: number;
 	arrowPosition: number;
-	onExpand?: (state: boolean) => void;
 	ref?: React.Ref<HTMLDivElement>;
 }
 
@@ -26,7 +25,6 @@ export default function TimelineProject({
 	extendedInfo,
 	stack,
 	arrowPosition,
-	onExpand,
 	ref,
 	className,
 	...rest
@@ -66,13 +64,7 @@ export default function TimelineProject({
 						)}
 					</AnimatePresence>
 					{extendedInfo && (
-						<button
-							type="button"
-							onClick={() => {
-								setIsExpanded(!isExpanded);
-								if (onExpand) onExpand(isExpanded); // callback
-							}}
-						>
+						<button type="button" onClick={() => setIsExpanded(!isExpanded)}>
 							<span className="underline">{isExpanded ? "Show less" : "Show more"}</span>
 						</button>
 					)}

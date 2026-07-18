@@ -82,7 +82,6 @@ export default function Timeline({ data, className, ...rest }: TimelineProps) {
 						<TimelineProject
 							key={props.title}
 							{...props}
-							onExpand={(_state) => bumpLayoutVersion((v) => v + 1)}
 							ref={(el) => {
 								projectRefs.current[index] = el;
 							}}
