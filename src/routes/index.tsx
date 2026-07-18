@@ -194,6 +194,13 @@ function Home() {
 							},
 							{
 								title: "Time Canvas",
+								links: [
+									{
+										to: "https://github.com/LucasOe/time-canvas",
+										icon: faGithub,
+										label: "Open on Github",
+									},
+								],
 								stack: ["TypeScript", "React", "Supabase", "TailwindCSS"],
 								time: 1769900400,
 								arrowPosition: 100,
