@@ -2,17 +2,10 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "@tanstack/react-router";
 import type { HTMLMotionProps } from "motion/react";
-import { motion, useMotionValue, useScroll, useTransform } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useEffect, useState } from "react";
 
-import useMousePosition from "@/hooks/useMousePosition";
-import { getRelativeMousePos } from "@/utils/utils";
-
-export interface ScrollIndicatorProps extends HTMLMotionProps<"div"> {
-	offset: number;
-}
-
-export default function ScrollIndicator({ offset, className, ...rest }: ScrollIndicatorProps) {
+export default function ScrollIndicator({ className, ...rest }: HTMLMotionProps<"div">) {
 	const [windowSize, setWindowSize] = useState({ x: 1, y: 1 });
 
 	useEffect(() => {
@@ -25,22 +18,11 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 	const { scrollY } = useScroll();
 	const opacity = useTransform(scrollY, [0, windowSize.y], [1, 0]);
 
-	const ref = useRef<HTMLDivElement | null>(null);
-	const mousePos = useMousePosition();
-	const mousePosRel = getRelativeMousePos(mousePos, ref);
-	const mouseX = useMotionValue(0);
-	const mouseY = useMotionValue(0);
-	mouseX.set(mousePosRel.x);
-	mouseY.set(mousePosRel.y);
-	const x = useTransform(mouseX, [-windowSize.x, windowSize.x], [-offset, offset]);
-	const y = useTransform(mouseY, [-windowSize.y, windowSize.y], [-offset, offset]);
-
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ delay: 0.6, duration: 0.6 }}
-			ref={ref}
 			className={className}
 			{...rest}
 		>
@@ -49,19 +31,11 @@ export default function ScrollIndicator({ offset, className, ...rest }: ScrollIn
 				whileHover={{ scale: 1.1 }}
 				className="group relative flex items-center justify-center select-none"
 			>
-				{/* Foreground */}
 				<Link to="." hash="about" reloadDocument aria-label="Scroll Down" tabIndex={-1} className="relative z-10 flex">
 					<div className="rounded-full border-2 border-neutral-200 p-5 group-hover:border-gradient-3.5">
 						<FontAwesomeIcon icon={faChevronDown} size="xl" className="text-neutral-200 group-hover:text-accent-pink" />
 					</div>
 				</Link>
-				{/* Background */}
-				<motion.div
-					style={{ x, y }}
-					className="absolute top-0 left-0 flex size-full items-center justify-center group-hover:hidden"
-				>
-					<div className="border-gradient-3 size-full rounded-full border-transparent" />
-				</motion.div>
 			</motion.div>
 		</motion.div>
 	);

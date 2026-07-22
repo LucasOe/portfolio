@@ -35,7 +35,7 @@ function Home() {
 			</div>
 			<div className="flex h-screen flex-col justify-center">
 				<Hero className="pointer-events-none z-10" />
-				<ScrollIndicator offset={16} className="absolute top-[75vh] z-10 self-center" />
+				<ScrollIndicator className="absolute top-[75vh] z-10 self-center" />
 			</div>
 			<Header text="About" id="about" />
 			<div className="prose prose-lg max-w-none">
