@@ -10,7 +10,7 @@ export default defineConfig({
 	// https://oxc.rs/docs/guide/usage/linter/config.html
 	lint: {
 		ignorePatterns: ["**/*.gen.ts"],
-		plugins: ["react", "unicorn", "oxc", "import", "jsx-a11y"],
+		plugins: ["eslint", "typescript", "unicorn", "react", "oxc", "import", "jsx-a11y"],
 		options: {
 			typeAware: true,
 			typeCheck: true,
@@ -31,6 +31,7 @@ export default defineConfig({
 			"react/jsx-no-useless-fragment": "error",
 			"react/no-unescaped-entities": "error",
 			"react/no-unknown-property": "warn",
+			"react/react-compiler": "error",
 			"react/react-in-jsx-scope": "off",
 			"react/rules-of-hooks": "error",
 			"react/self-closing-comp": "error",
