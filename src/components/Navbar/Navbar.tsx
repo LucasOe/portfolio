@@ -1,5 +1,5 @@
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons";
-import { faBluesky, faGithub, faSquareLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faBluesky, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { LinkProps } from "@tanstack/react-router";
@@ -31,7 +31,6 @@ const links: TextLink[] = [
 const socials: SocialLink[] = [
 	{ text: "Github", icon: faGithub, to: "https://github.com/LucasOe" },
 	{ text: "Bluesky", icon: faBluesky, to: "https://bsky.app/profile/lucasoe.com" },
-	{ text: "LinkedIn", icon: faSquareLinkedin, to: "https://www.linkedin.com/in/lucasoe/" },
 ];
 
 export default function Navbar({ className, ...rest }: NavbarProps) {
@@ -89,7 +88,7 @@ export default function Navbar({ className, ...rest }: NavbarProps) {
 				<div className="flex flex-wrap">
 					{socials.map((social) => (
 						<a key={social.text} href={social.to} className="focus p-2 no-underline">
-							<FontAwesomeIcon icon={social.icon} size="xl" className="hover:text-accent-pink" />
+							<FontAwesomeIcon icon={social.icon} size="xl" className="hover:text-accent-violet" />
 						</a>
 					))}
 				</div>
