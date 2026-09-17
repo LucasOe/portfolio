@@ -75,7 +75,7 @@ function RootComponent() {
 	);
 }
 
-function ErrorComponent({ error }: ErrorComponentProps) {
+function ErrorComponent({ error }: ErrorComponentProps<any>) {
 	return (
 		<main className="mb-24 text-center">
 			<p className="font-mono text-[12rem] leading-none font-bold">{error.name}</p>

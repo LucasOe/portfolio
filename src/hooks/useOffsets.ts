@@ -37,7 +37,7 @@ export default function useOffsets(
 			window.removeEventListener("resize", calculateDistances);
 			window.removeEventListener("scroll", calculateDistances);
 		};
-	}, [targetRef, otherRefs, update]);
+	}, [targetRef, otherRefs, update]); // oxlint-disable-line react/exhaustive-effect-dependencies
 
 	return offsets;
 }
