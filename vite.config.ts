@@ -31,7 +31,6 @@ export default defineConfig({
 			"react/jsx-no-useless-fragment": "error",
 			"react/no-unescaped-entities": "error",
 			"react/no-unknown-property": "warn",
-			"react/react-compiler": "error",
 			"react/react-in-jsx-scope": "off",
 			"react/rules-of-hooks": "error",
 			"react/self-closing-comp": "error",
