@@ -8,7 +8,7 @@
 		"lint": "vp lint",
 		"lint:fix": "vp lint --fix",
 		"fmt": "vp fmt",
-		"fmt:check": "vp cmt --check",
+		"fmt:check": "vp fmt --check",
 		"check": "vp check"
 	},
 	"dependencies": {
